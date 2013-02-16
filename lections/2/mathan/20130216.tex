@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Математический анализ}
+\date{}
+\author{abcdw}
+ 
+\begin{document}
+    \maketitle
+    $\int \frac{bx + c}{x^2 + 2px + q} dx = \int \frac{b(x+p) + c - bp}{(x+p)^2 + q - p^2} d(x+p) = \int b \frac{t dt}{t^2 + a^2} + (c - bp) \int \frac{dt}{t^2 + a^2} = \frac{b}2 \int \frac{d(t^2 + a^2)}{t^2 + a^2} + \frac{c-bp}{a} \int \frac{d(\frac{t}a)}{(\frac{t}{a})^2 + 1} = \frac{b}2\log(t^2 + a^2) + \frac{c-bp}a \arctg(\frac{t}{a}) + C = \frac{b}2 \log(x^2 + 2px + q) + \frac{c-bp}a \arctg(\frac{x+p}a) + C$ \newline
+    $\int \frac{bx + c}{(x^2 + 2px + q)^m} dx = \int \frac{b(x+p) + c - bp}{((x+p)^2 + a^2)^m} d(x+p) = \frac{b}2 \int \frac{d(t^2 + a^2)}{(t^2 + a^2)^m} + \frac{c - bp}{a ^{2m - 1}} \int \frac{d(\frac{t}a)}{(\frac{t}a)^2 + 1)^m} = \frac{b}2\frac{x^2 + 2px +q)^{1-m}}{1 - m} + \frac{c-bp}{a^{2m - 1}} I_m (\frac{x+p}a) + C$ \newline
+
+    $$\int \frac{P(x)}{Q(x)}dx$$ \newline
+    P, Q - многочлены. deg P(x) < deg Q(x). \newline
+    $\frac{P(x)}{Q(x)} = R(x) + \frac{P_1(x)}{Q(x)} \leftarrow$ правильная дробь, нет общих корней ни действительных, ни комплексных. \newline
+    $P_n(x) = p_0 + p_1 x + p_2 x^2 + \dots + p_n x^n, p_n \not = 0, p_!, \dots, p_n \in R$ \newline
+
+    Пусть $z = a + ib, b \not = 0$ корень $P_n(x)$, тогда $P_n(z) = 0, \overline P_n(z) = 0 = \overline{p_0 + p_1 z + \dots + p_n z^n} = \overline p_0 + \overline {p_1 z} + \dots + \overline{p_n z^n} = \overline p_0 + \overline{p}_1 \overline{z} + \dots + \overline{p}_n \overline{z}^n$ \newline
+    $P_n(x) = (x - z)(x + z)P_1(x)$ \newline
+    $(x - z)(x + z) = x^2 + (z + \overline z)x + z\overline z = x^2 + 2px + q$ - квадратный трехчлен без действительных корней. \newline
+    $Q_n(x) = (x - x_1)^{k_1}(x - x_2)^{k_2} \dots (x^2 + 2p_1x + q_1)^{m_1}\dots (x^2 + 2p_jx + q_j)^{m_j}$ \newline
+    $\exists A: P_1(x): \frac{P(x)}{Q(x)} = \frac{P(x)}{(x-a)^kQ(x)} = \frac{A}{(x-a)^k} + \frac{P_1(x)}{(x-a)^{k-1}Q_1(x)}$ \newline
+    Доказательство: $\forall A \frac{P(x)}{Q(x)} = \frac{A}{(x - a)^k} + \left(\frac{P(x)}{(x-a)^kQ_1(x)} - \frac{A}{(x-a)^k}\right) = \frac{A}{(x-a)^k} + \frac{P(x) - A Q_1(x)}{(x-a)^kQ_1(x)}$ \newline
+    Подберем A такое, чтобы $P(x) - AQ_1(x)$ делилось на (x - a). Для этого нужно, чтобы $P(a) - AQ_1(a) = 0, A = \frac{P(a)}{Q_1(a)}$ \newline
+    Значит $P(x) - AQ_1(x) = (x - a)P_1(x)$ \newline
+
+    $\exists M, N, P(x) \int R: \frac{P(x)}{Q(x)} = \frac{P(x)}{(x^2 + 2px + q)^m Q_1(x)} = \frac{Mx + N}{(x^2 + 2px + q)^m} + \frac{P_1(x)}{(x^2 + 2px + q)^{m-1} Q_1(x)}$ \newline
+    $\frac{P(x)}{Q(x)} = \frac{Mx + N}{(x^2 + 2px + q)^m} + \frac{P(x) - (Mx + N)Q_1(x)}{(x^2 + 2px + q)^m Q_1(x)}$ \newline
+    $x^2 + 2px + q = (x - z_1)(x - \overline z_1)$ \newline
+    $P(z_1) - (Mz_1 + N)Q_1(z_1) = 0$ \newline
+    $Mz_1 + N = \frac{P(z_1)}{Q(z_1)} = A + iB$ \newline
+    $M(a+ib) + N = (Ma+N) + ibM = A + iB, M = \frac{B}b, N = A - Ma = A - \frac{B}b a$
+    $P(x) - (Mx + N)Q_1(x) = (x-z_1)(x-\overline z_1)Q_1(x) = (x^2 + 2px + q) Q_1(x)$ \newline
+
+    Теорема. $\forall \frac{P(x)}{Q(x)} = R(x) + \frac{A_{1 k_1}}{(x-x_1)^{k_1}} + \frac{A_{1 k_1 - 1}}{(x-x_1)^{k_1 - 1}} + \dots + \frac{A_{1 1}}{(x-x_1)}$ \newline
+
+    \S Подстановки Эйлера. \newline
+    $\int R(x, \sqrt{ax^2 + bx + c})dx$ \newline
+
+    $1) a > 0: \sqrt{ax^2 + bx + c} = \sqrt{a}x \pm t$ \newline
+    $ ax^2 + bx + c = ax^2 + 2\sqrt{a}xt + t^2$ \newline
+    $ x = \frac{t^2 - c}{b - \sqrt{a}t}, dx = d(\frac{t^2 - c}{b - 2\sqrt{a}t}$ \newline
+    $\sqrt{ax^2 + bx + c} = \sqrt{a}x + t = \sqrt{a}\frac{t^2 - c}{b - 2\sqrt{a}t} + t$ \newline
+
+    $2) c > 0: \sqrt{ax^2 + bc + c} = \sqrt{c} + xt$ \newline
+    $ax^2 + bx + c = c + 2\sqrt{c}xt + x^2t^2$ \newline
+    $ax + b = 2\sqrt{c}t + xt^2$ \newline
+    $x = \frac{b - 2\sqrt{c}t}{t^2 - a}$ \newline
+    $\sqrt{ax^2 + bx + c} = \sqrt{c} + \frac{b - 2\sqrt{c}t}{t^2 - a}t$ \newline
+
+    $3) ax^2 + bx + c = a(x-x_1)(x-x_2), x_1, x_2 \in R x_1 \not = x_2$ \newline
+    $\sqrt{ax^2 + bx + c} = t(x - x_1)$ \newline
+    $ax^2 + bx + c = a(x - x_1)(x - x_2)= t^2 (x - x_1)^2$ \newline
+    $a(x - x_2) = t^2(x - x_1)$ \newline
+    $x = \frac{t^2x_1 - ax_2}{t^2 - a}$ \newline
+
+    Графическая интерпретация. \newline
+    $y = \pm\sqrt{ax^2 + bx + c}$ \newline
+    $y^2 = ax^2 + bx + c \leftarrow (x_0, y_0)$ на кривых. \newline
+    $y - y_0 = t(x - x_0)$ \newline
+    $((y - y_0) + y_0)^2 = ax^2 + bx + c$ \newline
+    $t^2(x - x_0)^2 + 2t(x - x_0)y_0 + y_0^2 = ax^2 + bx + \not c, y_0^2 = ax^2 + bx + \not c$ аккуратнее. \newline
+    $t^2(x - x_0)^2 + 2t(x - x_0)y_0 = a(x^2 - x_0^2) + b(x - x_0)$ \newline
+    $t^2(x - x_0) + 2ty_0 = a(x + x_0) + b$ \newline
+\end{document}
