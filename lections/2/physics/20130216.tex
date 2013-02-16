@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Физика}
+\date{}
+\author{abcdw}
+ 
+\begin{document}
+    \maketitle
+    Колебания.
+    \S1 Линейные диффиринциальные уравнения второго порядка с постоянным коэффициентами. \newline
+    $\ddot x + a\dot x + bx = f(t), x = x(t)$ \newline
+    $\ddot x + a\dot x + bx = 0$ - однородное. \newline
+    Решение любого диффиринциального уравнения содержит две произвольные константы. \newline
+    $\ddot x = 0$ \newline
+    $\frac{d\dot x}{dt} = 0$ \newline
+    $d \dot x = 0 dt$ \newline
+    $\dot x = c_1$ \newline
+    $x = c_1 t + c_2$ - общее решение. \newline
+    $x(t) = 5t + 3$ - частное решение. \newline
+
+    Рассмотрим $\ddot x + a\dot x + b = 0$ \newline
+    Пусть каким-то образом нашли два частных линейнонезависимых решения. \newline
+    Любое решение представляется в виде $x(t) = c_1x_1(t) + c_2x_2(t)$ \newline
+    $\ddot x + a\dot x + bx = f(t)$ \newline
+    $x_{\mbox{общ неоднор.}} = x_{\mbox{общ однор.}} + x_{\mbox{частн. неоднор.}}$
+
+    \S2 Гармонические колебания. \newline
+    $\ddot x + x = 0$ \newline
+    $\ddot x = -x$ \newline
+    $x_1(t) = \cos t, x_2(t) = \sin t$ \newline
+    $x(t) = c_1 \cos t + c_2 \sin t$ \newline
+    $\ddot x + \omega_0^2 x = 0$ \newline
+    $\ddot x = - \omega_0 ^2 x$ \newline
+    $x_1(t) = \cos \omega_0t, x_2(t) = \sin \omega_0t$ \newline
+    $x(t) = c_1 \cos \omega_0 t + c_2 \sin \omega_0 t$ \newline
+    $x(t) = \sqrt{c_1^2 + c_2 ^2} \left( \frac{c_1}{\sqrt{c_1^2 + c_2 ^2}}\cos \omega_0t + \frac{c_2}{\sqrt{c_1^2 + c_2 ^2}} \sin \omega_0 t \right) = \sqrt{c_1^2 + c_2 ^2} (\cos \varphi \cos \omega_0t~+~\sin \varphi \sin \omega_0t) = \sqrt{c_1^2 + c_2 ^2} \cos (\omega_0t - \varphi), \varphi = \arctg \frac{c_2}{c_1} $ \newline
+    $x(t) = a \cos(\omega_0t + \alpha), a = \sqrt{c_1^2 + c_2 ^2}, \alpha = -\varphi$ \newline
+
+    \S3 Комплексные числа. \newline
+    $z = x + \varphi y$ \newline
+    $i = \sqrt{-1}$ \newline
+
+    $x = e^{\lambda t}$ \newline
+    $\lambda^2 e^{\lambda t} + \omega_0^2 e^{\lambda t} = 0$ \newline
+    $\lambda_1 = i\omega_0, \lambda_2 = -i \omega_0$ \newline
+    $x(t) = c_1e^{i\omega_0t} + c_2e^{-i\omega_0t}$ \newline
+
+    \S4 Горизонтальные колебания пружинного маятника без трения. \newline
+    $m\ddot x = -kx$ \newline
+    $\ddot x + \frac{k}mx = 0, \omega_0^2 = \frac{k}m$ \newline
+
+    \S5 Малые колебания в близи минимума потенциальной энергии. \newline
+    $U(x) = U(x_0) + U'(x_0)(x-x_0) + \frac12U''(x_0)(x-x_0)^2, U(x_0) = 0, U'(x_0) = 0$ \newline
+    $U(x) = \frac12 U''(0)x^2, U''(0) = k \Rightarrow U(x) = \frac{kx^2}2, F_x = -\frac{dU}{dx} = -kx$ \newline
+
+    \S6 Смещение скорости и ускорения. \newline
+    $x(t) = a \cos (\omega_0t + \alpha)$ \newline
+    $V_x = \dot x = -a \omega_0 \sin(\omega_0t + \alpha) = a\omega_0\cos(\omega_0t + \alpha+ \frac{\pi}2)$ \newline
+    $W_x = \ddot x = -a \omega_0^2 \cos(\omega_0t + \alpha)$ \newline
+    
+\end{document}

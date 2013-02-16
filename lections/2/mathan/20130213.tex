@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Математический анализ}
+\date{}
+\author{abcdw}
+ 
+\begin{document}
+    \maketitle
+    Глава 1. Неопределенный интеграл. \newline
+    
+    \S1. Первообразная и неопределенный интеграл. \newline
+
+    Опр. f(x) определена на (a, b). F(x) - первообразная для f(x), если $F'(x) \equiv f(x), dF = f(x)dx$. \newline
+
+    Утв. Если $F_1(x)$ и $F_2(x)$ - первообразные f(x), то $F_1(x) - F_2(x) = const$ \newline
+    Док. $(F_1(x) - F_2(x))' = F_1'(x) - F_2'(x) = 0 \Rightarrow F_1 - F_2 = const$. По Лагранжу.\newline
+    $x>0: \arctg x = \arcctg \frac1x, x<0: \arcctg \frac1x = \arctg x + \pi$ \newline
+
+    Задача. Функция расстония до ближайшего целого числа. Найти первообразную. \newline
+    
+    Опр. Совокупность всех первообразных - неопределенный интеграл. $$\int f(x) dx = F(x) + C$$ \newline
+
+    \S2. Таблица неопределенных интегралов. \newline
+    \begin{itemize}
+        \item $\int x^\alpha dx = \frac{x^{\alpha + 1}}{\alpha + 1} + C (\alpha \not = 1)$
+        \item $\int a^x dx = \frac{a^x}{\log a} + C$
+        \item $\int \sin x dx = -\cos x + C$
+        \item $\int \frac{dx}{x} = \log|x| + C$
+        \item $\int e^x dx = e^x + C$
+        \item $\int \cos x dx = \sin x + C$
+        \item $\int \frac{dx}{\cos^2 x} = \tg x + C$
+        \item $\int \frac{dx}{\sqrt{1 - x^2}} = \arcsin x + C, - \arccos x + C$
+        \item $\int \frac{dx}{\sqrt{1 + x^2}} = \arctg x + C, - \arcctg x + C$
+        \item $\int \sh x dx = \ch x + C$
+        \item $\int \frac{dx}{\ch ^2 x} = \th x + C$
+        \item $\int \frac{dx}{\sqrt{x^2 \pm 1}} = \log(x + \sqrt{x^2 \pm 1} + C$
+        \item $\int \frac{dx}{1 - x^2} = \frac12 \log\left|\frac{1+x}{1-x}\right| + C$
+        \item $\int \ch x dx = \sh x + C$
+        \item $\int \frac{dx}{\sh ^2 x} = - \cth x + C$
+    \end{itemize}
+
+    \S3. Основные приемы вычисления первообразных. \newline
+
+    Равенство первообразных(интегралов) понимается как равенство производных. \newline
+
+    $$ \int (\alpha U(x) + \beta V(x)) dx = \alpha \int U(x)dx + \beta \int V(x)dx$$
+    $$ \int (UV)'dx = \int(U'V + V'U)dx = \int U'Vdx + \int V'Udx$$
+    $$ \int U'Vdx = UV - \int V'Udx, \int VdU = UV - \int UdV$$ \newline
+
+    Если на (a, b) $\int f(x) dx = F(x) + C$, а $\varphi(t) : (\alpha, \beta)\rightarrow(a,b), \varphi(t)$ непрерывно дифференцируема. \newline
+    $$\int F(\varphi(t))\varphi'(t) dt = F(\varphi(t)) + C$$
+
+    Примеры. \newline
+    1) $\int \cos^2 \frac{x}{2}dx = \int \frac{1+\cos x}{2}dx = \frac12\int dx + \frac12\int \cos x dx = \frac{x}{2} + \frac12 \sin x + C$ \newline
+    2) $\int \log x dx = x \log x - \int x d \log x = x \log x - \int x \frac1xdx = x\log x - x + C$ \newline
+    3) $\int x e^x dx = \int x d e^x = x e^x - \int e^x dx = xe^x - e^x + C$ \newline
+    4) $\int \frac{xdx}{1+x^2} = \frac12 \int \frac{d(x^2+1)}{x^2+1} = \frac12 \log(x^2 + 1) + C$ \newline
+    5) $\int \frac{dx}{\sin x} = \int \frac{dx}{2 \sin \frac{x}{2} \cos \frac{x}{2}} = \int \frac{d\frac{x}{2}}{\cos^2 \frac{x}{2} \tg \frac{x}{2}} = \int \frac{d \tg\frac{x}{2}}{\tg \frac{x}{2}} = \log (\tg \frac{x}{2}) + C$ \newline
+    6) $\int \sin 2x \cos 3x dx = \frac12 \int (\sin 5x - \sin x)dx = -\frac{\cos 5x}{10} + \frac{\cos x}{2} + C$ \newline
+    7) $\int e^{ax} \cos bx dx = \frac1a \int \cos bx d e^{ax} = \frac1a \cos bx e^{ax}] - \frac1a \int e^{ax} d \cos bx = \frac1a \cos bx e^{ax} + \frac{b}{a} \int \sin bx e^{ax} dx = \frac1a\cos bx e^{ax} + \frac{b}{a^2}\int \sin bx d e^{ax} =
+    \frac1a\cos bx e^{ax} + \frac{b}{a^2}\sin bx e^{ax} - \frac{b}{a^2}\int e^{ax} d \sin bx = \frac1a\cos bx e^{ax} + \frac{b}{a^2}\sin bx e^{ax} - \frac{b^2}{a^2}\int e^{ax} \cos bx dx$ \newline
+
+    Формула Эйлера. \newline
+    $$e^{i\alpha} = \cos \alpha + i\sin \alpha$$ \newline
+
+    \S 4. Интегрирование рациональных функций. \newline
+    1) $\int \frac{dx}{x-a} = \log |x-a| + C$ \newline
+    2) $\int\limits_{n \in N, n > 1} \frac{dx}{(x-a)^n} = \frac{(x-a)^{1-n}}{1-n} + C$ \newline
+    3) $\int \frac{dx}{1 + x^2} = \arctg x + C$ \newline
+    4) $\int\limits_{n \in N, n > 1} \frac{dx}{(x^2+1)^n} = I_n, I_1 = \arctg x + C$, по индукции $I_k = \frac{x}{(x^2 + 1)^k} + 2k I_k - 2k I_{k+1}$ \newline
+    5) $\int \frac{bx + c}{x^2 + 2px + q}dx$ \newline
+\end{document}

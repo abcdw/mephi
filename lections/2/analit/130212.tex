@@ -12,5 +12,86 @@
 
 \begin{document}
     \maketitle
+    A, B - матрицы $n \times n$. \newline
+    $|A * B| = |B * A| = |A| * |B|$ \newline
+    $B = \begin{pmatrix}
+        \vec b_1 \\
+        \vec b_2 \\
+        \vdots \\
+        \vec b_n
+    \end{pmatrix}$
+    $\tilde B = \begin{pmatrix}
+        \vec b_{i_1} \\
+        \vec b_{i_2} \\
+        \vdots \\
+        \vec b_{i_n}
+    \end{pmatrix}$
+    $det \tilde B = (-1)^{t(i_1, i_2, \dots, i_n)} det B$ \newline
+    много добавить. $\leftarrow$
 
+    Обратная матрица. \newline
+
+    A - матрица $n \times n$. \newline
+    B - обратная к матрица A, если \newline
+    A * B = B * A = E \newline
+    E - единичная. \newline
+    B - матрица $n \times n$ \newline
+
+    A - называется невырожденной, если $|A| \not = 0$ \newline
+
+    Теорема. \newline
+    A - обратима $\Leftrightarrow |A| \not = 0$ \newline
+    В одну сторону: \newline
+    $|A * B| = |E| = 1$ \newline
+    $|A| * |B| = |A * B| \Rightarrow |A| \not = 0$ \newline
+    В другую: \newline
+    $B = \frac1{\triangle}\begin{pmatrix}
+        A_{11} & A_{21} & \dots & A_{n1} \\
+        A_{12} & A_{22} & \dots & A_{n2} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        A_{1n} & A_{2n} & \dots & A_{nn}
+    \end{pmatrix} = \frac1{\triangle}C
+    $
+
+    C - транспонированная матрица из алгебраических дополнений. $C~=~(A_{ij})^T$ \newline
+    Проверим. \footnote{дописать} \newline
+
+    Теорема. \newline
+    Если существует обратная матрица, то она единственна. \newline
+    $B_1 = B_1 * E = B_1 * (A * B_2) = (B_1 * A) * B_2 = B_2$ \newline
+
+    Пример. \newline
+    $A = \begin{pmatrix}
+        2 & 5 & 7 \\
+        6 & 3 & 4 \\
+        5 &-2 &-3
+    \end{pmatrix}
+    A^{-1} = \frac1{-1} \begin{pmatrix}
+        -1 & 1 & -1 \\
+        38 & -41 & 34 \\
+        -27 & 29 & -24
+    \end{pmatrix}
+    $
+
+    Свойства. \newline
+    1. $(A^{-1})^{-1} = A$ \newline
+    2. $(A * B)^{-1} = B^{-1} * A^{-1}$ \newline
+    3. $(A^T)^{-1} = (A^{-1})^T$ \newline
+
+    Линейная зависисмость и независимость столбцов и строк матрицы. \newline
+    $\vec a_i$ - строки. \newline
+    $a_{\downarrow i}$ - столбцы. \newline
+
+    Система столцов называется линейно зависимой, если $\exists \alpha_i \not = 0: \alpha_1 a_{\downarrow 1} + \alpha_2 a_{\downarrow 2} + \dots + \alpha_k a_{\downarrow k} = 0$ \newline
+    Столбец $a_{\downarrow}$ является линейной комбинацией, если $\exists \alpha_i$. \newline
+    Столбцы ЛЗ $\Leftrightarrow$ один линейно выражается через остальные. \newline
+    Доказательство. \newline
+
+    Достаточное условие линейной зависимости столбцов. \newline
+    1. Если в системе имеется нулевой столбец. \newline
+    2. Если в системе столбцов имеется линейная подсистема. Следствие: если система ЛНЗ, то и любая подсистема ЛНЗ. \newline
+
+    Ранг матрицы. \newline
+
+    
 \end{document}
