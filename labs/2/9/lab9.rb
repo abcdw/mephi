@@ -1,5 +1,5 @@
+# coding: utf-8
 # Работа 9: Измерение коэффициента теплопроводимости воздуха.
-
 require 'gnuplot'
 
 outFile = 'graph.png'
@@ -15,6 +15,7 @@ x = i.collect { |v| v * v * 1000.0 }
 y = r.collect { |v| v }
 dy = x.collect { |v| 0.02 }
 
+
 Gnuplot.open do |gp|
     Gnuplot::Plot.new( gp ) do |plot|
         if writeOut
@@ -23,10 +24,12 @@ Gnuplot.open do |gp|
         end
         plot.xrange "[-10:100]"
         plot.yrange "[8.50:8.80]"
-        plot.title  "Sinus"
+        plot.title  "qweqwe"
         plot.ylabel "x"
         plot.xlabel "sin(x)"
-
+        plot.arbitrary_lines << "terminal postscript eps enhanced adobeglyphnames"
+        plot.arbitrary_lines << "set encoding utf8"
+        plot.arbitrary_lines << "set ylabel \"Й:wSignal mean value\" font \"Helvetica,10\""
 
         plot.data = [
 #            Gnuplot::DataSet.new( "y=5x" ) { |ds|
