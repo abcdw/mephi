@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Домашнее задания по математическому анализу}
+\date{}
+\author{abcdw}
+
+\begin{document}
+    \maketitle
+    Интегралы. \newline
+    1634. $\int \frac{\sqrt{x} - 2\sqrt[3]{x^2} + 1}{\sqrt[4]{x}}dx = \int\left(x^{\frac14} - 2x^{\frac{5}{12}} + x^{-\frac14}
+    \right)dx = \frac{4x^{\frac54}}{5} - \frac{24x^{\frac{17}{12}}}{17} + \frac{4x^{\frac34}}{3} + C$ \newline
+    1744. $\int \sin 3x \sin 5x dx = \frac12 \int (\cos 2x - \cos 8x)dx = \frac14 \sin 2x - \frac{1}{16}\sin 8x + C$ \newline
+    1750. $\int \cos^4 x dx = \int \frac{\cos 4x + 4 \cos 2x + 3}{8} dx = \frac{1}{32} \sin 4x + \frac14 \sin 2x + \frac38 x + C$ \newline
+    1756. $\int \frac{dx}{\sin x \cos^3 x} = \int \frac{\sin^2 x + \cos^2 x}{\sin x \cos^3 x} dx = \int \frac {\tg x dx}{\cos^2 x} + \int \frac{dx}{\sin x \cos x} 
+    =\footnote{$t = \tg x$, $dt = \frac{dx}{\cos^2 x}$} \int t dt + \int \left(\frac{\sin x}{\cos x} + \frac{\cos x}{\sin x} \right)dx = \newline
+    =\frac12 \tg^2 x - \int \frac{d \cos x}{\cos x} + \int \frac{d \sin x}{\sin x} = \frac12 \tg^2 x - \ln |\cos x| + \ln |\sin x| + C = \newline 
+    =\frac12 \tg^2 x + \ln |\tg x| + C$ \newline
+    1763. $\int \sh x \sh 2x dx = \int \frac{(e^x - e^{-x})(e^{2x} - e^{-2x})}{4} dx = \frac14 \int (e^{3x} + e^{-3x} - e^{x} - e^{-x})dx = \newline
+    = \frac1{12} e^{3x} - \frac1{12}e^{-3x} - e^x + e^{-x} + C = \frac16 \sh 3x - \frac12 \sh x + C$ \newline
+    1775. $\int \frac{dx}{e^{\frac{x}2} + e^x} = \int \frac{dx}{e^{\frac{x}2}(1 + e^{\frac{x}2})} = \int \frac{2dt}{t^2(1+t)} = 2 \int (\frac1{t^2} + \frac1{1 + t} - \frac1t)dt =\newline 
+    = -2e^{\frac{x}2} + 2 \ln |e^{\frac{x}2} + 1| - x$ \newline
+    1787. $\int \frac{x^2 dx}{\sqrt{a^2 + x^2}} = \int \frac{a^2 \sh^2 t\ a \ch t dt}{a\sqrt{1+sh^2 t}}$ \newline
+    1700(a). $\frac{\sin x\ d\sin x}{\sqrt{(a^2 - b^2)\sin^2 x + b^2}}, t = sin x, u = \sqrt{(a^2 - b^2)t^2 + b^2}, du = \frac{2(a^2 - b^2)t\ dt}{2\sqrt{(a^2-b^2)t^2 +b^2}} $ \newline
+    1710. $t = \arcsin x, dt = \frac{dx}{\sqrt{1-x^2}}$ \newline
+    1760. $\int \frac{(1+e^x)^2}{1+e^{2x}} dx = \int \frac{(1 + t)^2 t dt}{1 + t^2} = t - \arctg t + \frac12 \log|1+t^2| +\frac{t^3}3 + C$ \newline
+    1718. $t = \sin x, dt = \cos x dx.\ u = t^2, du = tdt.\ du = \sqrt{2} dv. $ \newline
+    1730. $x = -\frac15(2-5x)+\frac25$ \newline
+    1736. $A = \frac15, B = -\frac15.\ \int (\frac{A}{x^2 - 2} + \frac{B}{x^2 + 3})dx$ \newline
+    1741. $\sin^2 x = \frac{1-\cos 2x}{2}$ \newline
+    1743. $\sin x \sin(x + \alpha) = \frac{\cos \alpha - \cos(2x+\alpha)}{2}$ \newline
+    1749. $\sin^4 x = \frac{\cos 4x + 4 \cos 2x + 3}{8}$ \newline
+    1761. $\sh^2 x = \frac{\ch 2x - 1}2 $ \newline
+    1768. $\sqrt{2 - x} = t, dt = \frac{dx}{\sqrt{2-x}}, x = 2 - t^2$ \newline
+    1770. $t = (2 - 5x^3)^{\frac53}, dt = -25(2-5x^3)^{\frac23}x^2 dx, x^3 = \frac{2-t^{\frac35}}5$ \newline
+    1774. $t = \sqrt{1 + \ln x}, dt = \frac{dx}{2x\sqrt{1+\ln x}}, \ln x = t^2 - 1$ \newline
+    1776. $t = \sqrt{1+e^x}, dt = \frac{e^x dx}{2\sqrt{1+e^x}}, e^x = t^2 - 1$ \newline
+\end{document}
