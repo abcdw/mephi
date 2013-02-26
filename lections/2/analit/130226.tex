@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Аналитическая геометрия и линейная алгебра}
+
+\date{}
+\author{abcdw}
+
+\begin{document}
+    \maketitle
+    $A = (a_{\downarrow}^1, \dots, a_{\downarrow}^n)$ \newline
+    $B = (b_{\downarrow}^1, \dots, b_{\downarrow}^n)$ \newline
+    $b_{\downarrow}^1 = a_{\downarrow}^1+ \lambda a_{\downarrow}^2, b_{\downarrow}^n = a_{\downarrow}^n$ \newline
+    $Rg A \leq Rg B$ \newline
+    $C \begin{pmatrix}
+        c_{11} & c_{12} & \dots & c_{1n} \\
+        0 & c_{21} & \dots & c_{2n} \\  
+        \dots & \dots & \dots & \dots \\
+        0 & \dots & c_{rr} \dots & c_{rn} \\
+        0 & \dots & \dots & 0 \\
+        0 & \dots & \dots & 0 
+    \end{pmatrix}$ - трапецевидная матрица $m \times n$ \newline
+    Теорема. Любая матрица может быть приведена к трапецевидной матрице с помощью элементарных преобразований. \newline
+    Доказательство. привести алгоритм. \newline
+    ранг трапецевидной матрицы равен числу ненулевых строк. \newline
+
+    Теория систем линейных алгебраических уравнений.
+    \S1 Основные понятия. \newline
+    СЛАУ - называется система вида: \newline
+    $a_{11} x_1 + a_{12} x_2 + \dots + a_{1n} = b_1$ \newline
+    $a_{21} x_1 + a_{22} x_2 + \dots + a_{2n} = b_2$ \newline
+    $\dots$ \newline
+    $a_{m1} x_1 + a_{m2} x_2 + \dots + a_{mn} = b_m$ \newline
+    $A = (a_{ij})$ -  матрица системы. \newline
+    $x_{\downarrow}$ - столбец неизвестных. \newline
+    $b_{\downarrow}$ - столбец свободных членов. \newline
+    $\tilde A = (A|b_{\downarrow})$ - расширенная матрица. \newline
+    $b_{\downarrow} = 0$ однородная система. \newline
+    $Ax_\downarrow = b_\downarrow$ \newline
+    Упорядоченный набор из n чисел называется решение, если при его подстановке уравнения обращаются в равенства. \newline
+    Если система один имеет хотя бы одно решение, то она называется совместной, иначе несовместной. \newline
+    Две СЛАУ с n неизвестными называются эквивалентными, если каждое решение одной системы являеется решением другой и наоборот или если они обе несовместны. \newline
+    Общим решением СЛАУ один называется решение, зависящее от нескольких параметров и такое, что всякое частное решение получается из него при помощи специального выбор значений этих параметров.
+
+    \S2 Квадратные СЛАУ и теорема Крамера. \newline
+    Теорема. Если определитель матрицы A не равен нулю, то существует и при том единственное решение системы, которое находится или вычисляется по формулам. $x_k = \frac{\triangle_k}{\triangle}$ \newline
+    $\triangle_1 = det(b_\downarrow, a_{\downarrow}^2,\dots, a_{\downarrow}^n)$ \newline
+    $x_\downarrow = A^{-1} b_\downarrow$ \newline
+    $Ax_\downarrow = AA^{-1} b_\downarrow = Eb_\downarrow = b_\downarrow$ - существование. \newline
+    $A\tilde x = b, A^{-1}A\tilde x = A^{-1}b \Leftrightarrow \tilde x = A^{-1} b = x$ \newline
+    % Доказать формулы Крамера.
+
+    \S3 \newline
+    Элементарными преоразованиями СЛАУ будем называть следующие действия: \newline
+    1. Перестановка местами двух уравнений. \newline
+    2. Умножение на число уравнения. \newline
+    3. Прибавление к какому либо  уравнению уравнения умноженного на число. \newline
+    Элементарные преобразования СЛАУ приводят к соответствующим преобразованиям расширенной матрицы системы. \newline
+
+    Теорема. Элементарные преобразования СЛАУ переводят ее в эквивалентную. \newline
+    Доказательство. Очевидно. \newline
+    $Rg A = Rg \tilde A or Rg A + 1 = Rg \tilde A$ \newline
+
+    Метод Гаусса, метод последовательного исключения неизвестных. \newline
+    Первый шаг - перестановкой местами уравнений добьемся, чтобы $A_{11} \not = 0$ \newline
+    Вторым шагом исключим из уровнения $x_1$ \newline
+\end{document}
