@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Дискретная математика}
+
+\date{}
+\author{abcdw}
+
+\begin{document}
+    \maketitle
+    метод включения исключения, формула решета. \newline
+    $S,|n|$ \newline
+    $N: p_1, p_2, \dots, p_n$
+    $n(p_{i_1}, p_{i_2}, p_r)$ - число элементов, которые обладают этими свойствами. \newline
+    $n(\overline p) = n - n(p)$ \newline
+    $p_1, \dots, p_N$ - совместны. \newline 
+    $n(\overline p_1, \dots, p_N) = n - \sum\limits_{i=1}^{N}n(p_i) + \sum n(p_i, p_j) - \dots$ \newline
+    Беспорядок - любая такая перестановка, где не один элемент не занимает предназначенное ему место. \newline
+    $D_n = n! - c_n^1(n-1)! + c_n^2(n-2)! + \dots + (-1)^nc_n^n(n-n)!$ \newline
+    $D_n = n!\left(1 - \frac1{1!} + \frac1{2!} - \dots + (-1)^n\frac1{n!}$ \right) \newline
+    $D_n = n! e^{-1}$ \newline
+    Следствие. задача Монгор. \newline
+    В гардероб сданы шляпы, шляпы перепутаны. Какова вероятность. 
+    $D_n = nD_{n-1} + (-1)^n$ \newline
+    $D_{n,r}$ - на своих местах могут оставаться r элементов. \newline
+    $V(p_1, \dots, p_r)$ -  
+    Если во множестве нет ни одного такого элемента. \newline
+    Сумма весов элементов, обладающих ровно n свойствами. \newline
+    $S, n, N$ найти сумму весов элементов, необладающих ни одним из свойств. \newline   
+    $V_{N}(0) = V(0) - V(1) + V(2) + \dots + (-1}^NV(N)$ \newline
+
+\end{document}
