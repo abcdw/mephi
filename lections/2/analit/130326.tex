@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+%\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Аналитическая геометрия и линейная алгебра}
+
+\date{}
+\author{abcdw}
+
+\begin{document}
+    \maketitle
+    Упорядоченная система векторов $e_1, \dots, e_n$ называется базисом линейного пространства, если $\forall x\  \exists! \xi_1, \dots, \xi_k: x = \xi_1 e_1 + \dots + \xi_k e_k$ \newline
+    Векторы базиса обязательно ЛНЗ. \newline
+    Пусть $e_1, \dots, e_k$ - базис V. \newline
+    Рассмотрим линейнуйю комбинацию $\alpha_1 e_1 + \dots \alpha_k e_k = \theta \Rightarrow \forall i\  \alpha_i = 0$
+    
+    Лемма. Если $f_1, \dots, f_n$ - система ЛНЗ векторово в ЛП V. \newline
+    $x = \sum \alpha_i f_i$ \newline
+    Если расскладывается, то разложение единственно. \newline   
+    Пусть $x = \sum \beta_i f_i$ \newline
+    $(\alpha_1 - \beta_1) * f_1 + \dots + (\alpha_n - \beta_n) f_n = \theta$, так как $f_i$ - ЛНЗ, то $\alpha_i - \beta_i = 0$ \newline
+    
+    Свойство. \newline
+    $\forall \lambda \in F \lambda x = \sum (\lambda x_i)$ \newline
+    $x + y \Rightarrow x_i + y_i$ \newline
+
+    Пусть в ЛП V имеется две системы $e: e_1, \dots, e_k$ и $x_1, \dots, x_n$, такие что $x_i = \sum\limits_{l = 1}^k \xi_l^{(i)} e_l$, n > k, тогда система $x_1, \dots, x_n$ - ЛЗ. \newline
+    Доказательство. \newline
+    По условию. $x_i = (e_1, \dots, e_k)$
+    $\begin{pmatrix} 
+        \xi_1^{(i)} \\
+        \vdots \\
+        \xi_k^{(i)}
+    \end{pmatrix}$ \newline
+    Доказать, что $\sum \alpha_i x_i = \theta$ \newline 
+    
+    Рамерность - максимальное число ЛНЗ векторов. \newline
+    Основная теорема о связи базиса и размерности. \newline
+    Кол-во векторов в базисе равно размерности. \newline
+    Если $n = \dim V$, то любая упорядоченная и ЛНЗ система элементов пространства V образует базис. \newline
+    Если в ЛП V имеется базис $e_1, \dots, e_k$, то $k = \dim V$ \newline
+    1) Пусть $n = \dim V$ - по определению это максимальное число ЛНЗ элементов V. \newline
+    Рассмотрим $e_1, \dots, e_n$, докажем, что это базис. \newline
+    $\forall x \in V$ $x, e_1, \dots, e_n$ - ЛЗ. \newline
+    $\exists \alpha_i, \alpha \not = 0: \alpha x + \sum \alpha_i x_i = \theta$ \newline 
+    $x = \sum \frac{\alpha_i}{\alpha} e_i$ \newline
+    По лемме 1 разложение единственно. \newline
+    $e_1, \dots, e_n$ - базис. \newline
+    2) Пусть $e_1, \dots, e_k$ - базис V. \newline
+    Докажема, что $k = \dim V$ \newline
+    Пусть $x_1, \dots, x_n$ - произвольная система элементов ЛП V. \newline
+    По определению базиса $x_t = \sum\limits_{i = 1}^k \xi_i^{t} e_i$ по лемме 2 $x_1, \dots, x_n$ - ЛЗ. \newline
+    
+    Следствие. Пусть V - ЛП, $\dim V = n$ всякий базис V состоит из n элементов. \newline
+    
+    Примеры: \newline
+    1) Пространство строк $F^n$ \newline
+    2) Пространство многочленов $P_n$ \newline
+    3) Пространство матриц.  \newline
+    4) Ax = $\theta$ \newline
+    A - $m\times n$ матрица. \newline
+    r = Rg A < n \newline
+    $x^{(1)}, \dots, x^{(n - r)}$, $\dim = n - r$ \newline
+
+    \S 5 Изоморфизм линейных пространств. \newline
+    $V, W$ - ЛП.
+    Отображение $\varphi: V \to W$ \newline
+    Называется биективным(взаимнооднозначным). Если 
+    $\forall x \in V\ \exists!~\varphi(x)~\in~W$ \newline
+    $\forall x' \in W\ \exists! x_0~\varphi(x_0)=x'$ \newline
+
+    $W, V$ над полем F называются изоморфными, если существует биекция $\varphi: V \to W$, сохраняющая линейные операции. \newline
+    $\varphi(x) + \varphi(y) = \varphi(x + y)$ \newline
+    $\forall x \in V \forall \lambda \in F \varphi(\lambda x) = \lambda \varphi(x)$
+
+    Свойтсва изоморфизма. \newline
+    1) $\varphi(\theta_V) = \theta_W$ По свойству два 0x. \newline
+    2) Образом ЛНЗ системы элементов является ЛНЗ система. $x'_i = \varphi(x_i)$. Пусть $\exists \alpha_i \in F: \sum \alpha_i x'_i = \theta_W \Rightarrow \varphi(\sum \alpha_i x_i) = \varphi(\theta_W)$ \newline
+    
+    Теорема. \newline
+    Пусть $V, W$ - два конечномерных линейных пространства над полем F. \newline
+    V и W - изоморфны тогда и только тогда, когда $\dim V = \dim W$ \newline
+    $\sqrt
+\end{document}
