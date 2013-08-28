@@ -1,0 +1,32 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amssymb,amsfonts,mathtext,cite,enumerate,float}
+\usepackage[dvips]{graphicx}
+\graphicspath{{images/}}
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+\usepackage{geometry}  % Меняем поля страницы
+\geometry{left=2cm}    % левое поле
+\geometry{right=1.5cm} % правое поле
+\geometry{top=1cm}     % верхнее поле
+\geometry{bottom=2cm}  % нижнее поле
+
+\renewcommand{\theenumi}{\arabic{enumi}}                                       % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}                                     % Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}                                    % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}                   % Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}                                  % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
+
+\begin{document}
+    %\input{titlelist}
+    \tableofcontents
+
+    \chapter{Начало}
+\end{document}
+
