@@ -1,5 +1,7 @@
 \documentclass[a4paper,12pt]{report}
 
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+% здесь подключении шрифтов в русскими буквами
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -7,6 +9,7 @@
 %\usepackage[dvips]{graphicx}
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
+\usepackage{fix-cm}
 
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1.}
