@@ -1,9 +1,11 @@
 \documentclass[a4paper,12pt]{report}
+
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{amsmath,amssymb,amsfonts,mathtext,cite,enumerate,float}
-\usepackage[dvips]{graphicx}
+%\usepackage[dvips]{graphicx}
+\usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 
 \makeatletter
@@ -23,10 +25,12 @@
 \renewcommand{\theenumiii}{.\arabic{enumiii}}                                  % Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
 
-\begin{document}
-    %\input{titlelist}
-    \tableofcontents
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-    \chapter{Начало}
+\begin{document}
+  \input{title}
+  \tableofcontents
+
+  \chapter{Начало}
 \end{document}
 
