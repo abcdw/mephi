@@ -5,7 +5,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage{amsmath,amssymb,amsfonts,mathtext,cite,enumerate,float}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathtext,cite,enumerate,float}
 %\usepackage[dvips]{graphicx}
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
@@ -30,10 +30,19 @@
 \renewcommand{\theenumiii}{.\arabic{enumiii}}                                  % Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
 
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\theoremstyle{remark}
+\newtheorem{example}{Пример}
+
 \begin{document}
   \input{title}
   \tableofcontents
 
-  \chapter{Начало}
+  \input{ch1}
+
 \end{document}
 
