@@ -1,0 +1,133 @@
+\chapter{Числовые ряды}
+\section{Определение}
+
+\begin{definition}
+  $U_1 + U_2 + U_3 + \dots = \sum\limits_{k = 0}^{\infty}{U_k}$
+\end{definition}
+
+\begin{definition}
+  $S_n = $ - Частичная сумма
+\end{definition}
+\begin{definition}
+  Ряд сходится, если $\exists \lim_{n \to \infty} \sum\limits_0^\infty U_k$
+\end{definition}
+
+\begin{definition}
+  $\{a_n\} a_n = a_0 + \sum\limits_1^n (a_k - a_{k-1}$
+\end{definition}
+
+\begin{theorem}[Критерий Коши]
+  Ряд сходится $ \Leftrightarrow \forall \varepsilon \exists N = N(\varepsilon)
+  \forall n \geq N, \forall p |\sum\limits_{k=n+1}^{n+p} n_k| = |U_{n+1} + \dots
+  + U_{n+p} = |S_{n+p} + S_{n}| < \varepsilon$
+\end{theorem}
+
+\begin{proof}
+  $\forall \varepsilon > 0 \exists N: \forall n \geq N, \forall p
+  |S_{n+p} + S_{n}| < \varepsilon$
+\end{proof}
+
+\begin{definition}
+  Краевые условия
+  Если ряд
+\end{definition}
+
+\begin{example}
+  $\sum\limits_0^\infty z^n$
+  $S_n(z) = \sum\limits_0^n z_n = \frac{1-z^{n+1}}{1-z}$
+  При
+\end{example}
+
+\section{Действия с рядами}
+\begin{theorem}
+  Ряды $\sum U_k$ и $\sum V_k$ сходятся, тогда
+  $\sum\alpha U_k = \alpha\sum U_k$\\
+  $\sum U_k \pm V_k = \sum U_k \pm \sum V_k$
+\end{theorem}
+\begin{proof}
+  $\sum\limits_{k=0}^\infty \alpha U_k = \lim_{n \to \infty}
+  \sum\limits_0^n \alpha U_k = \alpha \lim_{n \to \infty} \sum\limits_0^n U_k
+  = \alpha \sum\limits_0^\infty U_k$
+\end{proof}
+
+\begin{proof}
+  Аналогично второе.
+\end{proof}
+
+\begin{remark}
+  Сумма сходится $\not \rightarrow$ по отдельности. \\
+  Еще свойство
+  Нельзя раскрывать скобки и переставлять.
+\end{remark}
+
+\section{Ряды с неотрицательными членами}
+
+$S_n$ - не строго возрастающая
+Сходимость ряда эквивалентна ограниченности $S_n$
+
+\begin{theorem}
+  \begin{enumerate}
+    \item $U_k \geq 0, V_k \geq 0 \forall k$
+      Если $0 \leq U_k \leq V_k$, то $\sum V_k$ сходится $\Rightarrow$
+      $\sum U_k$ сходится
+      $\sum U_k$ расходится $\Rightarrow$ расходится $\sum V_k$ \\
+    \item Если $\lim_{n\to \infty} \frac{U_k}{V_k} = A > 0$, то ряды
+      сходятся или расходятся.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Тут доказательство
+\end{proof}
+
+\begin{remark}
+  Вместо существования предела достаточно предположить, что существуют такие числа
+  p и q > 0 такие что $0 < q < \frac{U_k}{V_k} < p \forall k$
+\end{remark}
+
+\begin{theorem}[Признак Даламбера]
+  Признаки\\
+  \begin{enumerate}
+    \item Если $\exists q \forall k \frac{U_{k+1}}{U_k} < q < 1$ сходится
+    \item Если предел
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Идея докозательства - сравнение с геометрической прогрессией.
+    \item Для предельного случая
+  \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Признак Коши]
+  $\sum U_k, U_k \geq 0$ \\
+  \begin{enumerate}
+    \item Если $\exists q < 1$, то $\forall k \sqrt[k]U_k \leq q < 1$
+    \item Если $\exists \lim_{k \to \infty} \sqrt[k]U_k = q(\geq 0)$
+  \end{enumerate}
+  $q < 1$ - сходится \\
+  $q > 1$ - расходится \\
+  $q = 1$ - нужны дополнительные исследования\\
+\end{theorem}
+\begin{remark}
+  $\overline \lim$ вместо $\lim$
+\end{remark}
+
+\begin{proof}
+  Сравнение с геометрической прогрессией \\
+  Если $\forall k \sqrt[k]U_k \leq q < 1 \Leftrightarrow U_k \leq q^k$
+\end{proof}
+
+\begin{definition}
+  $\{a_n\}$ \\
+  $\overline \lim_{n\to \infty} a_n$
+\end{definition}
+
+\begin{proof}[Признак Коши с верзним пределом]
+  $\overline \lim_{k \to \infty} \sqrt[k]U_k = q < 1$
+\end{proof}
+
+\begin{remark}
+  Признак Даламбера слабее признака Коши
+\end{remark}
