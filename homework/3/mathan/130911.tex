@@ -1,0 +1,201 @@
+%HSE Template
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\makeatletter
+\fancyhead[L]{\footnotesize К3-682, 2013/14, <<Математический анализ>>}
+\fancyfoot[L]{\footnotesize \@author}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{}
+
+\renewcommand{\maketitle}{%
+\noindent{\bfseries\scshape\large\@title\ \mdseries\upshape(\@date)}\par
+\noindent {\large\itshape\@author}
+\vskip 2ex}
+\makeatother
+
+\newenvironment{problem}[1]{\par\bigskip\noindent\textbf{Решение задачи #1.}
+  \enskip\ignorespaces}{}
+
+\title{Решение домашнего задания} % Fill the number of the homework
+\author{Тропин А. Г. \\
+  e-mail: \href{mailto:andrewtropin@gmail.com}{andrewtropin@gmail.com} \\
+  github: \href{http://github.com/abcdw/mephi}{abcdw/mephi}}
+\date{11 сентября 2013 г.} % Fill the date
+
+\begin{document}
+  \maketitle
+  \thispagestyle{fancy}
+
+  \begin{problem}{3475}
+
+    $x^2 \frac{\partial z}{\partial x} + y^2 \frac{\partial z}{\partial y} =
+    z^2$, если $u = x$, $v = \frac{1}{y} - \frac{1}{x}$,
+    $w = \frac{1}{z} - \frac{1}{x}$. \\
+    $\frac{\partial w}{\partial x} =
+    - \frac{1}{z^2} \frac{\partial z}{\partial y} - 1$,
+    $\frac{\partial w}{\partial y} = - \frac{1}{z^2}
+    \frac{\partial z}{\partial y}$ \\
+    $\frac{\partial z}{\partial x} = -\frac{\partial w}{\partial x} z^2
+    + \frac{z^2}{x^2}$,
+    $\frac{\partial z}{\partial y} = -\frac{\partial w}{\partial y} z^2$ \\
+    $z^2 - \frac{\partial w}{\partial x}x^2 z^2
+    - \frac{\partial w}{\partial y} y^2 z^2 = z^2$ \\
+    $1 - \frac{\partial w}{\partial x}x^2
+    - \frac{\partial w}{\partial y} y^2 = 1$ \\
+    $\frac{\partial w}{\partial x}x^2
+    - \frac{\partial w}{\partial y} y^2 = 0$ \\
+    $\frac{\partial w}{\partial x} = 
+    \frac{\partial w}{\partial u} \frac{\partial u}{\partial x}
+    + \frac{\partial w}{\partial v} \frac{\partial v}{\partial x} 
+    = \frac{\partial w}{\partial u} 
+    + \frac{\partial w}{\partial v} \frac{1}{x^2}$ \\
+    $\frac{\partial w}{\partial y} 
+    = \frac{\partial w}{\partial u} \frac{\partial u}{\partial y}
+    + \frac{\partial w}{\partial v} \frac{\partial v}{\partial y}
+    = - \frac{1}{y^2} \frac{\partial w}{\partial v}$ \\
+    $x^2 \frac{\partial w}{\partial u}
+    + \frac{\partial w}{\partial v} \frac{x^2}{x^2} 
+    - \frac{\partial w}{\partial v} \frac{y^2}{y^2} = 0$,
+    $x^2 \frac{\partial w}{\partial u} = 0$ \\
+
+    Ответ: $\frac{\partial w}{\partial u} = 0$
+
+  \end{problem}
+
+  \begin{problem}{2550}
+
+    $S_n = \frac{1}{1 * 4} + \frac{1}{4 * 7} + \dots + \frac{1}{(3n-2)(3n+1)}$\\
+    $\frac{1}{(3n-2)(3n+1)} = \frac{A}{3n-2} + \frac{B}{3n + 1}$ \\
+    $A - 2B = 1, A = -B \Rightarrow A = \frac{1}{3}, B = -\frac{1}{3}$ \\
+    $a_n = \frac{1}{3} \left( \frac{1}{3n-2} 
+    - \frac{1}{3n + 1}\right)$ \\
+    $S_n = \frac{1}{3} \left( 1 - \frac{1}{3n+1} \right)$
+    
+    Ответ: $S = \frac{1}{3}$
+  \end{problem}
+
+  \begin{problem}{2552}
+
+    $\sum\limits_{n=1}^{\infty} (\sqrt{n+2} - 2\sqrt{n+1} + \sqrt{n})$ \\
+    $S_n = 1 - \sqrt{2} - \sqrt{n+1} + \sqrt{n+2}$
+
+    Ответ: $S = 1 - \sqrt{2}$
+  \end{problem}
+  
+  \begin{problem}{2560}
+
+    $\sum\limits_{n = 1}^{\infty} \frac{1}{1000n+1}$ \\
+    $a_n = \frac{1}{1000n+1} \sim \frac{1}{n^p}(p = 1)$
+
+    Ответ: по признаку сравнения ряд рассходится.
+
+  \end{problem}
+
+  \begin{problem}{2561}
+
+    $a_n = \frac{n}{2n - 1}$ \\
+    $\lim\limits_{n \to \infty} a_n = \frac{1}{2} \not = 0$
+
+    Ответ: не выполняется необходимое условие сходимости.
+  \end{problem}
+
+  \begin{problem}{2562}
+
+    $a_n = \frac{1}{(2n - 1)^2}$ \\
+    $a_n \sim \frac{1}{n^p} (p = 2)$
+
+    Ответ: по признаку сравнения ряд сходится.
+  \end{problem}
+
+  \begin{problem}{2563}
+
+    $a_n = \frac{1}{n\sqrt{n+1}}$ \\
+    $a_n \sim \frac{1}{n^p} (p = \frac{3}{2})$
+
+    Ответ: по признаку сравнения ряд сходится.
+  \end{problem}
+
+  \begin{problem}{2564}
+
+    $a_n = \frac{1}{\sqrt{(2n - 1)(2n + 1)}}$ \\
+    $a_n \sim \frac{1}{n^p} (p = 1)$
+
+    Ответ: по признаку сравнения ряд рассходится.
+  \end{problem}
+
+  \begin{problem}{2578}
+
+    $a_n = \frac{1000^n}{n!}$ \\
+    $\lim\limits_{n \to \infty} \frac{1000^{(n+1)}}{(n+1)!} \frac{n!}{1000^n}
+    = \lim\limits_{n \to \infty} \frac{1000}{n + 1} = 0 < 1$
+
+    Ответ: по признаку Даламбера ряд сходится.
+  \end{problem}
+
+  \begin{problem}{2579}
+
+    $a_n = \frac{(n!)^2}{(2n)!}$ \\
+    $\lim\limits_{n \to \infty} \frac{((n+1)!)^2}{(2(n+1))!}
+    \frac{(2n)!}{(n!)^2} = \lim\limits_{n \to \infty} 
+    \frac{(n+1)(n+1)}{(2n+1)(2n+2)} = \frac{1}{2} \frac{1}{2} = \frac{1}{4} < 1$
+
+    Ответ: по признаку Даламбера ряд сходится.
+  \end{problem}
+
+  \begin{problem}{2580}
+
+    $a_n = \frac{n!}{n^n}$ \\
+    $n! \approx \sqrt{2\pi n} \left( \frac{n}{e} \right) ^n$ 
+    \footnote{формула Муавра — Стирлинга} \\
+    $\lim\limits_{n \to \infty} \sqrt[n]{\frac{n!}{n^n}}
+    = \lim\limits_{n \to \infty} 
+    \sqrt[n]{\frac{\sqrt{2\pi n} \left( \frac{n}{e} \right) ^n}{n^n}}
+    = \frac{1}{e} < 1$
+
+    Ответ: по признаку Коши ряд сходится.
+  \end{problem}
+  
+  \begin{problem}{2581(а)}
+    
+    $a_n = \frac{2^nn!}{n^n}$ \\
+    $n! \approx \sqrt{2\pi n} \left( \frac{n}{e} \right) ^n$ \\
+    $\lim\limits_{n \to \infty} \sqrt[n]{\frac{2^nn!}{n^n}}
+    = \lim\limits_{n \to \infty} 
+    \sqrt[n]{\frac{2^n\sqrt{2\pi n} \left( \frac{n}{e} \right) ^n}{n^n}}
+    = \frac{2}{e} < 1$
+
+    Ответ: по признаку Коши ряд сходится.
+  \end{problem}
+
+  \begin{problem}{2581(б)}
+    
+    $a_n = \frac{3^nn!}{n^n}$ \\
+    $n! \approx \sqrt{2\pi n} \left( \frac{n}{e} \right) ^n$ \\
+    $\lim\limits_{n \to \infty} \sqrt[n]{\frac{3^nn!}{n^n}}
+    = \lim\limits_{n \to \infty} 
+    \sqrt[n]{\frac{3^n\sqrt{2\pi n} \left( \frac{n}{e} \right) ^n}{n^n}}
+    = \frac{3}{e} > 1$
+
+    Ответ: по признаку Коши ряд рассходится.
+  \end{problem}
+
+  \begin{problem}{2582}
+
+    $a_n = \frac{(n!)^2}{2^{n^2}}$ \\
+    $\lim\limits_{n \to \infty} \frac{(n+1)!^2}{2^{n^2 + 2n + 1}}
+    \frac{2^{n^2}}{(n!)^2}
+    = \lim\limits_{n \to \infty} \frac{(n+1)(n+1)}{2^{2n+1}} = 0 < 1$
+
+    Ответ: по признаку Даламбера ряд рассходится.
+  \end{problem}
+\end{document}
