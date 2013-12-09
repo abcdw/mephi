@@ -5,118 +5,235 @@
   $U_1 + U_2 + U_3 + \dots = \sum\limits_{k = 0}^{\infty}{U_k}$
 \end{definition}
 
-\begin{definition}
-  $S_n = $ - Частичная сумма
-\end{definition}
-\begin{definition}
-  Ряд сходится, если $\exists \lim_{n \to \infty} \sum\limits_0^\infty U_k$
+\begin{definition}[Частичная сумма]
+  $S_n = \sum\limits_{k = 0}^n U_k$
 \end{definition}
 
 \begin{definition}
-  $\{a_n\} a_n = a_0 + \sum\limits_1^n (a_k - a_{k-1}$
+  Ряд сходится, если $\exists \lim\limits_{n \to \infty}
+                      \sum\limits_0^\infty U_k = S_n$
+\end{definition}
+
+\begin{definition}
+  $\{a_n\} = a_0 + \sum\limits_1^n (a_k - a_{k-1})$, где $(a_k - a_{k - 1}) = U_k$
 \end{definition}
 
 \begin{theorem}[Критерий Коши]
-  Ряд сходится $ \Leftrightarrow \forall \varepsilon \exists N = N(\varepsilon)
-  \forall n \geq N, \forall p |\sum\limits_{k=n+1}^{n+p} n_k| = |U_{n+1} + \dots
-  + U_{n+p} = |S_{n+p} + S_{n}| < \varepsilon$
+  Ряд сходится, тогда и только тогда, когда он удовлетворяет условию Коши: \\
+  $$\forall \varepsilon > 0, \ \exists N~=~N(\varepsilon), \
+  \forall n \geq N, \forall p: \ |\sum\limits_{k=n+1}^{n+p} U_k|~=~|U_{n+1}
+  + \dots + U_{n+p}|~=~|S_{n+p} - S_{n}| < \varepsilon$$
 \end{theorem}
 
 \begin{proof}
-  $\forall \varepsilon > 0 \exists N: \forall n \geq N, \forall p
-  |S_{n+p} + S_{n}| < \varepsilon$
+  $\sum U_k$ - сходится $\Leftrightarrow \{S_n\}$
+  $$\forall \varepsilon > 0, \ \exists N: \forall n \geq N, \forall p: \
+  |S_{n+p} - S_{n}| < \varepsilon$$
 \end{proof}
-
-\begin{definition}
-  Краевые условия
-  Если ряд
-\end{definition}
+\begin{consequence}[Необходимое условие сходимости]
+  Если $\sum U_k$ сходится, то $U_k \to 0$, при $k~\to~\infty$
+\end{consequence}
+\begin{proof}
+  Если $\sum U_k$ сходится, то выполняется Критерий Коши. При $p = 1$
+  $$\forall \varepsilon > 0, \exists N, \forall n \geq N:
+  |S_{n+1} - S_n|~=~|U_{n+1}| < \varepsilon$$
+\end{proof}
+\begin{consequence}
+  Отбрасывание или добавление любого конечного числа членов ряда на его
+  сходимость не влияет.
+\end{consequence}
 
 \begin{example}
-  $\sum\limits_0^\infty z^n$
-  $S_n(z) = \sum\limits_0^n z_n = \frac{1-z^{n+1}}{1-z}$
-  При
+  $\sum\limits_0^\infty z^n,$
+  $S_n(z) = \sum\limits_0^n z_n = \frac{1-z^{n+1}}{1-z}$.
+  При $n \to \infty, \ S_n(z) = \frac{1}{1 - z}, \ |z| < 1$. \\
+  $S_n(z)$ не имеет придела при $|z| \geq 1$.
 \end{example}
 
 \section{Действия с рядами}
+
 \begin{theorem}
-  Ряды $\sum U_k$ и $\sum V_k$ сходятся, тогда
-  $\sum\alpha U_k = \alpha\sum U_k$\\
-  $\sum U_k \pm V_k = \sum U_k \pm \sum V_k$
+  Ряды $\sum U_k$ и $\sum V_k$ сходятся к $\alpha$, тогда
+  \begin{align}
+    \label{series:property1}
+    \sum\alpha U_k &= \alpha\sum U_k \\
+    \label{series:property2}
+    \sum (U_k \pm V_k) &= \sum U_k \pm \sum V_k
+  \end{align}
 \end{theorem}
 \begin{proof}
-  $\sum\limits_{k=0}^\infty \alpha U_k = \lim_{n \to \infty}
-  \sum\limits_0^n \alpha U_k = \alpha \lim_{n \to \infty} \sum\limits_0^n U_k
-  = \alpha \sum\limits_0^\infty U_k$
+  Доказательство свойства (\ref{series:property1}):
+  $$\sum\limits_{k=0}^\infty \alpha U_k = \lim\limits_{n \to \infty}
+  \sum\limits_0^n \alpha U_k = \alpha \lim\limits_{n \to \infty} \sum\limits_0^n U_k
+  = \alpha \sum\limits_{k = 0}^\infty U_k$$
 \end{proof}
-
 \begin{proof}
-  Аналогично второе.
+  Доказательство свойства (\ref{series:property2}):
+  \begin{gather*}
+      \sum\limits_0^\infty U_k \pm \sum\limits_{0}^{\infty} V_k
+      = \lim\limits_{n \to \infty} \sum\limits_{0}^{n} U_k
+      \pm \lim\limits_{n \to \infty} \sum\limits_{0}^{n} V_k = \\
+      = \lim\limits_{n \to \infty} \sum\limits_{0}^{n} U_k
+      \pm \sum\limits_{0}^{n} V_k
+      = \lim\limits_{n \to \infty} \sum\limits_{0}^{n} (U_k \pm V_k)
+      = \sum\limits_{0}^{n} (U_k \pm V_k)
+  \end{gather*}
 \end{proof}
 
 \begin{remark}
-  Сумма сходится $\not \rightarrow$ по отдельности. \\
-  Еще свойство
-  Нельзя раскрывать скобки и переставлять.
+  Из сходимости $\sum (U_k \pm V_k) \not \Rightarrow$ сходимость
+  $\sum U_k$ и $\sum V_k$
 \end{remark}
+\begin{remark}
+  Если $\sum U_k$ сходится, то можно группировать, не меняя порядка.
+\end{remark}
+\begin{example}
+  \begin{gather*}
+    \sum (1 - 1) \\
+    (1 - 1) + (1 - 1) + \dots \\
+    1 - (1 - 1) - (1 - 1) \dots
+  \end{gather*}
+\end{example}
+\begin{comment}
+  Нельзя раскрывать скобки и переставлять члены.
+\end{comment}
 
-\section{Ряды с неотрицательными членами}
-
-$S_n$ - не строго возрастающая
-Сходимость ряда эквивалентна ограниченности $S_n$
+\subsection{Ряды с неотрицательными членами}
+$U_k \geq 0$, $S_n = \sum\limits_{0}^{n} U_k$ - не убывающая последовательность. \\
+$\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- ограничена
+\begin{comment}
+  Сходимость ряда эквивалентна ограниченности $S_n$
+\end{comment}
 
 \begin{theorem}
-  \begin{enumerate}
-    \item $U_k \geq 0, V_k \geq 0 \forall k$
-      Если $0 \leq U_k \leq V_k$, то $\sum V_k$ сходится $\Rightarrow$
-      $\sum U_k$ сходится
-      $\sum U_k$ расходится $\Rightarrow$ расходится $\sum V_k$ \\
-    \item Если $\lim_{n\to \infty} \frac{U_k}{V_k} = A > 0$, то ряды
-      сходятся или расходятся.
-  \end{enumerate}
+    $$U_k \geq 0, V_k \geq 0, \ \forall k:$$
+    \begin{enumerate}
+      \item
+        Если $0 \leq U_k \leq V_k$, то если $\sum V_k$ сходится $\Rightarrow$
+        $\sum U_k$ сходится и если
+        $\sum U_k$ расходится $\Rightarrow$ $\sum V_k$ расходится.
+      \item
+        Если $\lim\limits_{n\to \infty} \frac{U_k}{V_k} = A > 0$, то ряды
+        сходятся или расходятся одновременно.
+    \end{enumerate}
 \end{theorem}
 
+\pagebreak
 \begin{proof}
-  Тут доказательство
+  \hfill
+  \begin{enumerate}
+    \item
+      $\forall n$ верно неравенство $0 \leq \sum\limits_{0}^{n} U_k \leq
+      \sum\limits_{0}^{n} V_k$
+    \item
+      $\forall \varepsilon > 0 \ \varepsilon < A \ \exists N : \forall n \geq N
+      \Rightarrow 0 < A - \varepsilon < \frac{U_k}{V_k} < A + \varepsilon$ \\
+      $0 < (A - \varepsilon) \cdot V_k < U_k < (A + \varepsilon) \cdot V_k$ \\
+      Пусть $U_k$ --- сходится, тогда из доказанного выше 1ого пункта следует
+      $(A - \varepsilon) \cdot V_k$ --- сходится
+      $\Rightarrow \sum V_k$ сходится
+      $\Rightarrow \sum (A + \varepsilon) \cdot V_k$ сходится
+      $\Rightarrow \sum U_k$ сходится.
+  \end{enumerate}
 \end{proof}
 
 \begin{remark}
-  Вместо существования предела достаточно предположить, что существуют такие числа
-  p и q > 0 такие что $0 < q < \frac{U_k}{V_k} < p \forall k$
+  Вместо существования предела $\lim\limits_{n \to \infty} \frac{U_k}{V_k}$
+  достаточно предположить, что существуют такие числа
+  p и q > 0, такие что $0 < q < \frac{U_k}{V_k} < p, \ \forall k$
 \end{remark}
 
 \begin{theorem}[Признак Даламбера]
-  Признаки\\
+  $$\sum U_k, \ U_k > 0$$
   \begin{enumerate}
-    \item Если $\exists q \forall k \frac{U_{k+1}}{U_k} < q < 1$ сходится
-    \item Если предел
+    \item Если $\exists q$ такое что:
+      $\ \forall k \ \frac{U_{k+1}}{U_k} < q < 1$ сходится
+    \item Если $\exists \lim\limits_{n \to \infty} \frac{U_{k+1}}{U_k} = q$, то:
+    \begin{itemize}
+      \item при $q < 1$ сходимость
+      \item при $q > 1$ расходимость
+      \item при $q = 1$ неизвестно (нужно провести дополнительные исследования)
+    \end{itemize}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
+  Идея докозательства - сравнение с геометрической прогрессией.
   \begin{enumerate}
-    \item Идея докозательства - сравнение с геометрической прогрессией.
-    \item Для предельного случая
-  \end{enumerate}
+    \item $k = 0, 1, \dots, n$;
+      $U_k = U_0 \cdot \frac{U_1}{U_0} \frac{U_2}{U_1} \cdots \frac{U_k}{U_{k-1}}
+      < U_0 \cdot q^k$
+      \begin{comment}
+        $\frac{U_k}{U_{k-1}} < q, \ \forall k$
+      \end{comment}
+      $q < 1$, тогда $\sum U_0 \cdot q^k$ --- сходящаяся геометрическая прогрессия. \\
+      $U_k = U_0 \cdot \frac{U_1}{U_0}\frac{U_2}{U_1}\cdots\frac{U_k}{U_{k-1}}
+      \geq U_0 > 0$
+      \begin{comment}
+        $\frac{U_k}{U_{k-1}} \geq 1, \ \forall k$
+      \end{comment}
+      $U_k \not \to 0 \Rightarrow$ не выполняется необходимое условие сходимости.
+    \item Пусть $\lim\limits_{k \to \infty} \frac{U_{k+1}}{U_k} = q$ \\
+      $\forall \varepsilon > 0, \ \exists K : \ \forall k \geq K$
+      выполняется неравенство
+      $q - \varepsilon < \frac{U_{k+1}}{U_k} < q + \varepsilon$
+      \begin{itemize}
+        \item Если $q < 1$, то $(q + \varepsilon) \in [q, 1]$.
+          Выберем такое $\varepsilon$, что $q + \varepsilon < 1$, для
+          $\forall k \geq K(\varepsilon)$. \\
+          $\frac{U_{k+1}}{U_k} < q + \varepsilon < 1 \Rightarrow$
+          сходится по первой части.
+        \item Если $q > 1$, то $(q - \varepsilon) \in [1, q]$.
+          Выберем $\varepsilon$ так, чтобы
+          $q - \varepsilon > 1$, для
+          $\forall k \geq K(\varepsilon)$. \\
+          $\frac{U_{k+1}}{U_k} > q - \varepsilon > 1, \ \Rightarrow$
+          расходится по первой части.
+      \end{itemize}
+    \end{enumerate}
 \end{proof}
 
+\pagebreak
 \begin{theorem}[Признак Коши]
-  $\sum U_k, U_k \geq 0$ \\
+  $$\sum U_k, U_k \geq 0$$
   \begin{enumerate}
-    \item Если $\exists q < 1$, то $\forall k \sqrt[k]U_k \leq q < 1$
-    \item Если $\exists \lim_{k \to \infty} \sqrt[k]U_k = q(\geq 0)$
+    \item Если $\exists q < 1$ и $\forall k > K : $ выполняется
+      $\sqrt[k]U_k \leq q < 1$, то ряд сходится, а если
+      $\forall k \ \sqrt[k]U_k~\geq~1$, то расходится.
+    \item Если $\exists \lim\limits_{k \to \infty} \sqrt[k]U_k = q, (q \geq 0)$,
+      то
+      \begin{itemize}
+        \item $q < 1$ - сходится
+        \item $q > 1$ - расходится
+        \item $q = 1$ - нужны дополнительные исследования
+      \end{itemize}
   \end{enumerate}
-  $q < 1$ - сходится \\
-  $q > 1$ - расходится \\
-  $q = 1$ - нужны дополнительные исследования\\
 \end{theorem}
 \begin{remark}
-  $\overline \lim$ вместо $\lim$
+  $\lim\limits_{n \to \infty} \sqrt[n]U_n$ можно рассматривать вместо
+  $\overline {\lim\limits_{k \to \infty}} \sqrt[k]U_k$
 \end{remark}
 
 \begin{proof}
-  Сравнение с геометрической прогрессией \\
-  Если $\forall k \sqrt[k]U_k \leq q < 1 \Leftrightarrow U_k \leq q^k$
+  Сравнение с геометрической прогрессией
+  \begin{enumerate}
+    \item Если $\forall k\ \sqrt[k]U_k \leq q < 1 \Rightarrow U_k \leq q^k$
+      --- сходящаяся геометрическая прогрессия. \\
+      Если $\forall k \sqrt[k]U_k \geq 1 \Rightarrow U_k \geq 1$
+      --- не выполняется необходимое условие сходимости.
+    \item Если $\lim\limits_{k \to \infty} \sqrt[k]U_k = q$, то
+      $\forall \varepsilon > 0 \ \exists K = K(\varepsilon) :
+      \forall k \geq K, (q - \varepsilon) < \sqrt[k]U_k < (q + \varepsilon)$\\
+      $(q - \varepsilon)^k < U_k < (q + \varepsilon)^k$
+      \begin{itemize}
+        \item При $q < 1$ выберем $\varepsilon$ так, чтобы $q + \varepsilon < 1$,
+          тогда $U_k < (q + \varepsilon)^k < 1$
+          --- сходящаяся геометрическая прогрессия.
+        \item При $q > 1$ выберем $\varepsilon$ так, чтобы $q - \varepsilon > 1$,
+          тогда $U_k > (q - \varepsilon)^k > 1$
+          --- не выполняется необходимое условие сходимости.
+      \end{itemize}
+  \end{enumerate}
 \end{proof}
 
 \begin{definition}

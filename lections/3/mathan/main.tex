@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,12pt]{book}
 
 \usepackage[unicode,colorlinks=true,linkcolor=blue]{hyperref}
 % здесь подключении шрифтов в русскими буквами
@@ -24,7 +24,7 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \renewcommand{\theenumi}{\arabic{enumi}}                                       % Меняем везде перечисления на цифра.цифра
-\renewcommand{\labelenumi}{\arabic{enumi}}                                     % Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}.}                                     % Меняем везде перечисления на цифра.цифра
 \renewcommand{\theenumii}{.\arabic{enumii}}                                    % Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}                   % Меняем везде перечисления на цифра.цифра
 \renewcommand{\theenumiii}{.\arabic{enumiii}}                                  % Меняем везде перечисления на цифра.цифра
@@ -32,10 +32,12 @@
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[section]
+\newtheorem*{consequence}{Следствие}
 \newtheorem{lemma}[theorem]{Лемма}
 \theoremstyle{definition}
 \newtheorem{definition}{Определение}
 \theoremstyle{remark}
+\newtheorem*{comment}{Комментарий}
 \newtheorem{example}{Пример}
 \newtheorem{remark}{Замечание}
 
