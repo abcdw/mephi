@@ -1,4 +1,3 @@
-\chapter{Числовые ряды}
 \section{Определение}
 
 \begin{definition}
@@ -380,8 +379,142 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   \end{align*}
   Это и означает, что $\forall n \in \mathbb{N}$ выполняется
   неравенство \ref{th141:ineq2}.
-
 \end{proof}
 
+\section{Преобразование Абеля}
+\begin{theorem}
+  Пусть $a_k \in \mathbb{C}$, $b_k \in \mathbb{C}$, $k = 1, \dots, n$;
+  $B_k = b_1 + \dots + b_k$, тогда
+  \begin{gather}
+    \sum\limits_{k = 1}^{n} a_k b_k
+  = \sum\limits_{k = 1}^{n - 1} (a_k - a_{k+1}) b_k + a_n B_n
+  \label{th151:sum1}
+  \end{gather}
+\end{theorem}
 
+\begin{proof}
+  Очевидно, $b_1 = B_1, b_k = B_k - B_{k - 1}, k = 2, 3, \dots, n$ \\
+  Поэтому
+  $a_1 b_1 + a_2 b_2 + \dots + a_n b_n
+  = a_1 B_1 + a_2 (B_2 - B_1) + a_3 (B_3 - B_2) + \dots a_n (B_n - B_{n - 1})
+  = (a_1 - a_2) B_1 + (a_2 - a_3) B_2 + \dots + (a_{n-1} - a_n) B_{n-1} + a_n B_n$ \\
+  Называется преобразованием Абеля $\sum\limits_{k = 1}^{n} a_k b_k$.
+\end{proof}
 
+\begin{consequence}[лемма Абеля]
+  Если $a_1 \leq a_2 \leq \dots \leq a_n$
+   или $a_1 \geq a_2 \geq \dots \geq a_n$ \\
+  $a_k \in \mathbb{R}, \ \forall k = 1, 2, \dots, n$,
+  $|b_1 + \dots + b_k| \leq B, \ (b_k \in \mathbb{C})$, то
+  $$\left|\sum\limits_{k = 1}^{n} a_k b_k \right| \leq B(|a_1| + 2|a_n|)$$
+\end{consequence}
+\begin{proof}
+  $\left|\sum\limits_{k = 1}^{n} a_k b_k \right | \leq
+  \sum\limits_{k = 1}^{n - 1} |a_k - a_{k + 1}| |B_k| + |a_n B_n| \leq
+  B\left(\sum\limits_{k = 1}^{n - 1} |a_k - a_{k + 1}| + |a_n|\right) = \\
+= B\left(\left| \sum\limits_{k = 1}^{n - 1} (a_k - a_{k + 1}) \right | + |a_n| \right)
+= B(|a_1 - a_n| + |a_n|) \leq B(|a_1| + 2|a_n|).$
+\end{proof}
+
+\section{Признаки Дирихле и Абеля}
+\begin{theorem}
+  Пусть дан ряд
+  \begin{gather}
+    \sum\limits_{n = 1}^{\infty} a_n b_n \label{th161:series1}
+  \end{gather}
+  \begin{enumerate}
+    \item $a_n \in \mathbb{R}^n, b_n \in \mathbb{C}, \ n = 1, 2, \dots$
+    \item $\{a_n\}, \{a_n\} \downarrow 0 \ (\{a_n\} \uparrow 0)$
+    \item $\{B_n\}$ --- последовательность частичных сумм ряда $\sum b_n$ ограничена
+  \end{enumerate}
+  Тогда ряд \ref{th161:series1} сходится.
+\end{theorem}
+
+\begin{proof}
+  $\exists B > 0, \ |B_n| \leq B \ \forall n \Rightarrow \forall m \geq n \geq 2:
+  |b_n + \dots + b_m| = |B_m - B_{n - 1}| \leq 2B$ \\
+  Возьмем $\varepsilon > 0$. По скольку $a_n \to 0$, то
+  $\exists N = N(\varepsilon): \forall n > N(\varepsilon)$ имеем
+  $|a_n| < \frac{\varepsilon}{6B}$.\\
+  Поэтому, $\forall n > N(\varepsilon)$ и $\forall m \geq n$ получим:
+  $$|a_n b_n + \dots + a_m b_m| \leq 2B(|a_n| + 2|a_m|) <
+  2B\left(\frac{\varepsilon}{6B} + 2 \frac{\varepsilon}{6B} \right) = \varepsilon$$
+  Ряд \ref{th161:series1} удовлетворяет Критерию Коши сходимости рядов.
+\end{proof}
+\begin{remark}
+  Признак Лейбница - это частный случай признака Дирихле. \\
+\end{remark}
+
+\begin{theorem}[признак Абеля]
+  Если последовательность действительных чисел $a_n$ монотонна и ограничена,
+  ряд $\sum\limits_{n = 1}^{\infty} b_n, b_n \in \mathbb{C}$ сходится, то ряд
+  \ref{th161:series1} также сходится.
+\end{theorem}
+
+\begin{proof}
+  $a_n = a + \alpha_n, \{\alpha_n\}$ --- монотонно стремящаяся к нулю
+  последовательность. \\
+  Поэтому
+  $$\sum a_n b_n = \sum (a + \alpha_n)b_n = a \sum b_n + \sum \alpha_n b_n, $$
+  где $a \sum b_n$ сходится по условию, а $\sum \alpha_n b_n$ сходится по
+  признаку Дирихле. \\
+  $\{B_n\}$ --- последовательность частичных сумм $\sum b_n$ ограничена,
+  $\{\alpha_n\}$ --- монотонно стремящаяся к нулю последовательность.
+\end{proof}
+
+\section{Безусловно и условно сходящиеся ряды}
+\begin{definition}
+  Пусть $\{k_n\}, n = 1, 2, \dots$ --- последовательность, в которой каждое
+  натуральное число встречается только один раз. $\{k_n\}$ --- однозначное
+  отображение $a_n^* = a_{k_n}, \ (n~=~1, 2, \dots)$. \\
+  Будем говорить, что ряд $\sum a_n^*$ является перестановкой ряда $\sum a_n$.
+\end{definition}
+\begin{definition}
+  Говорят, что $\sum a_n$ сходится безусловно, если каждая перестановка
+  сходится.
+\end{definition}
+\begin{theorem}
+  \label{th171}
+  Ряд $\sum a_n, (a_n \in \mathbb{C})$ сходится безусловно тогда и только тогда,
+  когда он сходится абсолютно.
+\end{theorem}
+
+\begin{proof}
+  Достаточность. \\
+  Если ряд $\sum a_n$ сходится абсолютно, то все его перестановки сходятся к
+  одному и тому же числу --- сумме исходного ряда. \\
+  Пусть $\sum a_n^*$ --- перестановка ряда $\sum a_n$. $S_n^*$ --- ее частичная
+  сумма. \\
+  По Коши: $\forall \varepsilon > 0 \exists N : m \geq n > N$
+  \begin{gather}
+    |a_n| + \dots + |a_m| < \varepsilon \label{th171:uneq1}
+  \end{gather}
+  Выберем $p$ так, чтобы все натуральные числа $1, 2, \dots, N$ содержались в
+  множестве $k_1, k_2, \dots, k_p$ (смотри определение), тогда при $n > p$
+  $a_1, \dots, a_N$ в разности $S_n - S_n^*$ уничтожаются, так что
+  $|S_n - S_n^*| < \varepsilon$ в силу \ref{th171:uneq1}. \\
+  Значит $\{S_n^*\}$ сходится к тому же пределу, что и $\{S_n\}$.
+\end{proof}
+
+\begin{definition}
+  Сходящийся, но не абсолютно сходящийся ряд называется условно сходящимся.
+\end{definition}
+Из теоремы \ref{th171} (из необходимости условия) $\Rightarrow$ Теорема \ref{th172}
+\begin{theorem}
+  \label{th172}
+  Условно сходящийся ряд не может сходится безусловно, то есть у него всегда
+  существует расходящаяся перестановка.
+\end{theorem}
+\begin{proof}
+  Без Доказательства.
+\end{proof}
+
+\begin{theorem}[Римана]
+  Если ряд с действительными членами условно сходится, то каким бы не было
+  действительное число $S$, существует перестановка ряда такая, что ее сумма
+  равна $S$
+\end{theorem}
+
+\begin{proof}
+  Без Доказательства.
+\end{proof}
