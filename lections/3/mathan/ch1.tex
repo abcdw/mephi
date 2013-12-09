@@ -97,7 +97,6 @@
 \begin{comment}
   Нельзя раскрывать скобки и переставлять члены.
 \end{comment}
-
 \subsection{Ряды с неотрицательными членами}
 $U_k \geq 0$, $S_n = \sum\limits_{0}^{n} U_k$ - не убывающая последовательность. \\
 $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- ограничена
@@ -237,14 +236,152 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
 \end{proof}
 
 \begin{definition}
-  $\{a_n\}$ \\
-  $\overline \lim_{n\to \infty} a_n$
+  Дана $\{a_n\}$ и пусть $\overline {\lim\limits_{n\to \infty}} a_n$
+  --- наибольший из частичных пределов, тогда:
+  $$\forall \{a\} \ \exists \overline{\lim\limits_{n \to \infty}} a_n = A \ or \ \infty $$
+  \begin{comment}
+    $A$ --- число.
+  \end{comment}
+  \begin{itemize}
+    \item Если $\overline{\lim\limits_{n \to \infty}} a_n = +\infty \Rightarrow
+      \{a_n\}$ --- неограничена сверху $\Rightarrow
+      \overline{\lim\limits_{k \to \infty}} \sqrt[k]U_k = +\infty$
+      --- неограничена сверху. $U_k$ неограничена сверху и не выполняется
+      необходимое условие.
+    \item Если $\overline{\lim\limits_{n \to \infty}} a_n = A$, тогда
+      $\forall \varepsilon \in (A - \varepsilon, A + \varepsilon)$ бесконечно
+      много членов $\{a_n\}$: \\
+      \begin{itemize}
+        \item $\overline{\lim\limits_{k \to \infty}} \sqrt[k]U_k = q < 1$.
+          Выберем $\varepsilon$ так, чтобы $q + \varepsilon < 1 \Rightarrow$
+          $\exists K: \forall k \geq K, \ \sqrt[k]U_k < q + \varepsilon < 1$ по признаку
+          Коши. \\
+        \item $\overline{\lim\limits_{k \to \infty}} \sqrt[k]U_k = q > 1$.
+          Выберем $\varepsilon$ так, чтобы $q - \varepsilon > 1 \Rightarrow$
+          $\forall K \ \exists k \geq K: \sqrt[k]U_k~>~q~-~\varepsilon~>~1 \\
+          \Rightarrow~U_k~>~1$
+      \end{itemize}
+  \end{itemize}
 \end{definition}
 
-\begin{proof}[Признак Коши с верзним пределом]
-  $\overline \lim_{k \to \infty} \sqrt[k]U_k = q < 1$
+\section{Интегральный признак сходимости рядов с неотрицательными членами}
+\begin{theorem}
+  Если $f(x)$ не отрицательна и убывает на $x \geq 1$, то ряд
+  \begin{gather}
+    \label{th131:series1}
+    \sum\limits_{n = 1}^{\infty} f(n) < \infty
+  \end{gather}
+  сходится тогда и только тогда, когда сходится интеграл:
+  \begin{gather}
+    \label{th131:integral1}
+    \int\limits_1^{+\infty} f(x) dx
+  \end{gather}
+  то есть $ \int\limits_1^{+\infty} f(x) dx < \infty$. \\
+  \begin{itemize}
+    \item $\sum a_n < \infty$ --- сходится
+    \item $\sum a_n = \infty$ --- расходится
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  Если $k \leq x \leq k + 1, \ k = 1, 2, \dots,$ то, в силу убывания функции
+  получаем неравенство:
+  $$f(k) \geq f(x) \geq f(k + 1)$$
+  Интегрируя по отрезку $[k, k + 1]$ получим:
+  $$f(k) \geq \int\limits_k^{k+1} f(x) dx \geq f(k+1), \ k = 1, 2, \dots \ .$$
+
+  \begin{gather}
+    \label{th131:series2}
+    \sum\limits_{k = 1}^{n} f(k+1) \leq \int\limits_1^{n+1} f(x) dx \leq
+    \sum\limits_{k = 1}^{n} f(k)
+  \end{gather}
+  Пусть $S_n = \sum\limits_{k = 1}^{n} f(k),$ тогда \ref{th131:series2} примет вид:
+  \begin{gather}
+    \label{th131:series3}
+    S_n + 1 - f(1) \leq \int\limits_1^{n+1} f(x) dx \leq S_n
+  \end{gather}
+  Если ряд \ref{th131:series1} сходится и его сумма равна $S$, то $S_n \leq S$,
+  и $\int\limits_1^{n+1} f(x) dx \leq S, \ \forall n \in \mathbb{N}$. \\
+  $\forall b > 1, n + 1 > b$ имеем:
+  $$\int\limits_1^b f(x) dx \leq \int\limits_1^{n+1} f(x) dx \leq S$$
+  В силу неотрицательности функции $f(x)$ интеграл сходится. \\
+  Пусть наоборот, интеграл \ref{th131:integral1} сходится, тогда из
+  \ref{th131:series3} следует:
+  $$S_{n+1} \leq f(1) + \int\limits_1^{n+1} f(x) dx
+  \leq f(1) + \int\limits_1^\infty f(x) dx$$
+  Тем самым, последовательность сумм $\{S_n\}$ ряда \ref{th131:series1}
+  ограничена сверху, и поэтому этот ряд сходится.
 \end{proof}
 
-\begin{remark}
-  Признак Даламбера слабее признака Коши
-\end{remark}
+\begin{example}
+  \label{th131:example131}
+  \begin{gather}
+    \label{ex131:series1}
+    \sum\limits_{n = 1}^{\infty} \frac{1}{n^\alpha}, \alpha \in \mathbb{R}
+  \end{gather}
+  Положим $f(x) = \frac{1}{x^\alpha}$, тогда $f(n) = \frac{1}{n^\alpha}$ \\
+  Поскольку $\int\limits_1^{+\infty} \frac{dx}{x^\alpha}$:
+  \begin{itemize}
+    \item При $\alpha > 1$ сходится
+    \item При $\alpha \leq 1$ расходится
+  \end{itemize}
+  Тогда ряд \ref{ex131:series1} сходится тогда и только тогда, когда $\alpha > 1$.
+  При $\alpha < 0 \ $ дробь $ \ \frac{1}{n^\alpha} \geq 1$.
+\end{example}
+
+\section{Признак сходимости для чередующихся рядов}
+Рассмотрим ряды с действительными числами, которые то положительные, то
+отрицательные.
+
+\begin{theorem}[Лейбница]
+  Если
+  \begin{gather}
+    \lim\limits_{n \to \infty} U_n = 0 \label{th141:lim1} \\
+    U_n \geq U_{n+1} > 0, \ n = 1, 2, \dots \label{th141:ineq1}
+  \end{gather}
+  то знакочередеющийся ряд
+  \begin{gather}
+    \sum\limits_{n = 1}^{+\infty} {(-1)}^{n+1} U_n \label{th141:sum1}
+  \end{gather}
+  сходится, при этом если $S$ --- сумма ряда, а $S_n$ --- его $n$-ая частичная
+  сумма,\\ то $\forall n: n = 1, 2, \dots$
+  \begin{gather}
+    |S - S_n| \leq U_{n+1} \label{th141:ineq2}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Заметим, что частичная суммы $S_n$ с четными номерами возрастают:
+  $$S_{2k} = (U_1 - U_2) + (U_3 - U_4) + \dots + (U_{2k - 1} - U_{2k}), \
+  k = 1, 2, \dots $$
+  Так что выполняется неравенство $S_{2k + 2} \geq S_k$. Кроме того, они
+  ограничены сверху:
+  $$S_{2k} = U_1 - (U_2 - U_3) - \dots - (U_{2k - 2} - U_{2k - 1}) - U_{2k}, \
+  S_{2k} < U_1$$
+  Поэтому последовательность $\{S_{2k}\}$ сходится
+  \begin{gather}
+    \lim\limits_{k \to \infty} S_{2k} = S \label{th141:lim2}
+  \end{gather}
+  Поскольку $S_{2k + 1} = S_{2k} + U_{2k + 1}$ и $U_{2k + 1} \to 0$ при
+  $k \to \infty$, то
+  \begin{gather}
+    \lim\limits_{k \to \infty} S_{2k + 1} = S \label{th141:lim3}
+  \end{gather}
+  Из \ref{th141:lim2} и \ref{th141:lim3} следует, что
+  $\lim\limits_{n \to \infty} S_n = S$ \\
+  При этом, нетрудно увидеть, что
+  \begin{gather}
+    S_{2k} \leq S \leq S_{2k + 1} \leq S_{2k - 1}, \ \forall k \label{th141:ineq3}
+  \end{gather}
+  Из неравенства \ref{th141:ineq3} следует, что
+  \begin{align*}
+    S - S_{2k} \leq S_{2k + 1} - S_{2k} &= U_{2k + 1} \\
+    S_{2k - 1} - S \leq S_{2k - 1} - S_{2k} &= U_{2k}, \ k = 1, 2, \dots
+  \end{align*}
+  Это и означает, что $\forall n \in \mathbb{N}$ выполняется
+  неравенство \ref{th141:ineq2}.
+
+\end{proof}
+
+
+
