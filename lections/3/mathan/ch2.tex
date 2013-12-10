@@ -119,6 +119,7 @@
 \end{example}
 
 \begin{definition}
+  \label{def222}
   \begin{gather}
     \sum\limits_{n = 1}^{\infty} U_n(x), \ x \in \mathbb{E} \label{def222:series1}
   \end{gather}
@@ -205,4 +206,207 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   \end{gather*}
   В силу критерия Коши \ref{th223}, ряд \ref{th231:series1} сходится равномерно.
 \end{proof}
+
+\begin{theorem}[Признак Абеля]
+  \label{th232}
+  \begin{gather}
+    \sum\limits_{n = 1}^{\infty} a_n(x) b_n(x) \label{th232:series1}
+  \end{gather}
+  \begin{enumerate}
+    \item Если $a_n(x) \in \mathbb{R}, b_n(x) \in \mathbb{C}, n = 1, 2, \dots,
+      x \in \mathbb{E}$.
+    \item $\{a_n(x)\}$ ограничена на множестве $\mathbb{E}$ и монотонна
+      $\forall x \in \mathbb{E}$.
+    \item Ряд $\sum b_n(x)$ равномерно сходится на $\mathbb{E}$.
+  \end{enumerate}
+  Тогда ряд \ref{th232:series1} равномерно сходится.
+\end{theorem}
+
+\begin{proof}
+  Доказательство легко провести так, как была доказана теорема \ref{th161}.
+\end{proof}
+
+\begin{example}
+  $\sum\limits_{n = 1}^{\infty} \frac{c_n}{n^x}$ ---
+  ряд Дирихле. \\
+  Если этот ряд сходится в точке $x_0$, то он сходится равномерно
+  $\forall x \in \mathbb{E}, \ \mathbb{E} = [x_0, +\infty)$. \\
+  Можно воспользоваться Признаком Абеля:
+  $$a_n(x) = \frac{1}{n^{x-x_0}}, \ b_n = \frac{c_n}{n^{x_0}}$$
+\end{example}
+
+\begin{exercise}
+  Рассмотреть и доказать абсолютную сходимость при $x > x_0 + 1$
+\end{exercise}
+
+\section{Равномерная сходимость и непрерывность}
+
+\begin{theorem}
+  Пусть $f_n \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} f, \ x_0$ ---
+  предельная точка множества $\mathbb{E}$ и пусть
+  $\lim\limits_{x \to x_0} f_n(x) = A_n, \ (n = 1, 2, \dots).$
+  Тогда $\{A_n\}$ сходится и
+  \begin{gather}
+    \lim\limits_{x \to x_0} f(x) = \lim\limits_{n \to \infty} A_n \label{th241:lim1}
+  \end{gather}
+  Иными словами, 2 предельных перехода в данном случае коммутируют. \\
+  $$\lim\limits_{x \to x_0} \lim\limits_{n \to \infty} f_n(x) =
+  \lim\limits_{n \to \infty} \lim\limits_{x \to x_0} f_n(x)$$
+\end{theorem}
+
+\begin{proof}
+  Пусть $\varepsilon > 0.$ В силу равномерной сходимости последовательности
+  $\{f_n\} \ \exists N : n > N, m > N, x \in \mathbb{E},$
+  \begin{gather}
+    \left|f_n(x) - f_m(x)\right| < \varepsilon \label{th241:uneq1}
+  \end{gather}
+  Переходя в неравенстве \ref{th241:uneq1} к приделу при $x \to x_0$ получим
+  \begin{gather}
+    \left|A_n - A_m \right| < \varepsilon, \ (n, m > N) \label{th241:uneq2}
+  \end{gather}
+  Поэтому $\{A_n\}$ --- последовательность для которой выполняется признак
+  Коши сходимости последовательности $\Rightarrow$ она сходится. \\
+  Обазначим ее предел $A$ \\
+  \begin{gather}
+    \left|f(x) - A\right| \leq \left|f(x) - f_n(x)\right| +
+    \left|f_n(x) - A_n\right| + \left|A_n - A\right| \label{th241:uneq3}
+  \end{gather}
+  Выберем $n:$
+  \begin{gather}
+    |f(x) - f_n(x)| < \frac{\varepsilon}{3}, \ \forall x \in \mathbb{E}
+    \label{th241:uneq4}
+  \end{gather}
+  Это возможно в силу равномерной сходимости.
+  \begin{gather}
+    |A_n - A| < \frac{\varepsilon}{3} \label{th241:uneq5}
+  \end{gather}
+  Затем, для этого $n$ подберем такую окрестность
+  $U(x_0): x \in U(x_0), x \not = x_0,$ следовательно:
+  \begin{gather}
+    |f_n(x) - A_n| < \frac{\varepsilon}{3} \label{th241:uneq6}
+  \end{gather}
+  Из неравенств \ref{th241:uneq3} --- \ref{th241:uneq6} получим
+  $$|f(x) - A| < \varepsilon, \ \forall x \in U(x_0), \ x \not = x_0$$
+  Это равносильно равенству \ref{th241:lim1}
+\end{proof}
+
+\begin{theorem}
+  \label{th242}
+  Последовательность функций, непрерывных в точке $x \in \mathbb{E}
+  f_n \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} f,$ то функция
+  $f$ непрерывна в точке $x_0$.
+\end{theorem}
+
+\begin{proof}
+  Без доказательства.
+\end{proof}
+
+\begin{remark}
+  Обратное не верно, то есть последовательность непрерывных функций может
+  неравномерно сходиться.
+\end{remark}
+
+Из теоремы \ref{th242} и определения \ref{def222} $\Rightarrow$ теорема \ref{th243}
+
+\begin{theorem}
+  \label{th243}
+  Если функции $U_n(x), \ (n = 1, 2, \dots), \ x \in \mathbb{E}$ непрерывны
+  в точке $x_0 \in \mathbb{E}$ и ряд $\sum\limits_{n = 1}^{\infty} U_n(x)$
+  равномерно сходится на $\mathbb{E}$, то его сумма $f(x)$ также непрерывна
+  в точкке $x_0$.
+\end{theorem}
+
+\section{Равномерная сходимость и интегрирование}
+\begin{theorem}
+  \label{th251}
+  Пусть $f_n$ --- последовательность действительных, значимых, интегрируемых на
+  отрезке $[a, b]$ функций. Тогда функция $f$ также интегрируема на $[a,b]$ и
+  \begin{gather}
+    \int\limits_a^b f(x) dx = \lim\limits_{n \to \infty} \int\limits_a^b f_n(x) dx
+    \label{th251:int1}
+  \end{gather}
+  Существование предела заранее не предполагается.
+\end{theorem}
+
+\begin{proof}
+  $\forall \varepsilon > 0, \ \exists n:$
+  \begin{gather}
+    |f_n(x) - f(x)| < \varepsilon, \ x \in [a,b] \label{th251:uneq1}
+  \end{gather}
+  Зафиксируем $n$ и выберем разбиение
+  $[a,b], \ \triangle_1, \dots, \triangle_S$ так, чтобы выполнялось неравенство
+  \begin{gather}
+    \sum_i \omega(f_n, \triangle_i) |\triangle_i| < \varepsilon \label{th251:sum1}
+  \end{gather}
+  \begin{comment}
+    $\omega(f, E) = \sup - \inf$ --- колебание функции.
+  \end{comment}
+  Функции $f_n$ интегрируемы на $[a,b]$. По скольку
+  $\omega(f, \triangle_i) \leq \omega(f_n, \triangle_i) + 2 \varepsilon,  \ (i = 1, \dots, S)$
+  (смотри \ref{th251:uneq1}).
+  $$\sum_i \omega(f, \triangle_i)|\triangle_i| \leq \varepsilon + 2\varepsilon (b - a)$$
+  Отсюда следует, что $f \in \mathbb{R} [a,b]$. Для доказательства \ref{th251:int1}
+  выберем $n > N: $
+  \begin{gather*}
+    |f_n(x) - f(x)| < \varepsilon, \ (a \leq x \leq b), \ n > N \\
+    \left|\int\limits_a^b f(x) dx - \int\limits_a^b f_n(x) dx\right| \leq
+    \int\limits_a^b |f(x) - f_n(x)| dx < \varepsilon(b - a)
+  \end{gather*}
+  Отсюда вытекает \ref{th251:int1}. \\
+\end{proof}
+
+\begin{theorem}
+  $U_n \in R[a,b]$ (Интегрируема). Если
+  \begin{gather}
+    f(x) = \sum\limits_{n = 1}^{\infty} U_n(x), \ (a \leq x \leq b)
+    \label{th252:series1}
+  \end{gather}
+  При чем ряд \ref{th252:series1} сходится на $[a,b]$, тогда
+  $$\int\limits_a^b f(x) dx = \sum\limits_{n = 1}^{\infty} \int\limits_a^b
+  f(x) dx$$
+  Иными словами ряд \ref{th252:series1} можно интегрировать частями.
+\end{theorem}
+
+\begin{proof}
+  Без доказательства.
+\end{proof}
+
+\begin{remark}
+  При нарушении равномерности ряд, состоящий из интегрируемых функций может
+  иметь интегрируемую сумму.
+\end{remark}
+
+\section{Равномерная сходимость и дифференцирование}
+$f_n(x) = \frac{\sin nx}{\sqrt{n}}, x \in \mathbb{R}$ показывает, что из
+равномерной сходимости последовательности функций не следует даже поточечная
+сходимость последовательностей функций производных. \\
+То есть нужны более сильные предположения, чтобы заключать, что $f_n' \to f_n$,
+при $f_n \to f$.
+
+\begin{theorem}
+  \label{th261}
+  Пусть $f_n(x) \to f(x), \ x \in [a,b], \ n \to \infty, \ f_n \in C[a,b], \
+  (n = 1, 2, \dots)$. \\
+  Если $\{f_n'(x)\}$ сходится равномерно на $[a,b]$, то $f_n(x)$ дифференцируема
+  и $$f'(x) = \lim\limits_{n \to \infty} f_n'(x)$$
+\end{theorem}
+
+\begin{proof}
+  Обозначим через $f^*$ предел последовательности $f_n'$. Ввиду теоремы \ref{th242}
+  $f^*$ непрерывна на $[a,b]$. \\
+  Применим теорему \ref{th251} к последовательости $\{f_n\}$ на промежутке
+  $[a, x],$ где $x \in [a,b]$
+  $$\int\limits_a^x f^*(t) dt = \lim \int\limits_a^x f'(t) dt =
+  \lim\limits_{n \to \infty} (f_n(x) - f_n(a)) = f(x) - f(a)$$
+  Так как интеграл слева ввиду непрерывности функции $f^*$ имеет производную
+  равную $f',$ то ту же производную имеет и $f(x)$.
+  $$f'(x) = f^*(x) = \lim\limits_{n \to \infty} f'(x), x \in [a,b]$$
+\end{proof}
+
+Перефразируем теорему \ref{th261} с точки зрения рядов: \\
+Пусть сходящийся ряд $\sum\limits_{n = 1}^{\infty} U_n(x) =: f(x), x \in [a,b]$
+и пусть $U_n(x) \in C^1[a,b], \ (n = 1, 2, \dots)$.\\
+Если ряд $\sum\limits_{n = 1}^{\infty} U_n'(x)$ сходится равномерно на $[a,b]$,
+то сумма $f(x)$ дифференцируема, и \\
+$f'(x) = \sum\limits_{n = 1}^{\infty} U_n'(x), x \in [a,b]$.
 

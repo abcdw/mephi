@@ -1,0 +1,93 @@
+\section{Радиус сходимости и круг сходимости}
+\begin{definition}
+  Степенной ряд --- ряд вида
+  \begin{gather}
+    \sum\limits_{n = 0}^{\infty} a_n(z - z_0)^n, \ z, z_0 \in \mathbb{C}, n = 0, 1, \dots
+    \label{def311:series1}
+  \end{gather}
+  $a_n$ --- коэффициенты ряда. \\
+  $\xi = z - z_0, $ тогда
+  $\sum\limits_{n = 0}^{\infty} a_n \xi$,
+  \begin{gather}
+    \sum\limits_{n = 0}^{\infty} a_n z^n \label{def311:series2}
+  \end{gather}
+\end{definition}
+
+\begin{theorem}
+  \label{th311}
+  Степенной ряд \ref{def311:series2}, $\alpha = \overline{\lim} \sqrt[n]{|a_n|}$,
+  \begin{gather}
+    R = \frac{1}{\alpha} \label{def311:eq1}
+  \end{gather}
+  ($\alpha = 0 \Longleftrightarrow R = \infty, \
+  \alpha = +\infty \Longleftrightarrow, R = 0$), тогда ряд \ref{def311:series2}
+  абсолютно сходится, если $|z| < R,$ и рассходится, если $|z| > R$.
+\end{theorem}
+
+\begin{proof}
+  Положим $C_n = a_n z^n$. По критерию Коши заключаем, что сумма
+  $\sum C_n$ сходится при $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|}
+  = |z|\cdot \overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|} =
+  \frac{|z|}{R} < 1,$ то есть $|z| < R;$ и рассходится, если $|z| > R$.
+\end{proof}
+
+\begin{definition}
+  Число R называется радиусом сходимости ряда \ref{def311:series2}. \\
+  $|z| < R, z \in \mathbb{C}$ называется кругом сходимости ряда
+  \ref{def311:series2}.
+\end{definition}
+
+\begin{remark}
+  О сходимсоти на границе окружности $|z| = R$ ничего не говорится в теореме
+  \ref{th311}, так как возможны все варианты.
+\end{remark}
+
+\begin{theorem}
+  Если R --- радиус сходимости $(R > 0)$ ряда \ref{def311:series2}, то на любом
+  круге $|z| < r, $ где $r$ --- фиксированно, и $r < R$. \\
+  Таким образом этот ряд сходится абсолютно и равномерно.
+\end{theorem}
+
+\begin{proof}
+  $z = r, \sum\limits_{n = 0}^{\infty} |a_n| r^n$ сходится, а так как для любой
+  точки $z$ круга $|z| \leq r$ выполняется неравенство:
+  \begin{gather*}
+    |a_n z^n| \leq |a_n| r^n, \ \forall n
+  \end{gather*}
+  то по признаку Вейерштрассе на этом круге ряд \ref{def311:series2} сходится
+  равномерно.
+\end{proof}
+
+\begin{consequence}
+  Степеной ряд непрерывный в каждой точке своего круга $|z| < R$ сходится.
+\end{consequence}
+
+\begin{theorem}[2-ая т. Абеля]
+  Если R --- радиус сходимости, $\sum\limits_{n = 0}^{\infty} a_n z^n$ и этот
+  ряд сходится при $|z| = R,$ то он сходится на отрезке $[0, R]$ равномерно.
+\end{theorem}
+
+\begin{proof}
+  Пусть $0 \leq x \leq R$, представим ряд $\sum\limits_{n = 0}^{\infty} a_n x^n
+  = \sum\limits_{n = 0}^{\infty} a_n R^n\left(\frac{x}{R}\right)^n$. По скольку
+  члены ряда $\sum a_n R^n$ не зависит от $x$, то его сходимость означает его
+  равномерную сходимость. $\{(\frac{x}{R})^n\}$ ограничена на отрезке $[0, R]$
+  и монотонна в каждой точке. \\
+  Поэтому в силу признака Абеля равномерной сходимости рядов \ref{th232} ряд
+  \ref{def311:series2} равномерно сходится на отрезке $[0, R]$.
+\end{proof}
+
+\begin{lemma}
+  Радиусы сходимости $R, R_1, R_2$ соответственно рядов
+  $\sum\limits_{n = 0}^{\infty} a_n z^n, \sum\limits_{n = 0}^{\infty}
+  \frac{a_n}{n + 1} z^{n+1}, \sum\limits_{n = 0}^{\infty} n a_n z^{n - 1}$ равны:
+  $R = R_1 = R_2$.
+\end{lemma}
+
+\begin{proof}
+  Действительно, так как $\lim\limits_{n \to \infty} \sqrt[n]{\frac{1}{n + 1}}=
+  \lim\limits_{n \to \infty} \sqrt[n]{n} = 1$, то \\
+  $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|} = 
+  \overline{\lim\limits_{n \to \infty}} \sqrt[n]{\frac{a_n}{n + 1}}=
+  \overline{\lim\limits_{n \to \infty}} \sqrt[n]{|n a_n|}$
+\end{proof}
