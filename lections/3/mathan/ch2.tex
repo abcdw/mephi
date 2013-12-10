@@ -1,0 +1,208 @@
+\section{Поточечная сходимость}
+Пусть на некотором множестве $\mathbb{E}$ задана последовательность
+комплексно значимых функций $f_n, n = 1, 2, \dots \ , \ (f_n \in \mathbb{C})$.
+Элементы $x \in \mathbb{E}$ будем называть точками.
+\begin{definition}
+  $\{f_n\}$ называется ограниченной на $\mathbb{E}$, если
+  $\exists M > 0: \forall n \in \mathbb{N}, \forall x \in \mathbb{E}$ выполняется
+  $$|f_n(x)| \leq M$$
+\end{definition}
+
+\begin{definition}
+  $\{f_n\}$ называется сходящейся поточечно на множестве $\mathbb{E}$, если
+  при любом фиксированном $x \in \mathbb{E}$, числовая последовательность
+  $\{f_n(x)\}$ сходится. Если последовательность сходится на $\mathbb{E}$,
+  то $f(x) := \lim\limits_{n \to \infty} f_n(x), x \in \mathbb{E}$ называется
+  пределом последовательности. Пусть
+  $\{U_n(x)\}_{n = 1}^\infty, x \in \mathbb{E}, \ (U_n \in \mathbb{C})$
+  --- последовательность числовых функций.
+\end{definition}
+
+\begin{definition}
+  Множество числовых рядов
+  \begin{gather}
+    \sum\limits_{n = 1}^{\infty} U_n(x) \label{def213:series1}
+  \end{gather}
+  в каждой из которых точка $x$ фиксированная называется рядом на множестве
+  $\mathbb{E}$, а функция $U_n(x)$ --- его член. \\
+  $S_n(x) = \sum\limits_{k = 1}^{n} U_k(x), x \in \mathbb{E}$ называется
+  $n$-ой частичной суммой ряда \ref{def213:series1}. \\
+  $\sum\limits_{k = n + 1}^{\infty} U_k(x)$ - его $n$-ым остатком.
+\end{definition}
+
+\begin{definition}
+  Ряд \ref{def213:series1} называется сходящимся поточечно на множестве
+  $\mathbb{E}$, если последовательность $\{S_n(x)\}$ сходится поточечно на
+  $\mathbb{E}$. При этом $\lim\limits_{n \to \infty} S_n(x) = S(x), x \in \mathbb{E}$
+  называется суммой ряда \ref{def213:series1}.
+  $$S(x) = \sum\limits_{n = 1}^{\infty} U_n(x).$$
+\end{definition}
+
+\begin{definition}
+  Если ряд \ref{def213:series1} при любом $x \in \mathbb{E}$ сходится абсолютно,
+  то он называется абсолютно сходящимся на множестве $\mathbb{E}$.
+\end{definition}
+
+\begin{remark}
+  Беззаботная перестановка членов ряда может привести к ошибке.
+\end{remark}
+
+\section{Равномерная сходимость}
+\begin{definition}
+  \label{def221}
+  Говорят, что функциональная последовательность $\{f_n\}_{n=1}^\infty$
+  сходится равномерно на $\mathbb{E}$, если $\forall \varepsilon > 0 \
+  \exists N \in \mathbb{N}: \forall n > N, \forall x \in \mathbb{E}$
+  имеем
+  $$|f_n(x) - f(x)| < \varepsilon$$
+  Ясно, что каждая равномерно сходящаяся последовательность, сходится поточечно.
+\end{definition}
+
+\begin{comment}
+  Обозначение равномерной сходимости:
+  $f_n \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} f$
+\end{comment}
+
+\begin{theorem}[Критерий Коши равномерной сходимости последовательностей]
+  \label{th221}
+  Для того, чтобы $\{f_n\}$ равномерно сходилась на
+  $\mathbb{E} \Longleftrightarrow$
+  $\forall \varepsilon > 0 \ \exists N: n, m > N, \forall x \in \mathbb{E}:$
+  \begin{gather}
+    |f_n(x) - f_m(x)| < \varepsilon \label{th221:uneq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  \hfill
+  \begin{itemize}
+    \item Необходимость: \\
+      $f_n \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} f$, тогда
+      $\forall \varepsilon > 0, \ \exists N \in \mathbb{N}: \forall n > N,
+      \forall x \in \mathbb{E} \ |f_n(x) - f(x)| < \frac{\varepsilon}{2}$. \\
+      $|f_n(x) - f_m(x)| \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| <
+      \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$,
+      $(\forall n, m > N, \forall x \in \mathbb{E}).$
+    \item Достаточность: \\
+      Пусть выполняется условие Коши, тогда $\{f_n(x)\}$, удовлетворяет
+      критерию Коши сходимости числовых последовательностей и следовательно
+      сходящегося числового предела, который обозначим $f(x)$. \\
+      Тогда перейдя к пределу при $m \to \infty$ получим $\forall n > N,
+      \forall x \in \mathbb{E}: |f_n(x) - f(x)| < \varepsilon$. \\
+  \end{itemize}
+\end{proof}
+Иногда полезен критерий, следующий из определения \ref{def221}
+
+\begin{theorem}
+  Пусть $\lim\limits_{n \to \infty} f_n(x) = f(x), \forall x \in \mathbb{E}$. \\
+  Положим $r_n = \sup|f_n(x) - f(x)|, x \in \mathbb{E}$ --- равномерное уклонение. \\
+  Тогда $f_n \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} f
+  \Longleftrightarrow r_n \to 0, \ n \to \infty$. (Переформулировка определения).
+\end{theorem}
+
+\begin{proof}
+  Без доказательства. \\
+\end{proof}
+
+\begin{example}
+  $f_n(x) = x^n, \mathbb{E} = [0, 1)$ \\
+  $\lim\limits_{n \to \infty} f_n(x) = 0, \forall \in \mathbb{E},
+  r_n = \sup\limits_{x \in [0, 1)} |x^n - 0| = 1 \not \to 0, n \to \infty.$ \\
+  $\{x^n\}$ не является равномерно сходящейся на $\mathbb{E}$.
+\end{example}
+
+\begin{example}
+  $f_n(x) = x^n - x^{n+1}, \mathbb{E} = [0, 1]$. \\
+  $f_n(x) \to 0, \forall x \in \mathbb{E}, \  f_n'(x) = nx^{n-1} - (n + 1)x^n = 0$. \\
+  $x_n = \frac{n}{n+1}, \ f_n(x_n) = x_n^n(1 - x_n) < \frac{1}{n + 1}$. \\
+  $r_n < \frac{1}{n + 1}$. \\
+\end{example}
+
+\begin{definition}
+  \begin{gather}
+    \sum\limits_{n = 1}^{\infty} U_n(x), \ x \in \mathbb{E} \label{def222:series1}
+  \end{gather}
+  называется равномерно сходящейся, если на множестве $\mathbb{E}$ равномерно
+  сходится последовательность частичных сумм. \\
+\end{definition}
+
+Пусть $S_k(x)$ --- частичные $k$-ые суммы ряда \ref{def222:series1},
+$$m \geq n: U_n(x) + \dots + U_m(x) = S_m(x) - S_n(x)$$
+тогда из теоремы \ref{th221} (критерий Коши равномерной сходимости последовательности)
+$\Rightarrow$ Теорема \ref{th223} (критерий Коши равномерной сходимости ряда).
+
+\begin{theorem}[Критерий Коши равномерной сходимости ряда]
+  \label{th223}
+  Для того, чтобы ряд \ref{def222:series1} равномерно сходился на множестве
+  $\mathbb{E} \Longleftrightarrow \forall \varepsilon > 0 \ \exists N \in \mathbb{N},
+  \forall x \in \mathbb{E}: $
+  \begin{gather}
+    |U_n(x) + \dots + U_m(x)| < \varepsilon \label{th223:uneq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Без доказательства.
+\end{proof}
+
+\begin{consequence}[Необходимый признак равномерной сходимости]
+  У равномерно сходящегося ряда общий член равномерно стремится к нулю.
+\end{consequence}
+
+\begin{theorem}[Признак Вейерштрасса]
+  Пусть $\{U_n\}$ --- последовательнсоть функций, определенных на $\mathbb{E}$
+  и пусть $|U_n(x)| \leq a_n, \forall x \in \mathbb{E}, \forall n \in \mathbb{N}.$
+  Тогда если $\sum a_n < \infty$ сходится, то следовательно $\sum U_n(x)$ сходится
+  равномерно на $\mathbb{E}$.
+\end{theorem}
+\begin{proof}
+  Если $\sum a_n$ сходится, то $\forall \varepsilon > 0 |
+  \sum\limits_{k = n}^{m} U_k(x)| \leq
+  \sum\limits_{k = n}^{m} a_k < \varepsilon$, при любом $x \in \mathbb{E}$,
+  если только $m$ и $n$ достаточно велики, теорема \ref{th111} (критерий Коши
+  сходимости числового ряда). Равномерная сходимость нашего ряда вытекает из
+  теоремы \ref{th223}.
+\end{proof}
+\begin{remark}
+  $\sum a_n$ называется мажорирующим рядом $\sum U_n(x)$.
+\end{remark}
+
+\begin{remark}
+  ПРОВЕРИТЬ!!! \\
+  Условие признака Вейерштрасса не являются необходимыми для равномерной
+  сходимости ряда.
+\end{remark}
+
+\section{Признаки равномерной сходимости рядов Дирихле и Абеля}
+\begin{theorem}
+  Пусть дан ряд
+  \begin{gather}
+    \sum\limits_{n = 1}^{\infty} a_n(x) b_n(x), \ x \in \mathbb{E} \label{th231:series1}
+  \end{gather}
+  такой что:
+  \begin{enumerate}
+    \item $a_n(x) \in \mathbb{R}, \ b_n(x) \in \mathbb{C}, \ n = 1, 2, \dots$
+    \item $a_n(x) \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} 0$
+      (Равномерная сходимость к нулю), $\{a_n(x)\}$ - монотонна.
+    \item $\{b_n(x)\}, \ \sum b_n(x)$ ограничена на множестве $\mathbb{E}$.
+  \end{enumerate}
+  Тогда ряд \ref{th231:series1} равномерно сходится на множестве $\mathbb{E}$.
+\end{theorem}
+
+\begin{proof}
+  В силу условия 3, $\exists B > 0: |B_n(x)| \leq B, \ \forall x \in \mathbb{E}, \
+  \forall n \in \mathbb{N}$. \\
+  $\forall x \in \mathbb{E}, m \geq n \geq 2: |b_n(x) + \dots + b_m(x)| =
+  |B_m(x) - B_{n-1}(x)| \leq 2B$. \\
+  $\forall \varepsilon > 0$ из условия 2 $\Rightarrow \exists N = N(\varepsilon):
+  n > N(\varepsilon), \forall \in \mathbb{E}$ выполняется неравенство:
+  $$0 \leq |a_n(x)| < \frac{\varepsilon}{6B}.$$
+  Примениев лемму Абеля \ref{th151:cons}, получим:
+  \begin{gather*}
+    |a_n(x) b_n(x) + \dots + a_m(x) b_m(x)| \leq 2B \\
+    (|a_n(x) + 2a_m(x)| < \varepsilon, \forall x \in \mathbb{E},
+    m \geq n \geq N(\varepsilon))
+  \end{gather*}
+  В силу критерия Коши \ref{th223}, ряд \ref{th231:series1} сходится равномерно.
+\end{proof}
+
