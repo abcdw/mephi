@@ -62,13 +62,13 @@
   \end{align}
 \end{theorem}
 \begin{proof}
-  Доказательство свойства (\ref{series:property1}):
+  Доказательство свойства (\eqref{series:property1}):
   $$\sum\limits_{k=0}^\infty \alpha U_k = \lim\limits_{n \to \infty}
   \sum\limits_0^n \alpha U_k = \alpha \lim\limits_{n \to \infty} \sum\limits_0^n U_k
   = \alpha \sum\limits_{k = 0}^\infty U_k$$
 \end{proof}
 \begin{proof}
-  Доказательство свойства (\ref{series:property2}):
+  Доказательство свойства (\eqref{series:property2}):
   \begin{gather*}
       \sum\limits_0^\infty U_k \pm \sum\limits_{0}^{\infty} V_k
       = \lim\limits_{n \to \infty} \sum\limits_{0}^{n} U_k
@@ -295,21 +295,21 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
     \sum\limits_{k = 1}^{n} f(k+1) \leq \int\limits_1^{n+1} f(x) dx \leq
     \sum\limits_{k = 1}^{n} f(k)
   \end{gather}
-  Пусть $S_n = \sum\limits_{k = 1}^{n} f(k),$ тогда \ref{th131:series2} примет вид:
+  Пусть $S_n = \sum\limits_{k = 1}^{n} f(k),$ тогда \eqref{th131:series2} примет вид:
   \begin{gather}
     \label{th131:series3}
     S_n + 1 - f(1) \leq \int\limits_1^{n+1} f(x) dx \leq S_n
   \end{gather}
-  Если ряд \ref{th131:series1} сходится и его сумма равна $S$, то $S_n \leq S$,
+  Если ряд \eqref{th131:series1} сходится и его сумма равна $S$, то $S_n \leq S$,
   и $\int\limits_1^{n+1} f(x) dx \leq S, \ \forall n \in \mathbb{N}$. \\
   $\forall b > 1, n + 1 > b$ имеем:
   $$\int\limits_1^b f(x) dx \leq \int\limits_1^{n+1} f(x) dx \leq S$$
   В силу неотрицательности функции $f(x)$ интеграл сходится. \\
-  Пусть наоборот, интеграл \ref{th131:integral1} сходится, тогда из
-  \ref{th131:series3} следует:
+  Пусть наоборот, интеграл \eqref{th131:integral1} сходится, тогда из
+  \eqref{th131:series3} следует:
   $$S_{n+1} \leq f(1) + \int\limits_1^{n+1} f(x) dx
   \leq f(1) + \int\limits_1^\infty f(x) dx$$
-  Тем самым, последовательность сумм $\{S_n\}$ ряда \ref{th131:series1}
+  Тем самым, последовательность сумм $\{S_n\}$ ряда \eqref{th131:series1}
   ограничена сверху, и поэтому этот ряд сходится.
 \end{proof}
 
@@ -325,7 +325,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
     \item При $\alpha > 1$ сходится
     \item При $\alpha \leq 1$ расходится
   \end{itemize}
-  Тогда ряд \ref{ex131:series1} сходится тогда и только тогда, когда $\alpha > 1$.
+  Тогда ряд \eqref{ex131:series1} сходится тогда и только тогда, когда $\alpha > 1$.
   При $\alpha < 0 \ $ дробь $ \ \frac{1}{n^\alpha} \geq 1$.
 \end{example}
 
@@ -367,19 +367,19 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   \begin{gather}
     \lim\limits_{k \to \infty} S_{2k + 1} = S \label{th141:lim3}
   \end{gather}
-  Из \ref{th141:lim2} и \ref{th141:lim3} следует, что
+  Из \eqref{th141:lim2} и \eqref{th141:lim3} следует, что
   $\lim\limits_{n \to \infty} S_n = S$ \\
   При этом, нетрудно увидеть, что
   \begin{gather}
     S_{2k} \leq S \leq S_{2k + 1} \leq S_{2k - 1}, \ \forall k \label{th141:ineq3}
   \end{gather}
-  Из неравенства \ref{th141:ineq3} следует, что
+  Из неравенства \eqref{th141:ineq3} следует, что
   \begin{align*}
     S - S_{2k} \leq S_{2k + 1} - S_{2k} &= U_{2k + 1} \\
     S_{2k - 1} - S \leq S_{2k - 1} - S_{2k} &= U_{2k}, \ k = 1, 2, \dots
   \end{align*}
   Это и означает, что $\forall n \in \mathbb{N}$ выполняется
-  неравенство \ref{th141:ineq2}.
+  неравенство \eqref{th141:ineq2}.
 \end{proof}
 
 \section{Преобразование Абеля}
@@ -419,7 +419,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
 \end{proof}
 
 \section{Признаки Дирихле и Абеля}
-\begin{theorem}
+\begin{theorem}[признак Дирихле]
   \label{th161}
   Пусть дан ряд
   \begin{gather}
@@ -430,7 +430,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
     \item $\{a_n\}, \{a_n\} \downarrow 0 \ (\{a_n\} \uparrow 0)$
     \item $\{B_n\}$ --- последовательность частичных сумм ряда $\sum b_n$ ограничена
   \end{enumerate}
-  Тогда ряд \ref{th161:series1} сходится.
+  Тогда ряд \eqref{th161:series1} сходится.
 \end{theorem}
 
 \begin{proof}
@@ -442,16 +442,17 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   Поэтому, $\forall n > N(\varepsilon)$ и $\forall m \geq n$ получим:
   $$|a_n b_n + \dots + a_m b_m| \leq 2B(|a_n| + 2|a_m|) <
   2B\left(\frac{\varepsilon}{6B} + 2 \frac{\varepsilon}{6B} \right) = \varepsilon$$
-  Ряд \ref{th161:series1} удовлетворяет Критерию Коши сходимости рядов.
+  Ряд \eqref{th161:series1} удовлетворяет Критерию Коши сходимости рядов.
 \end{proof}
 \begin{remark}
   Признак Лейбница - это частный случай признака Дирихле. \\
 \end{remark}
 
 \begin{theorem}[признак Абеля]
+  \label{th162}
   Если последовательность действительных чисел $a_n$ монотонна и ограничена,
   ряд $\sum\limits_{n = 1}^{\infty} b_n, b_n \in \mathbb{C}$ сходится, то ряд
-  \ref{th161:series1} также сходится.
+  \eqref{th161:series1} также сходится.
 \end{theorem}
 
 \begin{proof}
@@ -495,14 +496,14 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   Выберем $p$ так, чтобы все натуральные числа $1, 2, \dots, N$ содержались в
   множестве $k_1, k_2, \dots, k_p$ (смотри определение), тогда при $n > p$
   $a_1, \dots, a_N$ в разности $S_n - S_n^*$ уничтожаются, так что
-  $|S_n - S_n^*| < \varepsilon$ в силу \ref{th171:uneq1}. \\
+  $|S_n - S_n^*| < \varepsilon$ в силу \eqref{th171:uneq1}. \\
   Значит $\{S_n^*\}$ сходится к тому же пределу, что и $\{S_n\}$.
 \end{proof}
 
 \begin{definition}
   Сходящийся, но не абсолютно сходящийся ряд называется условно сходящимся.
 \end{definition}
-Из теоремы \ref{th171} (из необходимости условия) $\Rightarrow$ Теорема \ref{th172}
+Из теоремы \eqref{th171} (из необходимости условия) $\Rightarrow$ Теорема \eqref{th172}
 \begin{theorem}
   \label{th172}
   Условно сходящийся ряд не может сходится безусловно, то есть у него всегда

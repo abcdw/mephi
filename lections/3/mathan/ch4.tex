@@ -1,0 +1,110 @@
+\section{Ортогональные системы} \label{ch41}
+В параграфах \eqref{ch41} - \eqref{ch43} $\mathbb{X}$ --- линейное
+бесконечномерное пространство(действительное или комплексное, со скалярным
+произведением).
+$$X(\cdot \ , \ \cdot), \ \|x\| = \sqrt{(x, x)}.$$
+$\mathbb{K}$ --- некоторое счетное или конечное множество.
+\begin{definition}
+  \label{def411}
+  Система векторов $\{x_k: k \in \mathbb{K}\}, \ x \in \mathbb{X}$ ---
+  ортогональная система(ОС). \\
+  $(x_i, x_j) = 0, \ \forall i, j \in \mathbb{K}, i \not = j$ (и система не
+  нулевая). Если $(x_i, x_i) = 1$, то система называется ортонормированной.
+\end{definition}
+
+\begin{theorem}
+  Ортогональная система векторов линейно независима, то есть линейно не
+  зависима каждая ее конечная подсистема.
+\end{theorem}
+\begin{proof}
+  Определение линейной независимости:
+  \begin{gather*}
+    \alpha_1 x_1 + \dots + \alpha_i x_i +
+    \dots = 0 \Longleftrightarrow \alpha_i = 0, \ \forall i
+  \end{gather*}
+  Скалярно умножим все члены на $x_i$, тогда получим:
+  \begin{gather*}
+    \label{th411:eq1}
+    \alpha_1 (x_1, x_i) + \dots + \alpha_i (x_i, x_i) + \dots = (0, x_i) \\
+    \label{th411:eq2}
+    \alpha_i (x_i, x_i) = 0 \\
+    \label{th411:eq3}
+    \alpha_i = 0
+  \end{gather*}
+  Равенство \eqref{th411:eq2} следует из определения \eqref{def411}, равенство
+  \eqref{th411:eq3} следует из того, что $(x_i, x_i)~\not=~0$ (так как система
+  не нулевая).
+\end{proof}
+
+\section{Коэффициенты Фурье}
+\begin{definition}
+  Пусть $\{e_k: \ k \in \mathbb{K}\}$ --- ОНС в $\mathbb{X}$, $\{(x, e_k)\}, x
+  \in \mathbb{X}$ называется коэффициентами Фурье элемента $x$ в ОНС $e_k$.
+\end{definition}
+\begin{lemma}
+  \label{lemma421}
+  Если система векторов $e_1, \dots, e_n$ пространства $\mathbb{X}$ --- ОН, то
+  $\forall x \in \mathbb{X}$ вектор $h = x - x_e$, где
+  \begin{gather}
+    x_e = \sum\limits_{k = 1}^{n} (x, e_k) e_k
+    \label{lemma1:eq1}
+  \end{gather}
+  ортоганален подпространству $\mathbb{L} = \langle e_1, \dots, e_n \rangle$ (натянотому
+  на векторы $e_1, \dots, e_n$)
+\end{lemma}
+
+\begin{proof}
+  Достаточно проверить, что скалярное произведение \\ $(h, e_j) = 0, \ \forall j =
+  1, \dots, n$
+  \begin{gather*}
+    (h, e_j) = (x, e_j) - \sum\limits_{k = 1}^{n} (x, e_k) (e_k, e_j) =
+    (x, e_j) - (x, e_j) = 0
+  \end{gather*}
+\end{proof}
+
+\begin{lemma}[теорема Пифагора]
+  \label{lemma422}
+  Если векторы $x_1, \dots, x_n$ попарно ортогональны и $x = x_1 + \dots +
+  x_n$, то $\|x\|^2 = \|x_1\|^2 + \dots + \|x_n\|^2$
+\end{lemma}
+
+\begin{proof}
+  $(x, x) = (\sum\limits_{i = 1}^{n} x_i, \sum\limits_{i = 1}^{n} x_i) =
+  \sum\limits_{i, j = 1}^{n} (x_i, x_j) = \sum\limits_{i = 1}^{n} (x_i, x_i)$
+\end{proof}
+
+\begin{theorem}[экстремальное свойство коэффициентов Фурье]
+  \label{th423}
+  Если $e_1, \dots, e_n$ --- ОНС пространства $\mathbb{X}$, то $\forall x \in
+  \mathbb{X}$ и $\forall y = \alpha_1 e_1 + \dots + \alpha_n e_n$ имеет место
+  неравенство:
+  \begin{gather*}
+    \|x - \sum\limits_{k = 1}^{n} (x, e_k) e_k \| \leq \|x - \sum\limits_{k =
+    1}^{n} \alpha_k e_k \|,
+  \end{gather*}
+  в котором равенство возможно при условии: $\alpha_k = (x, e_k) \ \forall k = 1,
+  \dots, n$.
+\end{theorem}
+
+\begin{proof}
+  Представим $x - y$ в виде $x - y = (x_e - y) + h$, где $x_e, h$ определены в
+  лемме~\eqref{lemma421}. \\
+  По лемме~\eqref{lemma421} $h \perp (x_e - y) \in \mathbb{L}$. По теореме
+  Пифагора (лемма~\ref{lemma422}):
+  \begin{gather*}
+    \|x - y\|^2 = \|x_e - y\|^2 + \|h\|^2 = \|x_e - y\|^2 + \|x - x_e\|^2 \geq
+    \|x - x_e\|^2
+  \end{gather*}
+  равенство возможно, когда коэффициенты $\alpha_k$ совпадают с коэффициентами
+  Фурье.
+\end{proof}
+
+\begin{remark}
+  Теорема \eqref{th423} показывает, что вектор $x_e$ является наилучшей в
+  смысле нормы пространства $\mathbb{X}$, аппроксимацией вектора $x$
+  подпространства $\mathbb{L} = \langle e_1, \dots, e_n \rangle$, так что
+  наименьшее уклонением вектора $x$ от $\mathbb{L}$ равно $\|x - x_e\|$.
+\end{remark}
+
+\section{секция}
+\label{ch43}

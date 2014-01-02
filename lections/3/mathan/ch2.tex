@@ -26,20 +26,20 @@
   в каждой из которых точка $x$ фиксированная называется рядом на множестве
   $\mathbb{E}$, а функция $U_n(x)$ --- его член. \\
   $S_n(x) = \sum\limits_{k = 1}^{n} U_k(x), x \in \mathbb{E}$ называется
-  $n$-ой частичной суммой ряда \ref{def213:series1}. \\
+  $n$-ой частичной суммой ряда \eqref{def213:series1}. \\
   $\sum\limits_{k = n + 1}^{\infty} U_k(x)$ - его $n$-ым остатком.
 \end{definition}
 
 \begin{definition}
-  Ряд \ref{def213:series1} называется сходящимся поточечно на множестве
+  Ряд \eqref{def213:series1} называется сходящимся поточечно на множестве
   $\mathbb{E}$, если последовательность $\{S_n(x)\}$ сходится поточечно на
   $\mathbb{E}$. При этом $\lim\limits_{n \to \infty} S_n(x) = S(x), x \in \mathbb{E}$
-  называется суммой ряда \ref{def213:series1}.
+  называется суммой ряда \eqref{def213:series1}.
   $$S(x) = \sum\limits_{n = 1}^{\infty} U_n(x).$$
 \end{definition}
 
 \begin{definition}
-  Если ряд \ref{def213:series1} при любом $x \in \mathbb{E}$ сходится абсолютно,
+  Если ряд \eqref{def213:series1} при любом $x \in \mathbb{E}$ сходится абсолютно,
   то он называется абсолютно сходящимся на множестве $\mathbb{E}$.
 \end{definition}
 
@@ -91,7 +91,7 @@
       \forall x \in \mathbb{E}: |f_n(x) - f(x)| < \varepsilon$. \\
   \end{itemize}
 \end{proof}
-Иногда полезен критерий, следующий из определения \ref{def221}
+Иногда полезен критерий, следующий из определения \eqref{def221}
 
 \begin{theorem}
   Пусть $\lim\limits_{n \to \infty} f_n(x) = f(x), \forall x \in \mathbb{E}$. \\
@@ -127,14 +127,14 @@
   сходится последовательность частичных сумм. \\
 \end{definition}
 
-Пусть $S_k(x)$ --- частичные $k$-ые суммы ряда \ref{def222:series1},
+Пусть $S_k(x)$ --- частичные $k$-ые суммы ряда \eqref{def222:series1},
 $$m \geq n: U_n(x) + \dots + U_m(x) = S_m(x) - S_n(x)$$
-тогда из теоремы \ref{th221} (критерий Коши равномерной сходимости последовательности)
-$\Rightarrow$ Теорема \ref{th223} (критерий Коши равномерной сходимости ряда).
+тогда из теоремы \eqref{th221} (критерий Коши равномерной сходимости последовательности)
+$\Rightarrow$ Теорема \eqref{th223} (критерий Коши равномерной сходимости ряда).
 
 \begin{theorem}[Критерий Коши равномерной сходимости ряда]
   \label{th223}
-  Для того, чтобы ряд \ref{def222:series1} равномерно сходился на множестве
+  Для того, чтобы ряд \eqref{def222:series1} равномерно сходился на множестве
   $\mathbb{E} \Longleftrightarrow \forall \varepsilon > 0 \ \exists N \in \mathbb{N},
   \forall x \in \mathbb{E}: $
   \begin{gather}
@@ -160,9 +160,9 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   Если $\sum a_n$ сходится, то $\forall \varepsilon > 0 |
   \sum\limits_{k = n}^{m} U_k(x)| \leq
   \sum\limits_{k = n}^{m} a_k < \varepsilon$, при любом $x \in \mathbb{E}$,
-  если только $m$ и $n$ достаточно велики, теорема \ref{th111} (критерий Коши
+  если только $m$ и $n$ достаточно велики, теорема \eqref{th111} (критерий Коши
   сходимости числового ряда). Равномерная сходимость нашего ряда вытекает из
-  теоремы \ref{th223}.
+  теоремы \eqref{th223}.
 \end{proof}
 \begin{remark}
   $\sum a_n$ называется мажорирующим рядом $\sum U_n(x)$.
@@ -187,7 +187,7 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
       (Равномерная сходимость к нулю), $\{a_n(x)\}$ - монотонна.
     \item $\{b_n(x)\}, \ \sum b_n(x)$ ограничена на множестве $\mathbb{E}$.
   \end{enumerate}
-  Тогда ряд \ref{th231:series1} равномерно сходится на множестве $\mathbb{E}$.
+  Тогда ряд \eqref{th231:series1} равномерно сходится на множестве $\mathbb{E}$.
 \end{theorem}
 
 \begin{proof}
@@ -198,13 +198,13 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   $\forall \varepsilon > 0$ из условия 2 $\Rightarrow \exists N = N(\varepsilon):
   n > N(\varepsilon), \forall \in \mathbb{E}$ выполняется неравенство:
   $$0 \leq |a_n(x)| < \frac{\varepsilon}{6B}.$$
-  Примениев лемму Абеля \ref{th151:cons}, получим:
+  Примениев лемму Абеля \eqref{th151:cons}, получим:
   \begin{gather*}
     |a_n(x) b_n(x) + \dots + a_m(x) b_m(x)| \leq 2B \\
     (|a_n(x) + 2a_m(x)| < \varepsilon, \forall x \in \mathbb{E},
     m \geq n \geq N(\varepsilon))
   \end{gather*}
-  В силу критерия Коши \ref{th223}, ряд \ref{th231:series1} сходится равномерно.
+  В силу критерия Коши \eqref{th223}, ряд \eqref{th231:series1} сходится равномерно.
 \end{proof}
 
 \begin{theorem}[Признак Абеля]
@@ -219,11 +219,11 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
       $\forall x \in \mathbb{E}$.
     \item Ряд $\sum b_n(x)$ равномерно сходится на $\mathbb{E}$.
   \end{enumerate}
-  Тогда ряд \ref{th232:series1} равномерно сходится.
+  Тогда ряд \eqref{th232:series1} равномерно сходится.
 \end{theorem}
 
 \begin{proof}
-  Доказательство легко провести так, как была доказана теорема \ref{th161}.
+  Доказательство легко провести так, как была доказана теорема \eqref{th161}.
 \end{proof}
 
 \begin{example}
@@ -260,7 +260,7 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   \begin{gather}
     \left|f_n(x) - f_m(x)\right| < \varepsilon \label{th241:uneq1}
   \end{gather}
-  Переходя в неравенстве \ref{th241:uneq1} к приделу при $x \to x_0$ получим
+  Переходя в неравенстве \eqref{th241:uneq1} к приделу при $x \to x_0$ получим
   \begin{gather}
     \left|A_n - A_m \right| < \varepsilon, \ (n, m > N) \label{th241:uneq2}
   \end{gather}
@@ -285,9 +285,9 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   \begin{gather}
     |f_n(x) - A_n| < \frac{\varepsilon}{3} \label{th241:uneq6}
   \end{gather}
-  Из неравенств \ref{th241:uneq3} --- \ref{th241:uneq6} получим
+  Из неравенств \eqref{th241:uneq3} --- \eqref{th241:uneq6} получим
   $$|f(x) - A| < \varepsilon, \ \forall x \in U(x_0), \ x \not = x_0$$
-  Это равносильно равенству \ref{th241:lim1}
+  Это равносильно равенству \eqref{th241:lim1}
 \end{proof}
 
 \begin{theorem}
@@ -306,7 +306,7 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   неравномерно сходиться.
 \end{remark}
 
-Из теоремы \ref{th242} и определения \ref{def222} $\Rightarrow$ теорема \ref{th243}
+Из теоремы \eqref{th242} и определения \eqref{def222} $\Rightarrow$ теорема \eqref{th243}
 
 \begin{theorem}
   \label{th243}
@@ -343,16 +343,16 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
   \end{comment}
   Функции $f_n$ интегрируемы на $[a,b]$. По скольку
   $\omega(f, \triangle_i) \leq \omega(f_n, \triangle_i) + 2 \varepsilon,  \ (i = 1, \dots, S)$
-  (смотри \ref{th251:uneq1}).
+  (смотри \eqref{th251:uneq1}).
   $$\sum_i \omega(f, \triangle_i)|\triangle_i| \leq \varepsilon + 2\varepsilon (b - a)$$
-  Отсюда следует, что $f \in \mathbb{R} [a,b]$. Для доказательства \ref{th251:int1}
+  Отсюда следует, что $f \in \mathbb{R} [a,b]$. Для доказательства \eqref{th251:int1}
   выберем $n > N: $
   \begin{gather*}
     |f_n(x) - f(x)| < \varepsilon, \ (a \leq x \leq b), \ n > N \\
     \left|\int\limits_a^b f(x) dx - \int\limits_a^b f_n(x) dx\right| \leq
     \int\limits_a^b |f(x) - f_n(x)| dx < \varepsilon(b - a)
   \end{gather*}
-  Отсюда вытекает \ref{th251:int1}. \\
+  Отсюда вытекает \eqref{th251:int1}. \\
 \end{proof}
 
 \begin{theorem}
@@ -361,10 +361,10 @@ $\Rightarrow$ Теорема \ref{th223} (критерий Коши равном
     f(x) = \sum\limits_{n = 1}^{\infty} U_n(x), \ (a \leq x \leq b)
     \label{th252:series1}
   \end{gather}
-  При чем ряд \ref{th252:series1} сходится на $[a,b]$, тогда
+  При чем ряд \eqref{th252:series1} сходится на $[a,b]$, тогда
   $$\int\limits_a^b f(x) dx = \sum\limits_{n = 1}^{\infty} \int\limits_a^b
   f(x) dx$$
-  Иными словами ряд \ref{th252:series1} можно интегрировать частями.
+  Иными словами ряд \eqref{th252:series1} можно интегрировать частями.
 \end{theorem}
 
 \begin{proof}
@@ -392,9 +392,9 @@ $f_n(x) = \frac{\sin nx}{\sqrt{n}}, x \in \mathbb{R}$ показывает, чт
 \end{theorem}
 
 \begin{proof}
-  Обозначим через $f^*$ предел последовательности $f_n'$. Ввиду теоремы \ref{th242}
+  Обозначим через $f^*$ предел последовательности $f_n'$. Ввиду теоремы \eqref{th242}
   $f^*$ непрерывна на $[a,b]$. \\
-  Применим теорему \ref{th251} к последовательости $\{f_n\}$ на промежутке
+  Применим теорему \eqref{th251} к последовательости $\{f_n\}$ на промежутке
   $[a, x],$ где $x \in [a,b]$
   $$\int\limits_a^x f^*(t) dt = \lim \int\limits_a^x f'(t) dt =
   \lim\limits_{n \to \infty} (f_n(x) - f_n(a)) = f(x) - f(a)$$
@@ -403,7 +403,7 @@ $f_n(x) = \frac{\sin nx}{\sqrt{n}}, x \in \mathbb{R}$ показывает, чт
   $$f'(x) = f^*(x) = \lim\limits_{n \to \infty} f'(x), x \in [a,b]$$
 \end{proof}
 
-Перефразируем теорему \ref{th261} с точки зрения рядов: \\
+Перефразируем теорему \eqref{th261} с точки зрения рядов: \\
 Пусть сходящийся ряд $\sum\limits_{n = 1}^{\infty} U_n(x) =: f(x), x \in [a,b]$
 и пусть $U_n(x) \in C^1[a,b], \ (n = 1, 2, \dots)$.\\
 Если ряд $\sum\limits_{n = 1}^{\infty} U_n'(x)$ сходится равномерно на $[a,b]$,

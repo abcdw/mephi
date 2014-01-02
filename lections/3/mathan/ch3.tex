@@ -15,12 +15,12 @@
 
 \begin{theorem}
   \label{th311}
-  Степенной ряд \ref{def311:series2}, $\alpha = \overline{\lim} \sqrt[n]{|a_n|}$,
+  Степенной ряд \eqref{def311:series2}, $\alpha = \overline{\lim} \sqrt[n]{|a_n|}$,
   \begin{gather}
     R = \frac{1}{\alpha} \label{def311:eq1}
   \end{gather}
   ($\alpha = 0 \Longleftrightarrow R = \infty, \
-  \alpha = +\infty \Longleftrightarrow, R = 0$), тогда ряд \ref{def311:series2}
+  \alpha = +\infty \Longleftrightarrow, R = 0$), тогда ряд \eqref{def311:series2}
   абсолютно сходится, если $|z| < R,$ и рассходится, если $|z| > R$.
 \end{theorem}
 
@@ -32,18 +32,19 @@
 \end{proof}
 
 \begin{definition}
-  Число R называется радиусом сходимости ряда \ref{def311:series2}. \\
+  Число R называется радиусом сходимости ряда \eqref{def311:series2}. \\
   $|z| < R, z \in \mathbb{C}$ называется кругом сходимости ряда
-  \ref{def311:series2}.
+  \eqref{def311:series2}.
 \end{definition}
 
 \begin{remark}
   О сходимсоти на границе окружности $|z| = R$ ничего не говорится в теореме
-  \ref{th311}, так как возможны все варианты.
+  \eqref{th311}, так как возможны все варианты.
 \end{remark}
 
 \begin{theorem}
-  Если R --- радиус сходимости $(R > 0)$ ряда \ref{def311:series2}, то на любом
+  \label{th312}
+  Если R --- радиус сходимости $(R > 0)$ ряда \eqref{def311:series2}, то на любом
   круге $|z| < r, $ где $r$ --- фиксированно, и $r < R$. \\
   Таким образом этот ряд сходится абсолютно и равномерно.
 \end{theorem}
@@ -54,7 +55,7 @@
   \begin{gather*}
     |a_n z^n| \leq |a_n| r^n, \ \forall n
   \end{gather*}
-  то по признаку Вейерштрассе на этом круге ряд \ref{def311:series2} сходится
+  то по признаку Вейерштрассе на этом круге ряд \eqref{def311:series2} сходится
   равномерно.
 \end{proof}
 
@@ -63,6 +64,7 @@
 \end{consequence}
 
 \begin{theorem}[2-ая т. Абеля]
+  \label{th313}
   Если R --- радиус сходимости, $\sum\limits_{n = 0}^{\infty} a_n z^n$ и этот
   ряд сходится при $|z| = R,$ то он сходится на отрезке $[0, R]$ равномерно.
 \end{theorem}
@@ -73,11 +75,12 @@
   члены ряда $\sum a_n R^n$ не зависит от $x$, то его сходимость означает его
   равномерную сходимость. $\{(\frac{x}{R})^n\}$ ограничена на отрезке $[0, R]$
   и монотонна в каждой точке. \\
-  Поэтому в силу признака Абеля равномерной сходимости рядов \ref{th232} ряд
-  \ref{def311:series2} равномерно сходится на отрезке $[0, R]$.
+  Поэтому в силу признака Абеля равномерной сходимости рядов \eqref{th232} ряд
+  \eqref{def311:series2} равномерно сходится на отрезке $[0, R]$.
 \end{proof}
 
 \begin{lemma}
+  \label{ch3:lemma1}
   Радиусы сходимости $R, R_1, R_2$ соответственно рядов
   $\sum\limits_{n = 0}^{\infty} a_n z^n, \sum\limits_{n = 0}^{\infty}
   \frac{a_n}{n + 1} z^{n+1}, \sum\limits_{n = 0}^{\infty} n a_n z^{n - 1}$ равны:
@@ -87,7 +90,360 @@
 \begin{proof}
   Действительно, так как $\lim\limits_{n \to \infty} \sqrt[n]{\frac{1}{n + 1}}=
   \lim\limits_{n \to \infty} \sqrt[n]{n} = 1$, то \\
-  $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|} = 
+  $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|} =
   \overline{\lim\limits_{n \to \infty}} \sqrt[n]{\frac{a_n}{n + 1}}=
   \overline{\lim\limits_{n \to \infty}} \sqrt[n]{|n a_n|}$
 \end{proof}
+
+\begin{example}
+  $\sum a_n (z - z_0)^n$.
+  Областью сходимости такого ряда является круг $|z - z_0| < R$, с точностью до
+  граничных точек.
+\end{example}
+
+\section{Степенные ряды в действительной области. Общие свойства.}
+В параграфах 3.2 - 3.4 будем рассматривать
+\begin{gather}
+  \sum\limits_{n = 0}^{\infty} a_n (x - x_0)^n,
+  \label{ch3:lim1}
+\end{gather}
+где $a_n, x, x_0$ --- действительные числа. \\
+Если $R$ --- радиус сходимости ряда ряда \eqref{ch3:lim1}, то очевидно ряд
+\eqref{ch3:lim1} сходится, если $|x| < R$ и расходится, если $|x| > R$. \\
+Число $R$ --- по-прежнему называется радиусом сходимости ряда \eqref{ch3:lim1},
+а интервал \\ $(x_0 - R, x_0 + R)$ --- его интервал сходимости.
+
+\begin{theorem}
+  \label{th321}
+  Если $R$ --- радиус сходимости ряда
+  \begin{gather}
+    f(x) = \sum\limits_{n = 0}^{\infty} a_n (x - x_0)^n,
+    \label{ch3:lim2}
+  \end{gather}
+  где $R > 0$, то:
+  \begin{enumerate}
+    \item функция $f$ имеет в интервале $(x_0 - R, x_0 + R)$ производные всех
+      порядков, они называются почленным диффиринциалом ряда \eqref{ch3:lim2}:
+      \begin{gather}
+        f^{(m)}(x) = \sum\limits_{n = m}^{\infty} n(n-1)\dots(n - m + 1)
+        a_n(x - x_0)^{n-m}, \ m = 1, 2, \dots
+        \label{ch3:lim3}
+      \end{gather}
+    \item $\forall x \in (x_0 - R, x_0 + R)$
+      \begin{gather}
+        \int\limits_{x_0}^x f(t) dt = \sum\limits_{n = 0}^{\infty} a_n
+        \frac{(x - x_0)^{n+1}}{n+1}
+        \label{ch3:lim4}
+      \end{gather}
+    \item \eqref{ch3:lim2} - \eqref{ch3:lim4} имеют одинаковые радиусы сходимости
+      $R$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  В силу леммы \eqref{ch3:lemma1} ряды \eqref{ch3:lim3}, \eqref{ch3:lim4} имеют
+  тот же радиус сходимости, что и ряд \eqref{ch3:lim2}. Всякий ряд с $R >
+  0$ сходится на отрезке $[x_0 - r, x_0 + r]$, \\
+  $0 < r < R \ $(теорема~\eqref{th312}). \\
+  Поэтому утверждения 1 и 2 непосредственно следуют из общих теорем о
+  сходимости рядов (\eqref{th151:cons} и \eqref{th162}).
+\end{proof}
+
+\begin{theorem}
+  Если функция $f$ раскладывается в некоторой окружности $x_0$, то она
+  раскладывается в степенной ряд.
+  \begin{gather*}
+    f(x) = \sum\limits_{n = 0}^{\infty} a_n (x - x_0)^n
+  \end{gather*}
+  \begin{gather}
+    a_n = \frac{f^{(n)}(x_0)}{n!}, \ n = 0, 1, \dots \label{ch3:lim5} \\
+    f(x) = \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n
+    \label{ch3:lim6}.
+  \end{gather}
+\end{theorem}
+
+\begin{consequence}
+  \label{th322:cons}
+  Если в некоторой окружности точки функция раскладывается в степенной ряд, то
+  это разложение единственно.
+\end{consequence}
+
+\begin{proof}
+  Продифференцировав $m$ раз равенство \eqref{ch3:lim2}, получим (в силу \eqref{ch3:lim3}):
+
+  \begin{gather*}
+    f^{(m)}(x) = m(m-1)\dots 2 \cdot 1 \cdot a_m +
+    (m+1)m \dots a_{m-1} (x-x_0) + (m+2)(m+1) \dots 3 \cdot a_{m-2} (x -
+    x_0)^2\dots
+  \end{gather*}
+  Положим $x = x_0$, тогда получаем:
+  \begin{gather*}
+    f^{(m)}(x_0) = m! \ a_m, \ m = 0, 1, \dots
+  \end{gather*}
+\end{proof}
+
+\section{Ряд Тейлора. Разложение функции в степенные ряды.}
+\begin{definition}
+  Пусть $f$ определена в некоторой окрестности точки $x_0$ и имеет в этой точке
+  производные всех порядков, тогда ряд
+  \begin{gather}
+    \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!} (x-x_0)^n
+    \label{def331:series1}
+  \end{gather}
+  Называется рядом Тейлора функции $f$ в точке $x_0$.
+\end{definition}
+
+Следующий пример показывает, что функция, бесконечно дифференцируемая в одной
+точке может быть не равна разложению по Тейлору в окрестности этой точки.
+
+\begin{example}
+  \begin{gather*}
+    f(x) =
+    \begin{cases}
+      e^{-1/x^2}, \ x \not = 0 \\
+      0, \ x = 0
+    \end{cases}
+  \end{gather*}
+  $f^{(n)}(0) = 0, \ n = 0, 1, \dots$ \\
+  Отсюда следует, что все члены ряда Тейлора \eqref{ch3:lim2} в точке $x_0 = 0$,
+  и не совпадают с функцией $f(x)$ в никакой окрестности точки $x_0$.
+\end{example}
+
+\begin{approval}
+  \label{app331}
+  Пусть функция $f(x)$ определена в некоторой окрестности $(x_0 - h, x_0 + h)$.
+  \begin{gather}
+    S_n(x) = \sum\limits_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k
+    \label{app331:sum1} \\
+    r_n(x) = f(x) - S_n(x) \label{app331:term1}
+  \end{gather}
+  Тогда, для того, чтобы функция $f(x)$ на интервале $(x_0 - h, x_0 + h)$ равна
+  сумме своего ряда~\eqref{def311:series1}, то есть:
+  \begin{gather}
+    (S_n(x) \to f(x), \ n \to \infty) \Longleftrightarrow \lim\limits_{n \to
+    \infty} r_n(x) = 0, \ \forall x \in (x_0 - h, x_0 + h)
+    \label{app331:lim1}
+  \end{gather}
+\end{approval}
+
+\begin{theorem}
+  \label{th331}
+  Пусть функция $f$ и все ее производные ограничены в совокупности на интервале
+  $(x_0 - h, x_0 + h)$, то есть существует такая $M = const, M > 0$: \\$\forall
+  x \in (x_0 - h, x_0 + h), \ n = 0, 1, \dots, $ выполняется неравенство:
+  \begin{gather}
+    |f^{(n)}(x)| \leq M \label{th331:uneq1}
+  \end{gather}
+  Тогда на интервале $(x_0 - h, x_0 + h)$ функция $f$ раскладывается в ряд
+  Тейлора:
+  \begin{gather}
+    f(x) = \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n,
+    \label{th331:series1}
+  \end{gather}
+  где $|x - x_0| < h$.
+\end{theorem}
+
+\begin{proof}
+  \begin{gather}
+    \forall a : \lim\limits_{n \to \infty} \frac{a^n}{n!} = 0 \label{th331:lim1}
+  \end{gather}
+  По формуле Тейлора с остаточным членом в форме Лагранжа, для $x \in (x_0 - h,
+  x_0 + h)$, для $\forall M$ имеем:
+  \begin{gather*}
+    f(x) = S_n(x) + r_n(x),
+  \end{gather*}
+  где $r_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1}$, где $\xi = x_0 +
+  \theta(x - x_0)$, где $0 < \theta < 1$. \\
+  Используя \eqref{th331:uneq1} получим:
+  \begin{gather*}
+    |r_n(x)| = \frac{|f^{(n+1)}(\xi) (x - x_0)^{n+1}|}{(n+1)!} \leq
+    \frac{M|x-x_0|^{n+1}}{(n+1)!}, \ \forall x \in (x_0 - h, x_0 + h).
+  \end{gather*}
+  Остюда из \eqref{th331:lim1} следует \eqref{app331:lim1}. Согласно
+  утверждению \eqref{app331} теорема доказана.
+\end{proof}
+
+\section{Разложение основных элементарных в ряд Тейлора.}
+\begin{itemize}
+  \item Разложение в ряд функции $e^x, \cos x, \sin x$. \\
+    Использую теорему \eqref{th331}, получаем:
+    \begin{gather*}
+      f^{(n)}(x) = e^x, \ \sin(x + \frac{\pi}{2}n), \ \cos(x + \frac{\pi}{2}n),
+      \ n = 0, 1, \dots,
+    \end{gather*}
+    Так что $|f^{(n)}(x)| \leq e^h, \ f(x) = e^x, |x| \leq h$ \\
+    $|f^{(n)}(x)| \leq 1, \ f(x) = \sin x, \cos x, \forall x \in \mathbb{R}$ \\
+    Так как коэффициенты Тейлора для этих функций известны, то мы можем
+    записать разложение при любом $x$:
+    \begin{gather}
+      e^x = \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!} \label{ch34:series1} \\
+      \sin x = \sum\limits_{n = 0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}
+      \label{ch34:series2} \\
+      \cos x = \sum\limits_{n = 0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!}
+      \label{ch34:series3}
+    \end{gather}
+  \item Разложение в ряд функции $\sh x, \ch x$. \\
+    Заменив в \eqref{ch34:series1} $x$ на $-x$ получим
+    \begin{gather}
+      e^{-x} = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n x^n}{n!}
+      \label{ch34:series4}
+    \end{gather}
+    Отсюда из \eqref{ch34:series1} получаем:
+    \begin{gather}
+      \sh x = \frac{1}{2} \left(e^x - e^{-x}\right) = \sum\limits_{n =
+      0}^{\infty} \frac{x^{2n+1}}{(2n + 1)!} \label{ch34:series5} \\
+      \ch x = \frac{1}{2} \left(e^x + e^{-x}\right) = \sum\limits_{n =
+      0}^{\infty} \frac{x^{2n}}{(2n)!} \label{ch34:series6}
+    \end{gather}
+    В правых частях этих формул разложения степенных функций в ряды единственно
+    в силу теоремы \eqref{th322:cons}.
+  \item Разложение в ряд функции $\ln(1 + x)$. \\
+    Рассмотрим:
+    \begin{gather}
+      \frac{1}{1 + t} = 1 - t + t^2 - t^3 + \dots + (-1)^n t^n + \dots, \ |t| < 1
+      \label{ch34:series7}
+    \end{gather}
+    Интегрирую его почленно по теореме \eqref{th321} от $0$ до $x \in (-1, 1)$
+    получим:
+    \begin{gather*}
+      \int\limits_0^x \frac{dt}{1+t} = \ln(1+x) = x - \frac{x^2}{2} +
+      \frac{x^3}{3} - \dots, \\
+      \ln(1+x) = \sum\limits_{n = 1}^{\infty} \frac{(-1)^{n+1} x^n}{n}, \
+      \forall x \in (-1, 1)
+      \label{ch34:series8}
+    \end{gather*}
+    Ряд правой части равенства \eqref{ch34:series8} сходится по признаку Лейбница
+    $\Rightarrow$ согласно теореме Абеля \eqref{th313}, разложение
+    \eqref{ch34:series8} имеет место в промежутке $(-1, 1]$
+  \item Разложение в ряд $(1 + x)^\alpha, \alpha \not = 0, 1, \dots$
+    Формула Тейлора для этой функции имеет вид:
+    \begin{gather}
+      (1+x)^\alpha = 1 + \alpha x + \frac{\alpha(\alpha - 1)}{2!}x^2 + \dots +
+      \frac{\alpha(\alpha - 1)\dots(\alpha - n + 1)}{n!} x^n + r_n(x)
+      \label{ch34:series9}
+    \end{gather}
+    Соответствующий степенной ряд называют
+    \begin{gather}
+      1 + \sum\limits_{n = 1}^{\infty} \frac{\alpha(\alpha - 1)\dots(\alpha
+      -n + 1)}{n!} x^n \label{ch34:series10}
+    \end{gather}
+    биномиальным рядом. \\
+    $R = \lim\limits_{n \to \infty} \left|\frac{a_n}{a_{n+1}}\right| =
+    \lim\limits_{n \to \infty} \left|\frac{n+1}{\alpha - n}\right| = 1$,
+    в силу утверждения, $r_n(x) \to 0$.
+
+    \begin{remark}
+      Поведение ряда \eqref{ch34:series10} в точках $\pm 1$, характерезуется
+      следующей таблицой:
+      \begin{table}[H]
+        \caption{таблица, характеризующая ряд \eqref{ch34:series10}}
+        \begin{center}
+          \begin{tabular}{|c|c|l|}
+            \hline
+            & $\alpha > 0$ & абсолютно сходится \\
+            $x = 1$ & $-1 < \alpha < 0$ & условно сходится \\
+            & $\alpha \leq -1$ & расходится\\
+            \hline
+            $x = -1$ & $ \alpha > 0$ & абсолютно сходится \\
+            & $\alpha < 0$ & рассходится \\
+            \hline
+          \end{tabular}
+        \end{center}
+      \end{table}
+      Согласно второй теореме Абеля \eqref{th313} всякий раз, когда ряд
+      \eqref{ch34:series10} сходится при $x = \pm 1$, его сумма равна $(1 +
+      x)^\alpha$.
+    \end{remark}
+  \item Разложение в ряд $\arctg x$ \\
+    Рассмотрим ряд:
+    \begin{gather}
+      \frac{1}{1 + t^2} = 1 - t^2 + t^4 - t^6 + \dots + (-1)^n t^{2n} + \dots, \ |t| < 1
+    \end{gather}
+    Интегрирую его почленно по теореме \eqref{th321} от $0$ до $x \in (-1, 1)$
+    получим:
+    \begin{gather*}
+      \int\limits_0^x \frac{dt}{1+t^2} = \arctg x = x - \frac{x^3}{3} +
+      \frac{x^5}{5} - \dots + (-1)^n \frac{x^{2n+1}}{(2n+1)} + \dots
+    \end{gather*}
+    Ряд правой части равенства \eqref{ch34:series8} сходится по признаку Лейбница
+    $\Rightarrow$ согласно теореме Абеля \eqref{th313}, разложение
+    \eqref{ch34:series8} имеет место на отрезке $(-1, 1)$. \\
+    В частности, при $x = 1$, получим:
+    \begin{gather*}
+      1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \dots = \frac{\pi}{4}
+    \end{gather*}
+  \item Разложение в ряд $\arcsin x$ \\
+    Рассмотрим ряд:
+    \begin{gather}
+      \frac{1}{\sqrt{1 - t^2}} = 1 + \sum\limits_{n = 1}^{\infty}
+      \frac{(2n-1)!!}{(2n)!!}t^{2n}, \ |t| < 1
+    \end{gather}
+    Интегрирую его почленно по теореме \eqref{th321} от $0$ до $x \in (-1, 1)$
+    получим:
+    \begin{gather*}
+      \int\limits_0^x \frac{dt}{\sqrt{1-t^2}} = \arcsin x = x + \sum\limits_{n
+      = 1}^{\infty} \frac{(2n-1)!!}{(2n)!!} \frac{x^{2n+1}}{2n+1}, \ |x| \leq 1
+    \end{gather*}
+    Справедливость этого разложения при $x = \pm 1$ устанавливается с помощью
+    второй теоремы Абеля \eqref{th313}.
+\end{itemize}
+
+\section{Формулы Эйлера}
+Ряды разложения \eqref{ch34:series1} - \eqref{ch34:series3} функций $e^x, \sin x,
+\cos x$ сходятся всюду в комплексной плоскости $\mathbb{C}$. По этой причине
+естественны следующие определения($e^z, \sin z, \cos z, z \in \mathbb{C}$):
+\begin{gather}
+  e^z = \exp(z) = \sum\limits_{n = 0}^{\infty} \frac{z^n}{n!}
+  \label{ch35:series1} \\
+  \sin z = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n z^{2n+1}}{(2n+1)!}
+  \label{ch35:series2} \\
+  \cos z = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n z^{2n}}{(2n)!}
+  \label{ch35:series3}
+\end{gather}
+Заменив $z$ сначала на $iz$, а затем на $-iz$ получим:
+\begin{gather}\label{ch35:series4}
+  e^{iz} = \sum\limits_{n = 0}^{\infty} \frac{i^n z^n}{n!} \\
+  e^{-iz} = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n i^n z^n}{n!}
+\end{gather}
+
+Заметим, что $i^{2k} = (-1)^k, i^{2k + 1} = (-1)^ki, k = 0, 1, \dots$. \\
+\begin{gather*}
+  \frac{1}{2} (e^{iz} + e^{-iz}) = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n
+  z^{2n}}{(2n)!} \\
+  \frac{1}{2i} (e^{iz} - e^{-iz}) = \sum\limits_{n = 0}^{\infty}
+  \frac{(-1)^n z^{2n+1}}{(2n+1)!}
+\end{gather*}
+Сравнив эти формулы с \eqref{ch35:series2}, \eqref{ch35:series3} заключаем, что
+\begin{gather}
+  \cos z = \frac{e^{iz} + e^{-iz}}{2}
+  \label{ch35:eq1} \\
+  \sin z = \frac{e^{iz} - e^{-iz}}{2i}
+  \label{ch35:eq2}
+\end{gather}
+
+Из этих формул следует формула:
+\begin{gather}
+  \cos z + i \sin z = e^{iz} \label{ch35:eq3}
+\end{gather}
+Формулы \eqref{ch35:eq1}, \eqref{ch35:eq2} и \eqref{ch35:eq3} называются
+формулами Эйлера. \\
+Если в формуле \eqref{ch35:eq3} $z = \varphi, \ \varphi \in
+\mathbb{R}$, то
+\begin{gather*}
+  \cos \varphi + i \sin \varphi = e^{i\varphi}
+\end{gather*}
+Поэтому $z \in \mathbb{C}, |z| = r, \ z = r(\cos \varphi + i \sin
+\varphi)$
+\begin{gather*}
+  z = r e^{i\varphi}
+\end{gather*}
+
+\begin{definition}
+  $W(x) = U(x) + iV(x), \ x \in \mathbb{R}, V(x) \in \mathbb{R}$ \\
+  Положим $\frac{dW}{dx} = U'(x) + iV'(x)$, тогда
+  \begin{gather*}
+    \int\limits_a^b W(x) dx = \int\limits_a^b U(x) dx + i \int\limits_a^b V(x)
+    dx
+  \end{gather*}
+\end{definition}
+$e^{i\pi} = -1$
