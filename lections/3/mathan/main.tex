@@ -10,6 +10,7 @@
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 \usepackage{fix-cm}
+\usepackage{mathenv}
 
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1.}
@@ -33,14 +34,15 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[section]
 \newtheorem*{consequence}{Следствие}
-\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{lemma}{Лемма}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Определение}[section]
 \theoremstyle{remark}
 \newtheorem*{comment}{Комментарий}
 \newtheorem{example}{Пример}[section]
+\newtheorem{exercise}{Упражнение}[]
 \newtheorem{remark}{Замечание}[section]
-
+\newtheorem{approval}{Утверждение}[section]
 
 \begin{document}
   \input{title}
@@ -51,6 +53,11 @@
   \input{ch1}
   \chapter{Функциональные последовательности и ряды}
   \input{ch2}
-
+  \chapter{Степенные ряды}
+  \input{ch3}
+  %\chapter{Радомский консультация}
+  %\input{arad}
+  \chapter{Ряды Фурье}
+  \input{ch4}
 \end{document}
 
