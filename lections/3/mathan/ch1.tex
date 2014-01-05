@@ -146,8 +146,8 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   $$\sum U_k, \ U_k > 0$$
   \begin{enumerate}
     \item Если $\exists q$ такое что:
-      $\ \forall k \ \frac{U_{k+1}}{U_k} < q < 1$ сходится
-    \item Если $\exists \lim\limits_{n \to \infty} \frac{U_{k+1}}{U_k} = q$, то:
+      $\ \forall k \ \frac{U_{k+1}}{U_k} \leq q < 1$ сходится
+    \item Если $\exists \lim\limits_{k \to \infty} \frac{U_{k+1}}{U_k} = q$, то:
     \begin{itemize}
       \item при $q < 1$ сходимость
       \item при $q > 1$ расходимость
@@ -177,13 +177,12 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
       выполняется неравенство
       $q - \varepsilon < \frac{U_{k+1}}{U_k} < q + \varepsilon$
       \begin{itemize}
-        \item Если $q < 1$, то $(q + \varepsilon) \in [q, 1]$.
-          Выберем такое $\varepsilon$, что $q + \varepsilon < 1$, для
+        \item Если $q < 1$,выберем такое $\varepsilon$, что 
+          $q + \varepsilon < 1$, для
           $\forall k \geq K(\varepsilon)$. \\
           $\frac{U_{k+1}}{U_k} < q + \varepsilon < 1 \Rightarrow$
           сходится по первой части.
-        \item Если $q > 1$, то $(q - \varepsilon) \in [1, q]$.
-          Выберем $\varepsilon$ так, чтобы
+        \item Если $q > 1$, то выберем $\varepsilon$ так, чтобы
           $q - \varepsilon > 1$, для
           $\forall k \geq K(\varepsilon)$. \\
           $\frac{U_{k+1}}{U_k} > q - \varepsilon > 1, \ \Rightarrow$
