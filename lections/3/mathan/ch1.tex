@@ -297,7 +297,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   Пусть $S_n = \sum\limits_{k = 1}^{n} f(k),$ тогда \eqref{th131:series2} примет вид:
   \begin{gather}
     \label{th131:series3}
-    S_n + 1 - f(1) \leq \int\limits_1^{n+1} f(x) dx \leq S_n
+    S_{n+1} - f(1) \leq \int\limits_1^{n+1} f(x) dx \leq S_n
   \end{gather}
   Если ряд \eqref{th131:series1} сходится и его сумма равна $S$, то $S_n \leq S$,
   и $\int\limits_1^{n+1} f(x) dx \leq S, \ \forall n \in \mathbb{N}$. \\
@@ -353,7 +353,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   Заметим, что частичная суммы $S_n$ с четными номерами возрастают:
   $$S_{2k} = (U_1 - U_2) + (U_3 - U_4) + \dots + (U_{2k - 1} - U_{2k}), \
   k = 1, 2, \dots $$
-  Так что выполняется неравенство $S_{2k + 2} \geq S_k$. Кроме того, они
+  Так что выполняется неравенство $S_{2k + 2} \geq S_2k$. Кроме того, они
   ограничены сверху:
   $$S_{2k} = U_1 - (U_2 - U_3) - \dots - (U_{2k - 2} - U_{2k - 1}) - U_{2k}, \
   S_{2k} < U_1$$
