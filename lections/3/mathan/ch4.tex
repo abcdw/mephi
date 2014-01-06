@@ -174,7 +174,7 @@ $\{e_k = \frac{f_k}{\|f_k\|}\}$, используем ортгональное �
 \end{definition}
 
 \begin{example}
-  В пространстве $\mathbb{X} = \mathbb{R}_2([-\pi, \pi], \mathbb{C})$. \\
+  В пространстве $\mathbb{X} = \mathcal{R}_2([-\pi, \pi], \mathbb{C})$. \\
   Рассмотрим ОС $\{e^{ikt}: k \in \mathbb{Z}\}$. \\
   В соответствии с определением \eqref{def422} коэффициенты Фурье $C_k$ функции
   $f$ в системе $\{e_{ik}\}$ выражаются формулами:
@@ -183,7 +183,7 @@ $\{e_k = \frac{f_k}{\|f_k\|}\}$, используем ортгональное �
     \label{ex421:coef1}
   \end{gather}
   из неравенства Бесселя \eqref{def422:uneq1} $\forall f \in
-  \mathbb{R}_2([-\pi,\pi], \mathbb{C})$
+  \mathcal{R}_2([-\pi,\pi], \mathbb{C})$
   \begin{gather}
     \sum\limits_{k = -\infty}^{\infty} |C_k|^2 \leq \frac{1}{2\pi}
     \int\limits_{-\pi}^\pi |f(t)|^2 dt
@@ -194,7 +194,7 @@ $\{e_k = \frac{f_k}{\|f_k\|}\}$, используем ортгональное �
 \begin{example}
   Аналогично находим коэффициенты Фурье. \\
   $\{\frac{1}{2} a_0, a_k, b_k : k \in \mathbb{N}\}$ функции $f \in
-  \mathbb{R}([-\pi, \pi], \mathbb{C})$ в ОС $\{1, \cos kx, \sin kx : k \in
+  \mathcal{R}([-\pi, \pi], \mathbb{C})$ в ОС $\{1, \cos kx, \sin kx : k \in
   \mathbb{N}\}$:
   \begin{gather}
     a_k = \frac{1}{\pi} \int\limits_{-\pi}^\pi f(t) \cos kt dt, \ k = 0, 1,
@@ -562,12 +562,11 @@ $\mathbb{R}$
 \end{proof}
 
 Получаем еще одно следствие от теоремы Фейера --- полнота тригонометрической
-системы функций $C_2[-\pi, \pi]$ и более общо $R_2[-\pi,
-\pi]$.
+системы функций $C_2[-\pi, \pi]$ и более общо $\mathcal{R}_2[-\pi, \pi]$.
 
 \begin{theorem}[о полноте тригонометрической системы]
   \label{th445}
-  Любая функция $f$ из множества $f \in R[-\pi, \pi]$ может быть сколь угодно
+  Любая функция $f$ из множества $f \in \mathcal{R}[-\pi, \pi]$ может быть сколь угодно
   точно приближена в среднем, то есть по норме:
   \begin{enumerate}
     \item Кусочно-постоянной функции $[-\pi, \pi]$
@@ -628,7 +627,7 @@ $\mathbb{R}$
           \left(\frac{1}{2\pi} \int\limits_{-\pi}^\pi (h(x) - T(x))^2 dx
           \right)^{\frac{1}{2}} < \varepsilon
         \end{gather*}
-        Ссылаясь на неравенство треугольника, пространства $R_2[-\pi, \pi]$
+        Ссылаясь на неравенство треугольника, пространства $\mathcal{R_2}[-\pi, \pi]$
         заключаем, что теорема доказана.
   \end{enumerate}
 \end{proof}
@@ -639,11 +638,11 @@ $\mathbb{R}$
 
 \begin{theorem}
   \label{th446}
-  $f \in R_2([-\pi, \pi], \mathbb{C})$, имеем:
+  $f \in \mathcal{R}_2([-\pi, \pi], \mathbb{C})$, имеем:
   \begin{enumerate}
-    \item $f(x) \overset{R_2}=\frac{a_0(f)}{2} + \sum\limits_{k = 1}^{\infty}
+    \item $f(x) \overset{\mathcal{R}_2}=\frac{a_0(f)}{2} + \sum\limits_{k = 1}^{\infty}
       a_k(f) \cos kx + b_k(f) \sin kx$, или в комплексной записи: \\
-      $f(x) \overset{R_2}= \sum\limits_{-\infty}^{+\infty} C_k(f) e^{ikx}$, где
+      $f(x) \overset{\mathcal{R}_2}= \sum\limits_{-\infty}^{+\infty} C_k(f) e^{ikx}$, где
       сходимость понимается, как сходимость по норме.
     \item $\frac{1}{\pi} \int\limits_{-\pi}^\pi |f(x)|^2 dx =
       |\frac{a_0(f)}{2}|^2 + \sum\limits_{k = 1}^{\infty} |a_k(f)|^2 +
@@ -652,7 +651,7 @@ $\mathbb{R}$
       \sum\limits_{-\infty}^{+\infty} |C_k(f)|^2$.
     \item $\frac{1}{\pi}\int\limits_{-\pi}^\pi |f(x) - S_n(f, x)|^2 dx =
       \sum\limits_{k = n + 1}^{\infty} |a_k(f)|^2 + |b_k(f)|^2 = 4
-      \sum\limits_{k = n + 1}^{\infty} |C_k(f)|^2, f \in R([-\pi, \pi],
+      \sum\limits_{k = n + 1}^{\infty} |C_k(f)|^2, f \in \mathcal{R}([-\pi, \pi],
       \mathbb{R})$.
   \end{enumerate}
 \end{theorem}
@@ -660,12 +659,12 @@ $\mathbb{R}$
 \section{Обобщение на неограниченные функции}
 \begin{definition}
   Пусть $0 < p < \infty, -\infty \leq a < b \leq + \infty$. Будем писать $f \in
-  R^p[a,b]$, если существует конечное число точек $x_j, j = 0, 1, 2, \dots, n$,
+  \mathcal{R}^p[a,b]$, если существует конечное число точек $x_j, j = 0, 1, 2, \dots, n$,
   таких что:
   \begin{enumerate}
     \item $a = x_0 < x_1 < \dots < x_n = b$
-    \item Функция $f$ интегрируема по Римману на любом отрезке $f \in R[\alpha,
-      \beta], \ [\alpha, \beta] \subset (x_{j-1}, x_j)$
+    \item Функция $f$ интегрируема по Римману на любом отрезке $f \in
+      \mathcal{R}[\alpha, \beta], \ [\alpha, \beta] \subset (x_{j-1}, x_j)$
     \item Интеграл $\int\limits_{x_{j-1}}^{x_j} |f(x)|^p dx, \ j = 1, 2,
       \dots, n$ сходится.
   \end{enumerate}
@@ -674,8 +673,8 @@ $\mathbb{R}$
 \begin{remark}
   Формулы \eqref{ch44:eq1}, \eqref{def442:coef1} и \eqref{def442:coef2},
   определяющие коэффициенты Фурье $C_k(f), a_k(f), b_k(f)$ имеют смысл для
-  $\forall f \in R^1[-\pi, \pi]$, так как тогда $f(x) e^{-ikx}, f(x) \cos kx,
-  f(x) \sin kx \in R^1[-\pi, \pi]$.
+  $\forall f \in \mathcal{R}^1[-\pi, \pi]$, так как тогда $f(x) e^{-ikx}, f(x) \cos kx,
+  f(x) \sin kx \in \mathcal{R}^1[-\pi, \pi]$.
 \end{remark}
 
 \begin{definition}[неравенство Гельдера]
@@ -697,8 +696,8 @@ $\mathbb{R}$
 
 \begin{approval}
   теоремы \eqref{th445} и \eqref{th446} остаются в силе, если в них
-  пространство $R_2[-\pi, \pi]$ расширить до линейного пространства
-  $R^2[-\pi, \pi]$:
+  пространство $\mathcal{R}_2[-\pi, \pi]$ расширить до линейного пространства
+  $\mathcal{R}^2[-\pi, \pi]$:
   \begin{gather*}
     (f, g) = \int f(x) \overline{g(x)} dx
   \end{gather*}
@@ -710,8 +709,8 @@ $\mathbb{R}$
 
 \begin{lemma}
   \label{lem451}
-  Если $f \in R^p[a,b] (p > 0)$, то $\forall \varepsilon > 0 \exists g \in
-  R[a,b]: \int\limits_a^b |f(x) - g(x)|^p dx < \varepsilon$.
+  Если $f \in \mathcal{R}^p[a,b] (p > 0)$, то $\forall \varepsilon > 0 \exists g \in
+  \mathcal{R}[a,b]: \int\limits_a^b |f(x) - g(x)|^p dx < \varepsilon$.
 \end{lemma}
 
 \begin{proof}
@@ -720,7 +719,7 @@ $\mathbb{R}$
 
 \section{Достаточные условия сходимости тригонометрического ряда Фурье в точке}
 \begin{lemma}[Римана]
-  Если $f \in R^1[a,b]$, то
+  Если $f \in \mathcal{R}^1[a,b]$, то
   \begin{gather}
     \int\limits_a^b f(x) e^{i\lambda x} dx \to 0
     \label{lem461:lim1} \\
@@ -778,7 +777,7 @@ $\mathbb{R}$
 \end{definition}
 
 \begin{theorem}
-  $f$ --- $2\pi$-периодическая функция $f \in R^1[-\pi, \pi], \ x \in
+  $f$ --- $2\pi$-периодическая функция $f \in \mathcal{R}^1[-\pi, \pi], \ x \in
   \mathbb{R}$. \\
   \begin{gather}
     \sum\limits_{\infty} C_k(f) e^{ikx} = \frac{f(x-0) + f(x+0)}{2}
@@ -800,7 +799,7 @@ $\mathbb{R}$
   \frac{t}{2}} \right) \sin((n+\frac{1}{2}) t) \ dt
   \label{th461:eqs}$ \\
   Поскольку, $2 \sin \frac{t}{2} \sim t, \ t \to 0$, то из условий Дини
-  следует, что $g_x(t) \in R^1[0, \pi]$ абсолютно интегрируема. На основании
+  следует, что $g_x(t) \in \mathcal{R}^1[0, \pi]$ абсолютно интегрируема. На основании
   леммы Римана:
   \begin{gather*}
     \int\limits_0^\pi g_x(t) \sin ((n + \frac{1}{2})t) dt \to 0, \text{при} \ n
