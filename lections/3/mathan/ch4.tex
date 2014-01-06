@@ -815,3 +815,109 @@ $\mathbb{R}$
   всюду, а его сумма в точке разрыва непрерывна и равна: $f(x) =
   \frac{1}{2}(f(x+0) + f(x-0))$
 \end{consequence}
+
+\section{Гладкость функции и скорость убывания коэффициентов Фурье}
+\begin{definition}
+  Функцию $f$ называют кусочно диффиренцируемой, если существует ее разбиение
+  $a = x_0 < x_1 < \dots < x_n = b$, такое что на каждом интервале $(x_{j-1},
+  x_j) f$ --- диффиренцируема, а в точках $x_{j-1}, x_j$ существуют конечные
+  значения $f(x_{j-1}+0), f(x_j-0), f_+'(x_{j-1}), f_-'(x_j)$, при $\forall j =
+  1, \dots, n, \ f' \in Q[a,b]$ \\
+  Через $C_{2\pi}^{(k)} (k = 0, 1, \dots)$ обозначим класс $2\pi$-периодических
+  (комплексно-значимых) функций, имеющих на $\mathbb{R} \ k$-ую непрерывную
+  производную. $f^{(k)}, \ (f^{(k)} \in C_{2\pi} = C_{2\pi}^{(0)})$.
+\end{definition}
+
+\begin{lemma}[о диффиренцировании ряда Фурье]
+  Если $f$ --- непрерывна, $f \in C_{2\pi}$ и $f$ кусочно диффиренцируема на
+  $[-\pi, \pi]$, то $f' \sim \sum\limits_{-\infty}^{+\infty} C_k(f') e^{ikx}$
+  может быть получен формальным диффиренцированием ряда Фурье $f \sim
+  \sum\limits_{-\infty}^{+\infty} C_k(f) e^{ikx}$ самой функции, то есть:
+  \begin{gather}
+    C_k(f') = ikC_k(f), \ k \in \mathbb{Z}
+    \label{lem471:eq1}
+  \end{gather}
+\end{lemma}
+
+\begin{proof}
+  Интегрированием по частям находим:
+  \begin{gather*}
+    C_k(f') = \frac{1}{2\pi} \int\limits_{-\pi}^\pi f'(x) e^{-ikx} dx =
+    \left. \frac{1}{2\pi} f(x) e^{-ikx} \right|_{-\pi}^\pi + \frac{ik}{2\pi}
+    \int\limits_{-\pi}^\pi f(x) e^{-ikx} dx = ikC_k(f)
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}
+  Пусть $f \in C_{2\pi}^{(m-1)}, \ (m \in \mathbb{N}), \ f^{(m-1)}$ ---
+  кусочно-диффиренцируема \\ на $[-\pi, \pi]$. Тогда:
+  \begin{gather}
+    C_k(f^{(m)}) = (ik)^m C_k(f), \ k \in \mathbb{Z}
+    \label{th471:eq1} \\
+    |C_{\pm k}(f)| = \frac{\gamma_k}{k^m} =
+    \bar{\bar{o}}\left(\frac{1}{k^m}\right), \ k
+    \to \infty, k \in \mathbb{N}
+    \label{th471:eq2}
+  \end{gather}
+  Причем $\sum\limits_{k = 1}^{\infty} \gamma_k^2 < \infty, \ \gamma_k \downarrow
+  0, \ \gamma_k = \bar{\bar{o}}\left(\frac{1}{k}\right)$.
+\end{theorem}
+
+\begin{proof}
+  Соотношение \eqref{th471:eq1} получается в результате $m$-кратного
+  использования \eqref{lem471:eq1}. \\
+  $C_k(f^{(m)}) = ik C_k(f^{(m-1)}) = \dots = (ik)^m C_k(f), \ k \in
+  \mathbb{Z}$. \\
+  Полагаю $\gamma_k = |C_k(f^{(m)})|$, с учетом неравенства Бесселя:
+  \begin{gather*}
+    \sum\limits_{-\infty}^{+\infty} \gamma_k^2 \leq \frac{1}{2\pi}
+  \end{gather*}
+  Из \eqref{th471:eq1} получаем \eqref{th471:eq2}.
+\end{proof}
+
+\begin{theorem}
+  $f \in C_{2\pi}^{(m-1)}, \ m \in \mathbb{N}, \ f^{(m-1)}$ ---
+  кусочно-диффиренцируема на $[-\pi, \pi]$, тогда ряд Фурье сходится абсолютно
+  и равномерно на $\mathbb{R}$, причем
+  \begin{gather}
+    \max\limits_{x \in \mathbb{R}} |f(x) - S_n(f,x)| =
+    \bar{\bar{o}}\left(\frac{1}{n^{m - 1/2}}\right), \ n \to \infty
+    \label{th472:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Поскольку $f \in C_{2\pi}$ и удовлетворяет условиям Дини в любой точке, то
+  \begin{gather*}
+    f(x) = \lim\limits_{n \to \infty} S_n(f, x), \ \forall x \in \mathbb{R}
+  \end{gather*}
+  Поэтому, с учетом \eqref{th471:eq2} имеем:
+  \begin{gather}
+    |f(x) - S_n(f, x)| = \left|\sum\limits_{|k| \geq n + 1} C_k(f)
+    e^{ikx}\right| \leq \left|\sum\limits_{|k| \geq n + 1}
+    |C_k(f)e^{ikx}|\right| = \\
+    2 \sum\limits_{k = n + 1}^{\infty} \frac{\gamma_k}{k^m} \leq
+    2 \left(\sum\limits_{k = n + 1}^{\infty} \gamma_k^2 \right)^{\frac{1}{2}}
+    \left(\sum\limits_{k = n + 1}^{\infty}  \frac{1}{k^{2m}}\right)^{\frac{1}{2}}
+    \label{th472:uneq1}
+  \end{gather}
+  (В силу неравенства Коши-Буняковского). \\
+  Так как
+  \begin{gather*}
+    \left(\sum\limits_{k = n + 1}^{\infty}
+    \frac{1}{k^{2m}}\right)^{\frac{1}{2}} \leq \left(\int\limits_{n+1}^{\infty}
+    \frac{dx}{x^{2m}} \right)^\frac{1}{2} = \frac{1}{\sqrt{2m-1}} \cdot
+    \frac{1}{n^{m-1/2}}
+  \end{gather*}
+  То из \eqref{th472:uneq1} получаем \eqref{th472:eq1}
+\end{proof}
+
+\begin{remark}
+  Поскольку $a_k(f) = C_k(f) + C_{-k}(f), \ b_k(f) = i(C_k(f) - C_{-k}(f))$, то
+  из \eqref{th471:eq2} следует, что
+  \begin{gather*}
+    |a_k(f)| = \frac{\alpha_k}{k^m}, \ |b_k(f)| = \frac{\beta_k}{k^m}, \ k \in
+    \mathbb{N}, \ \sum \alpha_k^2 < \infty, \ \sum \beta_k^2 < \infty
+  \end{gather*}
+\end{remark}
+
