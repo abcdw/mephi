@@ -1,0 +1,622 @@
+\section{Определение интеграла Римана на $n$-ом промежутке}
+Пусть $\mathbb{R}^n$ --- $n$-мерное арифметическое евклидово пространство(ЕП).
+\\ ($\mathbb{R}^2$ отождествляется $oxy$, $\mathbb{R}^3$ с $oxyz$).\\
+$(x_1, \dots, x_n) \in \mathbb{R}^n$ далее обозначается через $x$.
+
+\begin{definition}
+  Множество $I = \{x \in \mathbb{R}^n : a_i \leq x \leq b_i, \ i = 1, \dots, n\}$
+  называется промежутком или координатным параллелепипедом. По аналогии с
+  одномерным случаем записывают:
+  \begin{gather*}
+    a = (a_1, \dots, a_n), \ b = (b_1, \dots, b_n)
+  \end{gather*}
+\end{definition}
+
+\begin{definition}
+  Число $|I| := \prod\limits_{i=1}^{n} (b_i - a_i)$ называют объемом, либо мерой
+  промежутка. \\
+  Объем(меру) обозначают символами: $v(I), \mu(I)$.
+  \begin{align*}
+    \text{При} \ n &= 1, \mu(I) \text{ --- длина отрезка} \\
+    \text{При} \ n &= 2, \mu(I) \text{ --- площадь прямоугольника} \\
+    \text{При} \ n &= 3, \mu(I) \text{ --- объем прямоугольного параллелепипеда}
+  \end{align*}
+  Разобьем каждый из координатных отрезков $[a_i, b_i], \ i = 1, \dots, n$ на
+  конечное число более мелких отрезков. Эти разбиения индуцируют разбиение
+  промежутка $I$ на более мелкие промежутки, получающиеся прямым произведением
+  промежутков $a_i, b_i$.
+\end{definition}
+
+\begin{definition}[Декартово произведение]
+  $X \times Y := \{(x, y) : x \in X, y \in Y \}$
+\end{definition}
+
+\begin{definition}
+  Описанное представление промежутка $I$ в виде объеденения промежутков $i, j$
+  из более мелких промежутков $i, j$ назовем разбиением и обозначим $T(k =
+  k_T)$.
+\end{definition}
+
+\begin{definition}
+  $\lambda(T) = \max\{d(I_1), \dots, d(I_k)\}$.
+  $d(I_j)$ называется диаметром разбиения~$T$. Пусть $f(x) = f(x_1, \dots,
+  x_n)$ --- функция, определенная на промежутке $I, \\ T = \{I_1, \dots, I_k\}$
+  --- разбиение промежутка $I$. \\
+  $\xi = (\xi^1, \dots, \xi^k)$ --- некоторый набор точек $\xi^j$, таких что
+  $\xi^j \in I_j$.
+\end{definition}
+
+\begin{definition}
+  Сумма $\sigma(f, T, \xi) := \sum\limits_{j = 1}^k f(\xi')|I_j|$ называется
+  интегральной суммой Римана.
+\end{definition}
+
+\begin{definition}
+  Если существует конечный предел $\mathcal{J}$, $\sigma(f, T, \xi), \
+  \lambda(T) \to 0$, то его называют интегралом Римана от функции $f$ на
+  промежутке $I$:
+  \begin{gather}
+    \mathcal{J} = \int\limits_I f(x) dx := \lim\limits_{\lambda(T) \to 0}
+    \sigma(f, T, \xi)
+    \label{def517:eq1}
+  \end{gather}
+  Функцию $f$ называют интегрируемой на промежутке $I$. Множество таких функций
+  обозначим $\mathcal{R}(I)$. Уточним, что равенство \eqref{def517:eq1}
+  означает:
+  $\forall \varepsilon > 0 \ \exists \delta > 0 : \forall T = \{I_1, \dots,
+  i_k\}, \lambda(T) < \delta$ и при любом выборе точек $\xi^j \in I_j, j = 1,
+  \dots, k$ выполняется неравенство:
+  \begin{gather*}
+    \left|\mathcal{J} - \sum\limits_{j = 1}^{k} f(\xi^j) |I_j|\right| <
+    \varepsilon
+  \end{gather*}
+  Равносильные отображения интеграла таковы:
+  \begin{gather*}
+    \int\limits_I f(x_1, \dots, x_n) \ dx_1 \dots dx_n, \
+    \underset{n}{\underbrace{\int \dots \int}} f(x_1, \dots, x_n) \ dx_1 \dots
+    dx_n, \ n \in \mathbb{N}
+  \end{gather*}
+\end{definition}
+
+Мы видим, что данное определение повторяет определение интеграла Римана, и при
+$m = 1$ совпадает. Схожесть опеределний позваляет найти сходные методы о
+решении вопроса условий существования.
+
+\section{Условие существования кратного интеграла}
+$n=1$
+
+\begin{theorem}
+  Если $f \in \mathcal{R}(I)$, то $f$ ограниченна на $I$.
+  Пусть функция $f$ определена на $I, \ I \in \mathbb{R}^n$. $T = \{I_j\}$ ---
+  разбиение промежутка $I$.
+  \begin{gather*}
+    m_j = \inf\limits_{x \in I_j} f(x), \ M_j = \sup\limits_{x \in I_j} f(x)
+  \end{gather*}
+\end{theorem}
+
+\begin{definition}
+  Велечины $s(f, T) = \sum\limits_{j} m_j |I_j|, \ S(f,T) = \sum\limits_{j} M_j
+  |I_j|$ называются соотвтетственно нижней и верхней суммой Дарбу на промежутке
+  отвечающему разбиению $T$ этого промежутка.
+\end{definition}
+
+\begin{comment}
+  Совершенно аналогично доказывается при $m = 1$ теорема \eqref{th522}.
+\end{comment}
+
+\begin{theorem}
+  \label{th522}
+  Для того, чтобы ограниченная на промежутке функция $f$ была интегрируема на
+  $I \Longleftrightarrow$
+  \begin{gather}
+    \lim\limits_{\lambda(T) \to 0} (S(f, T) - s(f, T)) = 0
+    \label{th522:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{remark}[критерий интегрируемости Римана]
+  Если обозначить колебания $M_j - m_j, \ I_j$ через $\Omega(f, I_j)$, то
+  \eqref{th522:eq1} можно записать в виде:
+  \begin{gather*}
+    \lim\limits_{\lambda(T) \to 0} \sum\limits_{j} \Omega(f, I_j) |I_j| = 0
+  \end{gather*}
+\end{remark}
+
+\begin{definition}
+  Говорят, что множество $\mathbb{E} \ n$-мерного пространства имеет меру $0$ в
+  смысле Жордана или имеет нулевой $n$-мерный объем, если для $\forall
+  \varepsilon > 0$ существует покрытие множества $\mathbb{E}$ конечной системой
+  $\{I_j\} \ n$-мерных промежутков. $\sum\limits_{j} |I_j|$ объемов которых
+  меньше~$\varepsilon$. В этом случае пишем: $\mu(\mathbb{E}) = 0$
+\end{definition}
+
+\begin{theorem}
+  \label{th523}
+  Пусть функция $f$ ограничена на $n$-мерном промежутке $I \subset
+  \mathbb{R}^n$ и $\mathbb{E}_f$ --- множество ее точек разрыва. Тогда, если
+  $\mu(\mathbb{E}_f) = 0$, то $f \in \mathcal{R}(I)$ (интегрируема).
+\end{theorem}
+
+\begin{comment}
+  Эта теорема при $n = 1$ обычно устанавливается в разделе ``определенный
+  интеграл''. В общем случае доказывается аналогично.
+\end{comment}
+
+\section{Кратный интеграл по множеству}
+Пусть функция $f$ определена на $\mathbb{E} \subset \mathbb{R}^n$, условимся
+символом $f_{\mathbb{E}}(x)$ обозначать функцию $= 0$ вне $\mathbb{E}$.
+\begin{definition}
+  \label{def531}
+  Интеграл функции по множеству $\mathbb{E}$ определяется соотношением:
+  \begin{gather}
+    \int\limits_{\mathbb{E}} f(x) dx := \int\limits_I f_{\mathbb{E}}(x) dx
+    \label{def531:eq1}
+  \end{gather}
+  где $I$ --- наименьший промежуток, содержащий $\mathbb{E}$. \\
+  Если стоящий справа интеграл существует, то он называется интегрируемым по
+  Риману на~$\mathbb{E}$.
+  Совокупность всех интегрируемых на множестве $\mathbb{E}$ функций обозначим
+  $\mathcal{R}(\mathbb{E})$.
+\end{definition}
+
+\begin{definition}
+  Множество $\mathbb{E} \subset \mathbb{R}^n$ назовем допустимым, если оно
+  ограничено в $\mathbb{R}^n$ и его граница $\partial \mathbb{E}$ есть
+  множество меры нуль (в смысле Жордана).
+\end{definition}
+
+\begin{example}
+  Куб, тетраэдер, шар и т. д. являются допустимыми множествами.
+\end{example}
+
+\begin{comment}
+  Граница $\partial \mathbb{E}$ множества $\mathbb{E}$ состоит из точек, в
+  любой окрестности которых имеются как точки из $\mathbb{E}$, так и точки из
+  дополнения $\mathbb{E}$ до $\mathbb{R}^n$.
+\end{comment}
+
+\begin{theorem}
+  Пусть $\mathbb{E}$ --- допустимое множество в $\mathbb{R}^n$. $f$ ---
+  функция, определенная на $\mathbb{E}$ и пусть множество точек разрыва
+  $\mathbb{E}_f$ множества $\mathbb{E}$ имеют нулевую меру, тогда функция $f
+  \in \mathcal{R}(\mathbb{E})$ (интегрируема).
+\end{theorem}
+
+\begin{proof}
+  Функция $f_{\mathbb{E}}$ по сравнению с функцией $f$ может иметь
+  дополнительные разрывы на $\partial \mathbb{E}$, которые, по условию, имеет
+  меру нуль. Поэтому множество точек разрыва функции $f_{\mathbb{E}}$ так же
+  имеет нулевую меру. \\
+  Отсюда из определения \eqref{def531} и теоремы \eqref{th523} следует, что
+  функция интегрируема.
+\end{proof}
+
+\section{Мера(объем) множества}
+\begin{definition}
+  Мерой Жордана(или объемом) ограниченного множества $\mathbb{E}$ назовем
+  величину $\mu(\mathbb{E}) := \int\limits_{\mathbb{E}} dx$, если указанный
+  интеграл(Римана) существует. В последнем случая множество $\mathbb{E}$
+  называют измеримым в смысле Жордана.
+\end{definition}
+
+\begin{theorem}
+  Допустимое множество измеримо в смысле Жордана.
+\end{theorem}
+
+\begin{proof}
+  Рассмотрим характеристическую функцию:
+  \begin{gather*}
+    \aleph_{\mathbb{E}}(x) =
+    \begin{cases}
+      1, \ x \in \mathbb{E} \\
+      0, \ x \not \in \mathbb{E}
+    \end{cases}
+  \end{gather*}
+  \begin{comment}
+    $\aleph$ --- Алеф.
+  \end{comment}
+  Очевидно, функция $\aleph_{\mathbb{E}}(x)$ имеют разрывы в граничных и только
+  в граничных точках множества $\mathbb{E}$. \\
+  По определению \eqref{def531}:
+  \begin{gather}
+    \int\limits_{\mathbb{E}} 1 \cdot dx = \int\limits_I \aleph_{\mathbb{E}}(x)
+    dx
+    \label{th541:eq1}
+  \end{gather}
+  где $I$ --- наименьший промежуток, содержащий множество $\mathbb{E}$. \\
+  А так как множество точек разрыва $\aleph_{\mathbb{E}}(x)$ совпадает с
+  границей $\partial \mathbb{E}$ и $\mu(\partial \mathbb{E}) = 0$, то по
+  теореме \eqref{th523} интеграл \eqref{th541:eq1} существует. \\
+  $\mu(\mathbb{E})$ носит комплексный смысл, если $\mathbb{E}$ --- измеримое
+  множество, и
+  \begin{gather*}
+    \int\limits_I \aleph_{\mathbb{E}}(x) dx = \lim\limits_{\lambda(T) \to 0}
+    s(\aleph_{\mathbb{E}}, T) = \lim\limits_{\lambda(T) \to 0}
+    S(\aleph_{\mathbb{E}}, T), \ (I > \mathbb{E})
+  \end{gather*}
+  то
+  \begin{gather*}
+    s(\aleph_{\mathbb{E}}, T) = \sum\limits_{j} m_j |I_j|, \
+    S(\aleph_{\mathbb{E}}, T) = \sum\limits_{j} M_j |I_j|
+  \end{gather*}
+  где $s, S$ --- нижняя и верхняя суммы Дарбу. Но в силу определения функции
+  $\aleph_{\mathbb{E}}: s(\aleph_{\mathbb{E}}, T)$ равна сумме объемов
+  промежутков $I_j$, лежащих в множестве $\mathbb{E}$ (это объем вписанного в
+  $\mathbb{E}$ многогранника), а $S(\aleph_{\mathbb{E}}, T)$ равна сумме
+  объемов тех промежутков $I_j$, которые имеют общие точки с множеством
+  $\mathbb{E}$ (Объем описанного многогранника).
+\end{proof}
+
+\begin{approval}
+  Мера $\mu(\mathbb{E})$ есть общий предел, при $\lambda(T) \to 0$ объемов,
+  вписанных в $\mathbb{E}$ и описанных около $\mathbb{E}$ многогранников.
+\end{approval}
+
+\begin{remark}
+  Можно показать, что измеримы по Жордану только измеримые множества
+  $\Longleftrightarrow$ множество $\mathbb{E}$ является измеримым по Жордану
+  $\Longleftrightarrow$ его границы имеют меру нуль в смысле Жордана.
+\end{remark}
+
+\begin{remark}
+  При $n = 2$ понятие измеримого по Жордану множества совпадает с понятием
+  квадрируемой плоской фигуры и меры Жордана с ее площадью.
+\end{remark}
+
+\section{Свойства кратных интегралов}
+На кратные интегралы по ограниченной функции переносятся все свойства
+интегралов по отрезку. \\
+Доказатаельства аналогичны одномерному случаю:
+\begin{enumerate}
+  \item \underline{Линейность} интеграла по множеству. \\
+    $f_1, \dots, f_n$ интегрируема на множестве $\mathbb{E}, \ \lambda_1, \dots, \lambda_n$
+    \\
+    $\lambda_1 f_1, \dots, \lambda_n f_n$ так же интегрируема на $\mathbb{E}$ и
+    \begin{gather*}
+      \int\limits_{\mathbb{E}} \left(\lambda_1 f_1(x) + \dots + \lambda_n
+      f_n(x) \right) dx = \lambda_1 \int\limits_{\mathbb{E}} f_1(x) dx + \dots
+      \lambda_n \int\limits_\mathbb{E} f_n(x) dx
+    \end{gather*}
+  \item \underline{Адитивность} интеграла по множеству. \\
+    Если $\mathbb{E}_1, \mathbb{E}_2$ --- допустимые множества в $\mathbb{R}^n$
+    и $\mu(\mathbb{E}_1 \cap \mathbb{E}_2) = 0 \ (\mathbb{E}_1 \cap \mathbb{E}_2
+    \not = 0$ в частности), а $f$ --- функция, определенная на $\mathbb{E}_1
+    \cup \mathbb{E}_2$, то при условии существования интегралов имеет место
+    равенство:
+    \begin{gather*}
+      \int\limits_{\mathbb{E}_1 \cup \mathbb{E}_2} f(x) dx =
+      \int\limits_{\mathbb{E}_1} f(x) dx + \int\limits_{\mathbb{E}_2} f(x) dx
+    \end{gather*}
+  \item \underline{Общая оценка}. \\
+    Если $f \in \mathcal{R}(\mathbb{E})$, то $|f| \in \mathcal{R}(\mathbb{E})$ и имеет место
+    неравенство:
+    \begin{gather*}
+      \left| \int\limits_{\mathbb{E}} f(x) dx \right| \leq
+      \int\limits_{\mathbb{E}} |f(x)| dx
+    \end{gather*}
+  \item \underline{Интегрирование неравенств}.
+    Если функции $f, g \in \mathcal{R}(\mathbb{E})$ и $f(x) \leq g(x), \ x \in
+    \mathbb{E}$, то:
+    \begin{gather*}
+      \int\limits_\mathbb{E} f(x) dx \leq \int\limits_\mathbb{E} g(x) dx
+    \end{gather*}
+  \item \underline{Следствие из 4}. \\
+    Если $f$ интегрируема и $m \leq f(x) \leq M, x \in \mathbb{E}$
+    \begin{gather*}
+      m\mu(\mathbb{E}) \leq \int\limits_\mathbb{E} f(x)dx \leq M\mu(\mathbb{E})
+    \end{gather*}
+  \item \underline{Теорема о среднем}. \\
+    Если в дополнении условия 5. множество $\mathbb{E}$ линейно связано, а $f$
+    --- непрерывна на $\mathbb{E}$, то существует $\xi \in \mathbb{E}$, такое
+    что:
+    \begin{gather*}
+      \int f(x) dx = f(\xi) \mu(\mathbb{E})
+    \end{gather*}
+\end{enumerate}
+
+\section{Сведение кратного инетграла к повторному}
+\begin{theorem}
+  $X \times Y \subset \mathbb{R}^{m+n}$ является прямым произведением
+  промежутков: $X \subset \mathbb{R}^m$ и $Y \subset \mathbb{R}^n$. \\
+  Если для $f(x, y)$ определенной на $X \times Y, (x \in X, y \in Y)$
+  существует интеграл:
+  \begin{gather}
+    \int\limits_{X \times Y} f(x, y) dx dy
+    \label{th561:ex1}
+  \end{gather}
+  и для любого $x \in X$ существует:
+  \begin{gather}
+    \mathcal{J}(x) = \int\limits_Y f(x, y) dy
+    \label{th561:eq1}
+  \end{gather}
+  то существует так же и повторный интеграл:
+  \begin{gather}
+    \int\limits_X dx \int\limits_Y f(x, y) dy
+    \label{th561:ex2}
+  \end{gather}
+  и выполняется равенство:
+  \begin{gather}
+    \int\limits_{X \times Y} f(x, y) dx dy = \int\limits_X dx \int\limits_Y
+    f(x, y) dy
+    \label{th561:eq2}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Любое разбиение $T$ промежутка $X \times Y$ индуцируется собственными
+  разбиениями $T_x, T_y$. При этом, каждый промежуток разбиения $T$ есть прямое
+  произведения $X_i \times Y_j, \ X_i, Y_j$ --- разбиения $T_x, T_y$. \\
+  Очевидно, $|X_i \times Y_j| = |X_i| \cdot |Y_j|$. \\
+  Положим $m_{ij} = \inf\limits_{x \in X_i, \ y \in Y_j} f(x, y), \ M_{ij} =
+  \sup\limits_{x \in X_i, \ y \in Y_j} f(x, y)$, так что выполняется следующее
+  неравенство:
+  \begin{gather}
+    m_{ij} \leq f(x, y) \leq M_{ij}, \ \forall (x, y) \in X_i \times Y_j
+    \label{th561:uneq1}
+  \end{gather}
+  Фиксируем $\forall x \in X_i: x = \xi_i$. \\
+  Учитывая \eqref{th561:uneq1} получим:
+  \begin{gather*}
+    m_{ij} |Y_j| \leq \int\limits_{Y_j} f(\xi_i, y) dy \leq M_{ij} |Y_j|
+  \end{gather*}
+  Просуммировав все по $j$ получим:
+  \begin{gather*}
+    \sum\limits_{j} m_{ij} |Y_j| \leq \mathcal{J}(\xi_i) = \int\limits_Y
+    f(\xi_i, y) dy \leq \sum\limits_j M_{ij} |Y_j|
+  \end{gather*}
+  Отсюда имеем:
+  \begin{gather}
+    \sum\limits_{i} |X_i| \sum\limits_j m_{ij} |Y_j| \leq \sum\limits_{i}
+    \mathcal{J}(\xi_i) |X_i| \leq \sum\limits_{i} |X_i| \sum\limits_{j} M_{ij}
+    |Y_j|
+    \label{th561:uneq2}
+  \end{gather}
+  По середине мы получили интегральную сумму для функции $\mathcal{J}(x)$.
+  Крайние челны --- это суммы Дарбу $s(f, T), S(f, T)$ для кратного интеграла
+  \eqref{th561:ex1}. \\
+  Например $\sum\limits_{i, j} m_{ij} |X_i \times Y_j|$. Таким образом
+  неравенство \eqref{th561:uneq2} перепишется в виде:
+  \begin{gather}
+    s(f, T) \leq \sum\limits_{i} \mathcal{J}(\xi_i) |X_i| \leq S(f, T)
+    \label{th561:uneq3}
+  \end{gather}
+  Так как кратный интеграл \eqref{th561:ex1} существует по условию, то при
+  $\lambda(T) \to 0$ обе суммы Дарбу неравенства \eqref{th561:uneq3} стремятся
+  к этому интегралу, откуда
+  \begin{gather*}
+    \left|\lim\limits_{\lambda(T) \to 0} \sum\limits_{i} \mathcal{J}(\xi_i)
+    |X_i| \right| = \int\limits_{X \times Y} f(x, y) dx dy
+  \end{gather*}
+  Левая часть этого равенства есть повторный интеграл:
+  \begin{gather*}
+    \int\limits_X \mathcal{J}(x) dx = \int\limits_X dx \int\limits_Y f(x, y) dy
+  \end{gather*}
+\end{proof}
+
+\begin{remark}
+  Применяя эту теорему несколько раз, можно свести вычисление по $k$-мерному
+  промежутку к вычислению $k$ одномерных интегралов.
+\end{remark}
+
+\begin{consequence}
+  Пусть $\mathbb{D} \subset Oxy$ --- область, ограниченная двумя кривыми
+  $\mathcal{J} = \varphi(x), \mathcal{J} = \psi(x), (\varphi(x) \leq \psi(x))$
+  и двумя прямыми $x = a$ и $x = b$. \\
+  Тогда, если для $f(x, y)$ существует $\iint\limits_\mathbb{D} f(x, y)
+  dx dy, \ x \in [a,b]$. \\
+  $\mathcal{J}(x) = \int\limits_{\varphi(x)}^{\psi(x)} f(x, y) dy$, то
+  существует так же повторный интеграл: $\int\limits_a^b dx
+  \int\limits_{\varphi(x)}^{\psi(x)} f(x, y) dy$ и выполняется равенство
+  \begin{gather*}
+    \iint\limits_\mathbb{D} f(x, y) dx dy = \int\limits_a^b dx
+    \int\limits_{\varphi(x)}^{\psi(x)} f(x, y) dy.
+  \end{gather*}
+\end{consequence}
+
+\section{Замена переменных в кратных интегралах}
+Напомним, что обтображение:
+\begin{gather*}
+  x = \varphi(t) =
+  \begin{cases}
+    x_1 = \varphi_1(t_1, \dots, t_n) \\
+    \dots \\
+    x_n = \varphi_n(t_1, \dots, t_n)
+  \end{cases}
+\end{gather*}
+называется регулярным в области $\mathbb{D} \subset \mathbb{R}^n$, если:
+\begin{enumerate}
+  \item $\varphi_1, \dots, \varphi_n$ имеют в $\mathbb{D}$ непрерывные частные
+    производные по всем аргументам.
+  \item Матрица Якоби:
+
+    \begin{gather}
+      \varphi'(t) :=
+      \begin{pmatrix}
+        \frac{\partial \varphi_1}{\partial t_1} & \dots & \frac{\partial
+        \varphi_1}{\partial t_n} \\
+        \vdots & \ddots & \vdots \\
+        \frac{\partial \varphi_n}{\partial t_1} & \dots & \frac{\partial
+        \varphi_n}{\partial t_n}
+      \end{pmatrix}
+      \label{ch57:mat1}
+    \end{gather}
+    Определитель(якобиан):
+    \begin{gather*}
+      \det \varphi'(t) =
+      \left|
+      \begin{matrix}
+        \frac{\partial \varphi_1}{\partial t_1} & \dots & \frac{\partial
+        \varphi_1}{\partial t_n} \\
+        \vdots & \ddots & \vdots \\
+        \frac{\partial \varphi_n}{\partial t_1} & \dots & \frac{\partial
+        \varphi_n}{\partial t_n}
+      \end{matrix}
+      \right|
+      =: \frac{\mathbb{D}(\varphi_1, \dots, \varphi_n)}{\mathbb{D}(t_1, \dots,
+      t_n)}
+    \end{gather*}
+    Отличен от нуля в $\mathbb{D}$.
+    Матрица Якоби \eqref{ch57:mat1} называется производной отображения
+    $\varphi$, а линейный оператор в $\mathbb{R}^n$ называется диффиренциалом
+    $\varphi$ в точке $t$, в области $\mathbb{D}, \ (\mathbb{D}_\varphi(t))$.
+    Регулярное отображение является локально обратимым.
+\end{enumerate}
+\begin{lemma}
+  Пусть $\varphi$ --- регулярное отображение области $\mathbb{D} \subset
+  \mathbb{R}_t^n$, $I$ --- замкнутый промежуток, лежащий в $\mathbb{D}, \ (I
+  \subset \mathbb{D})$. $\varphi(I)$ --- образ промежутка $I$, $(\varphi(I)
+  \subset R_x^n)$. Тогда, существует такая точка $\tau \in I$, что:
+  \begin{gather*}
+    \mu(\varphi(I)) = |\det \varphi'(\tau)| \cdot |I|
+  \end{gather*}
+  \begin{comment}
+    $|I| = \mu(I)$
+  \end{comment}
+\end{lemma}
+
+\begin{clarification}
+  Лемма при $n = 1$ следует из формулы Лагранжа:
+  $\varphi(b) - \varphi(a) = \varphi(\tau)(b-a)$, \\ где $\tau \in [a,b] = I$,
+  поскольку при $\varphi'(\tau) \not = 0$ функция $\varphi$ монотонна и
+  \begin{gather*}
+    |\varphi(b) - \varphi(a)| = \mu(\varphi(I))
+  \end{gather*}
+  Если $n \geq 2$ и отображение $\varphi$ является линейным преобразованием
+  \begin{gather*}
+    x = \varphi(t) =
+    \begin{cases}
+      x_1 = a_{11}t_1 + \dots + a_{1n} t_n \\
+      \dots \\
+      x_n = a_{n1}t_1 + \dots + a_{nn} t_n \\
+    \end{cases}
+  \end{gather*}
+  с матрицей $A = (a_{ij}) = \varphi'(t), \ x = At$, то образ промежутка
+  $\varphi(I)$ является параллелепипедом $\varphi(I) \subset \mathbb{R}_x^n$,
+  объем которого равен:
+  \begin{gather*}
+    |\det A| \cdot |I| = |\det \varphi'| \cdot |I|
+  \end{gather*}
+  При $n = 3, I$ --- прямоугольный параллелепипед, построенный на векторах:
+  $h^1 = (h_1, 0, 0), h^2 = (0, h_2, 0), h^3 = (0, 0, h_3)$, тогда
+  $\varphi(h^i) = (a_{1i} h_i, a_{2i} h_i, a_{3i} h_i), \ i = 1, 2, 3$. Отсюда
+  объем параллелепипеда, построенного на векторах $\varphi(h^1), \varphi(h^2),
+  \varphi(h^3)$ как на ребрах, равен
+  \begin{gather*}
+    |<\varphi(h^1), \varphi(h^2), \varphi(h^3)>| = |\det A| \cdot |h_1 h_2 h_3|
+  \end{gather*}
+  Рассматривая уже общий, нелинейный случай, следует принять во внимание, что в
+  малой окрестности точки $t \in \mathbb{D}$ является почти линейным
+  отображением:
+  \begin{gather*}
+    \varphi(t + h) = \varphi(t) + \mathbb{D}_\varphi(t) +
+    \bar{\bar{o}}\left(h\right), \ \text{при} \ h \to 0
+  \end{gather*}
+  Поэтому, если размеры промежутка $I$ малы, то с малой относительной
+  погрешностью можно сказать:
+  \begin{gather*}
+    \mu(\varphi(I)) \approx |\det \varphi'(t)| \cdot |I|, \ t \in I
+  \end{gather*}
+  В такой ситуации и используется лемма ($I$ --- малый промежуток).
+\end{clarification}
+
+\begin{theorem}
+  Пусть $\varphi: \mathbb{E}_t \to \mathbb{E}_x$ --- отображение измеримого (по
+  Жордану) множества $\mathbb{E}_t \subset \mathbb{R}_t^n, \ \mathbb{E}_x
+  \subset \mathbb{R}_x^n$, при чем отображение $\varphi$ регулярно в некоторой
+  области $\mathbb{D}$, содержащей замыкание $\overline{\mathbb{E}}_t,
+  \mathbb{E}_t, (\overline{\mathbb{E}}_t \subset \mathbb{D})$. Тогда, если
+  $f(x) \in \mathcal{R}(\mathbb{E}_x)$, то $f(\varphi(t)) |\det \varphi'(t)|
+  \in \mathcal{R}(\mathbb{E}_t)$ и имеет место равенство:
+  \begin{gather}
+    \int\limits_{\mathbb{E}_x} f(x) dx = \int\limits_{\mathbb{E}_t}
+    f(\varphi(t)) |\det \varphi'(t)| dt
+    \label{th571:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Случай, когда $\mathbb{E}_t$ --- промежуток, а $f(x)$ ограничена и непрерывна
+  на $\mathbb{E}_x$. В этом случае функция $g(t) = f(\varphi(t))|\det
+  \varphi'(t)|$ так же ограничена и непрерывна на $\mathbb{E}_t$, а
+  следовательно и интегрируема на $\mathbb{E}_t$. Любому разбиению $T$
+  промежутка $\mathbb{E}_t$ на промежутке $I_1, \dots, I_k$ соответствует
+  разложение множества $\varphi(\mathbb{E}_t) = \mathbb{E}_x$ на множество
+  $\varphi(I_j), \ j = 1, \dots, k$. \\
+  Все эти множества измеримы, связаны и пересекаются попарно лишь по множествам
+  меры нуль. Поэтому, в силу адитивности интеграла:
+  \begin{gather}
+    \int\limits_{\mathbb{E}_x} f(x) dx = \sum\limits_{j = 1}^{k}
+    \int\limits_{\varphi(I)} f(x) dx
+    \label{th571:eq2}
+  \end{gather}
+  По теореме о среднем:
+  \begin{gather}
+    \int\limits_{\varphi(I_j)} f(x) dx = f(\xi^j) \mu(\varphi(I_j)), \ \xi^j
+    \in \varphi(I_j)
+    \label{th571:eq3}
+  \end{gather}
+  Пусть $\eta^j = \varphi^{-1}(\xi^j) \in I_j$, так что $\xi^j =
+  \varphi(\eta^j)$. \\
+  Поскольку по лемме $\mu(\varphi(I_j)) = |\det \varphi'(\tau^j)|\cdot |I_j|$,
+  где $\tau^j \in I_j$, то из \eqref{th571:eq2} и \eqref{th571:eq3} получаем:
+  \begin{gather}
+    \int\limits_{\mathbb{E}_x} f(x) dx = \sum\limits_{j = 1}^{k}
+    f(\varphi(\eta^j))\left|\det \varphi'(\tau^j)\right|\cdot |I_j| =: \sigma_1
+    \label{th571:eq4}
+  \end{gather}
+  Составим сумму: $\sigma_2 := \sum\limits_{j = 1}^{k} f(\varphi(\eta^j))
+  \left|\det \varphi'(\eta^j)\right| \cdot |I_j|$, которая является
+  интегрируемой суммой для функции $g(t), \ t \in \mathbb{E}_t$. Поскольку
+  $g(t) \in \mathcal{R}$, то:
+  \begin{gather}
+    \lim\limits_{\lambda(T) \to 0} \sigma_2 = \int\limits_{\mathbb{E}_t} g(t)
+    dt
+    \label{th571:eq5}
+  \end{gather}
+  Положим $\psi(t) = |\det \varphi'(t)|$ и оценим разность $\sigma_1 -
+  \sigma_2$:
+  \begin{gather*}
+    \sigma_1 - \sigma_2 = \sum\limits_{j = 1}^{k} f(\xi^j) (\psi(\tau^j) -
+    \psi(\eta^j)) |I_j|
+  \end{gather*}
+  Функция $\psi(t)$ непрерывна на замкнутом множестве $\mathbb{E}_t$ и по
+  теореме Кантора равномерно непрерывна на $\mathbb{E}_t$, так что $\forall
+  \varepsilon > 0 \ \exists \delta > 0, \ \lambda(T) < \delta$:
+  \begin{gather*}
+    |\psi(\tau^j) - \psi(\eta^j)| < \varepsilon, \ \forall j \\
+    \rho(\tau^j, \eta^j) < \delta
+  \end{gather*}
+  Отсюда, при $\lambda(T) < \delta$:
+  \begin{gather*}
+    |\sigma_1 - \sigma_2| \leq \max\limits_{x \in \mathbb{E}_x} |f(x)| \cdot
+    \varepsilon \sum\limits_{j = 1}^{k} |I_j| = C \varepsilon
+  \end{gather*}
+  где $C$ не зависит от $\varepsilon$, $C = const$.
+  \begin{gather}
+    \lim\limits_{\lambda(T) \to 0} (\sigma_1 - \sigma_2) = 0
+    \label{th571:eq6}
+  \end{gather}
+  Равенство \eqref{th571:eq1} теперь следует из \eqref{th571:eq4},
+  \eqref{th571:eq5} и \eqref{th571:eq6}. \\
+  Доказательство теоремы в общем случае можно провести, придерживаясь
+  рассмотренной схемы.
+\end{proof}
+
+\begin{consequence}
+  Величина интеграла от $f$ по множеству $\mathbb{E} \subset \mathbb{R}^n$ и
+  зависит от выбора декартовых координат в $\mathbb{R}^n$.
+\end{consequence}
+
+\begin{proof}
+  Пусть $\mathbb{E}_x, \mathbb{E}_t$ --- запись множества $\mathbb{E}$.
+  $p$ --- точка множества $\mathbb{E}, \ x = (x_1, \dots, x_n)$ --- ее
+  координаты в первой системе, $t = (t_1, \dots, t_n)$ --- во второй системе.
+  Тогда $f(p) = f_x(x_1, \dots, x_n) = f_t(t_1, \dots, t_n)$, где $f_t = f_x
+  \circ \varphi$ (суперпозиция). Поскольку переход от одной системы декартовых
+  координат к другой имеет якобиан по модулю равный единице, то есть:
+  \begin{gather*}
+    \int\limits_{\mathbb{E}_x} f_x(x) dx = \int\limits_{\mathbb{E}_t}
+    f_x(\varphi(t))\left|\det \varphi'(t)\right| dt = \int\limits_{\mathbb{E}_t} f_t(t) dt
+  \end{gather*}
+\end{proof}
+
