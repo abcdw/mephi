@@ -11,15 +11,19 @@
 \graphicspath{{images/}}
 \usepackage{fix-cm}
 \usepackage{mathenv}
+\usepackage{arcs}
+\usepackage{yhmath}
+\usepackage{indentfirst}
 
 \makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \renewcommand{\@biblabel}[1]{#1.}
 \makeatother
 
 \usepackage{geometry}  % Меняем поля страницы
 \geometry{left=2cm}    % левое поле
 \geometry{right=1.5cm} % правое поле
-\geometry{top=1cm}     % верхнее поле
+\geometry{top=2cm}     % верхнее поле
 \geometry{bottom=2cm}  % нижнее поле
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -63,5 +67,7 @@
   \part{Интегралы}
   \chapter{Кратные интегралы}
   \input{ch5}
+  \chapter{Криволинейные интегралы}
+  \input{ch6}
 \end{document}
 

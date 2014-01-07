@@ -1,0 +1,353 @@
+\section{Криволинейный интеграл первого рода}
+Пусть $\Gamma = \{M(S) : 0 \leq S \leq S_0\}$ определенная кривая в
+$\mathbb{R}^3$, в частности $\mathbb{R}^2. \\ M(S) = (x(S), y(S), z(S))$ --- ее
+параметрическое представление, где в качестве переменной взята длина дуги $S$.
+\\
+Кривая, у которой переменная длина дуги отсчитывается от точки $A$
+обозначим: $\Gamma = \wideparen{AB}$. Противоположно ориентированную прямую, у
+которой переменная длина дуги отсчитывается от точки $B$ обозначим $\Gamma =
+\wideparen{BA}$.
+
+\begin{definition}
+  Пусть на токах $M(S)$, кривой $\Gamma = \wideparen{AB}$ задана некотороая
+  функция $F$. Выражение $\int\limits_\Gamma F(x, y, z) dS$ опеределенное по
+  формуле:
+  \begin{gather}
+    \int\limits_\Gamma F(x, y, z) dS = \int\limits_0^{S_0} F(x(S), y(S), z(S))
+    dS
+    \label{def611:eq1}
+  \end{gather}
+  называется криволинейным интегралом первого рода (КИПР) от функции $F$ по
+  кривой $\Gamma$. Этот интеграл обозначается символами:
+  \begin{gather*}
+    \int\limits_\Gamma F(M(S)) dS, \ \int\limits_\Gamma F dS, \
+    \int\limits_{\wideparen{AB}} FdS
+  \end{gather*}
+\end{definition}
+
+Отметим свойства интеграла \eqref{def611:eq1}:
+\begin{enumerate}
+  \item $\int\limits_\Gamma dS = S_0$ --- длина кривой $\Gamma$.
+  \item Если $F$ непрерывна на $\Gamma$ (то есть $F(x(S), y(S), z(S))$
+    непрерывная на отрезке $S \in [0, S_0]$), то $\int\limits_\Gamma FdS$
+    существует.
+  \item КИПР не зависит от ориентации кривой:
+    \begin{gather*}
+      \int\limits_{\wideparen{BA}} FdS = \int\limits_{\wideparen{AB}} FdS
+    \end{gather*}
+\end{enumerate}
+
+\begin{definition}
+  Кривую $\Gamma$ называют гладкой, если в ее параметрическом представлении:
+  \begin{gather}
+    x = \varphi(t), \ y = \psi(t), \ z = \chi(t), \ a \leq t \leq b
+    \label{def612:eq2}
+  \end{gather}
+  все функции непрерывно диффиренцируемы на отрезке $[a, b]$ и $\varphi'(t)^2 +
+  \psi'(t)^2 + \chi'(t)^2~>~0, \ \forall t \in~[a, b]$.
+\end{definition}
+
+\begin{theorem}
+  Пусть $\Gamma$ --- гладкая кривая с параметрическим представлением
+  \eqref{def612:eq2},\\ $F$ --- непрерывная на $\Gamma$ функция. Тогда:
+  \begin{gather}
+    \int\limits_\Gamma F(x, y, z) dS = \int\limits_a^b F(\varphi(t), \psi(t),
+    \chi(t)) \sqrt{\varphi'(t)^2 + \psi'(t)^2 + \chi'(t)^2} dt
+    \label{th611:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Кривая $\Gamma$ спрямляема. Переменную дуги $S = S(t)$ можно принять в
+  качестве параметра, и тогда $\int\limits_\Gamma FdS$ существует. Учитывая,
+  что $S'(t) = \sqrt{\varphi'(t)^2 + \psi'(t)^2 + \chi'(t)^2}$ получим
+  \eqref{th611:eq1}.
+\end{proof}
+
+\begin{remark}
+  Если плоская кривая $\Gamma$ является графиком функци $y = f(x), a \leq x
+  \leq b$, то ее представлением является функция $x = x, y = f(x)$. И тогда
+  формула \eqref{th611:eq1} примет вид:
+  \begin{gather*}
+    \int\limits_\Gamma F(x, y) dS = \int\limits_a^b F(x, f(x)) \sqrt{1 +
+    f'(x)^)} dx
+  \end{gather*}
+\end{remark}
+
+\section{Криволинейный интеграл второго рода}
+
+Пусть $\Gamma$ --- гладкая ориентированная кривая,\\ $\vec{r} = \vec{r}(S) =
+\{x(S), y(S), z(S)\}, \ 0 \leq S \leq S_0$ --- ее векторное представление, в
+котором за параметр $S$ взята переменная длина ее дуги. $\vec{\tau} =
+\frac{d \vec{r}}{dS} = \{\frac{dx}{dS}, \frac{dy}{dS}, \frac{dz}{dS}\}$ ---
+единичный касательный вектор к кривой $\Gamma$, его направление соответствует
+выбранному направлению отсчета длины дуг. Если $\alpha, \beta, \gamma$ ---
+углы, которые $\vec\tau$ образует с координатными осями, то $\vec\tau = \{\cos
+\alpha, \cos \beta, \cos \gamma\}$. Получаем $\cos \alpha~=~\frac{dx}{dS}, \cos
+\beta~=~\frac{dy}{dS}, \cos \gamma~=~\frac{dz}{dS}$. \\
+
+Пусть на $\Gamma$ задана вектор-функция $\vec a = \vec a(x, y, z) = \vec
+a(x(S), y(S), z(S)), \ 0 \leq S \leq S_0$. \\ Пусть $P, Q, R$ --- координаты
+вектора $\vec a : \vec a = \{P, Q, R\}$. Функции $P, Q, R$ являются функциями
+точки кривой $\Gamma$.
+
+\begin{definition}
+  \label{def621}
+  $\int\limits_\Gamma \vec a d \vec r$ определенное по формуле:
+  \begin{gather}
+    \int\limits_\Gamma (\vec a, \vec r) dS
+    \label{def621:int1}
+  \end{gather}
+  называется криволинейным интегралом второго рода (КИВР) по кривой $\Gamma =
+  \wideparen{AB}$.
+\end{definition}
+
+Для интеграла $\int\limits_\Gamma \vec a d \vec r$ используется так же
+обозначение:
+\begin{gather*}
+  \int\limits_\Gamma Pdx + Qdy + Rdz
+\end{gather*}
+где $Pdx + Qdy + Rdz$ --- записанное в координатной форме скалярное
+произведение векторов $\vec a = \{P, Q, R\}$ и $d \vec r = \{dx, dy, dz\}$.
+Учитывая, что $(\vec a, \vec \tau) = P \cos \alpha + Q \cos \beta + R \cos
+\gamma$, то определение \eqref{def621} можно записать в виде:
+\begin{gather}
+  \int\limits_\Gamma \vec a d \vec r \equiv \int\limits_\Gamma Pdx + Qdy + Rdz
+  := \int\limits_\Gamma (P\cos \alpha + Q \cos \beta + R \cos \gamma) dS
+  \label{def621:int2}
+\end{gather}
+
+Следующие свойства КИВР под силу доказать каждому:
+\begin{enumerate}
+  \item $\vec a = \vec a(x, y, z), \ \Gamma = \wideparen{AB}$, то
+    $\int\limits_\Gamma \vec a d \vec r$ существует.
+  \item КИВР меняет знак при изменении ориентации кривой $\Gamma$:
+    \begin{gather*}
+      \int\limits_{\wideparen{BA}} \vec a d \vec r =
+      -\int\limits_{\wideparen{AB}} \vec a d \vec r
+    \end{gather*}
+\end{enumerate}
+
+\begin{theorem}
+  Если $\Gamma = \wideparen{AB}$ --- гладкая ориентированная кривая. \\ $\vec r =
+  \vec r(t) = \{\varphi(t), \psi(t), \chi(t)\}, \ a \leq t \leq b$ --- ее
+  векторное представление ($\vec r(a) = A, \ \vec r(b) = B$), то получим:
+  \begin{gather}
+    \int\limits_\Gamma \vec a d \vec r = \int\limits_a^b (\vec a, \vec r') dt
+    \label{th621:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Поскольку
+  \begin{gather}
+    \vec \tau = \frac{d \vec r}{dS} = \frac{d \vec r}{dt} \cdot
+    \frac{dt}{dS} = \frac{\vec r'}{S'}
+    \label{th621:eq2}
+  \end{gather}
+  (здесь штрихом обозначены производные по $t$), то
+  \begin{gather*}
+    \int\limits_\Gamma \vec a d \vec r \overset{\eqref{def621:int1}} =
+    \int\limits_\Gamma (\vec a, \vec \tau) dS \overset{\eqref{th611:eq1}} =
+    \int\limits_a^b (\vec a, \vec \tau) S' dt \overset{\eqref{th621:eq2}} =
+    \int\limits_a^b (\vec a, \vec r') dt
+  \end{gather*}
+\end{proof}
+
+\begin{remark}
+  В координатной форме формула \eqref{th621:eq1} примет вид:
+  \begin{gather}
+    \int\limits_\Gamma Pdx + Qdy + Rdz = \int\limits_a^b (P x' + Q y' + R z')dt
+    \label{rem621:eq1}
+  \end{gather}
+\end{remark}
+
+\begin{consequence}
+  Если плоская кривая $\Gamma = \wideparen{AB}$ является графиком функции $y =
+  f(x), \ a~\leq~x~\leq~b, \\ A = (a, f(a)), \ B = (b, f(b))$, то формула
+  \eqref{th621:eq1} (при $x = t, \ R \equiv 0$) принимает вид:
+  \begin{gather}
+  \int\limits_\Gamma Pdx + Qdy + Rdz = \int\limits_a^b (P(x, f(x)) + Q(x,
+  f(x))) f'(x) dx
+  \label{cons621:eq1}
+  \end{gather}
+\end{consequence}
+
+\begin{remark}
+  Если $\vec a = \{P, 0, 0\}, \ Q \equiv R \equiv 0$, то $\int\limits_\Gamma
+  \vec a d \vec r$ обозначается $\int\limits_\Gamma dx$, таким образом
+  интеграл:
+  \begin{gather}
+    \int\limits_\Gamma P(x, y, z) dx = \int\limits_\Gamma P \cos \alpha \ dS
+    \label{rem622:eq1}
+  \end{gather}
+  аналогично
+  \begin{gather}
+    \int\limits_\Gamma Q dy := \int\limits_\Gamma Q \cos \beta \ dS,
+    \ \int\limits_\Gamma R dz := \int\limits_\Gamma R \cos \gamma \ dS
+    \label{rem622:eq2}
+  \end{gather}
+  Отсюда, воспользовавшись адитивностью обычного интеграла, получим:
+  \begin{gather*}
+    \int\limits_\Gamma Pdx + Qdy + Rdz = \int\limits_\Gamma Pdx +
+    \int\limits_\Gamma Qdy + \int\limits_\Gamma Rdz
+    \label{rem622:eq3}
+  \end{gather*}
+\end{remark}
+
+\begin{consequence}
+  В условиях предыдущего следствия:
+  \begin{gather}
+    \int\limits_\Gamma Pdx = \int\limits_a^b P(x, f(x)) dx
+    \label{cons621:eq2}
+  \end{gather}
+\end{consequence}
+
+\begin{definition}
+  Если кривая $\Gamma$ --- кусочно-гладкая, то есть представима в виде
+  объединения конечного числа гладких ориентированных кривых $\Gamma_1, \dots,
+  \Gamma_k, \ F, \ \vec a = \{P, Q, R\}$, определенный на точках кривой
+  $\Gamma$, то пологают:
+  \begin{gather*}
+    \int\limits_\Gamma F dS := \sum\limits_{i = 1}^{k} \int\limits_{\Gamma_i} F
+    dS, \int\limits_\Gamma \vec a d \vec r := \sum\limits_{i = 1}^{k}
+    \int\limits_{\Gamma_i} \vec a d \vec r
+  \end{gather*}
+\end{definition}
+
+\section{Формула Грина}
+Пусть на плоскости $\mathbb{R}^2$ задана система координат по $Oxy$.
+
+\begin{definition}
+  Ориентация простого замкнутого контура $\Gamma$, лежащего на этой плоскости
+  называется положительной, если она соответствует движению {\bfseries против}
+  часовой стрелки. Противоположная ориентация называется отрицательной.
+\end{definition}
+
+Напомним, что простым замкнутым контуром в $\mathbb{R}^n$ называют $x =
+\varphi(t) = (\varphi_1(t), \dots, \varphi_n(t)), \\ a \leq t \leq b$, у
+которой нет других кратных точек.
+
+\begin{definition}
+  Пусть граница $\partial \mathbb{G}$, ограниченной плоской области
+  $\mathbb{G}$,
+  состоит из конечного числа простых замкнутых контуров. Совокупность этих
+  контуров, ориентированных так, что при обходе каждого из них, область
+  $\mathbb{G}$ остается слева(справа), называется положительной(отрицательной)
+  ориентацией: $\partial \mathbb{G}^+ (\partial \mathbb{G}^-)$.
+\end{definition}
+
+\begin{definition}
+  Грацница $\partial \mathbb{G}$ области $\mathbb{G}$ называется
+  кусочно-гладкой, если она состоит из конечного числа простых кусочно-гладких
+  контуров.
+\end{definition}
+
+\begin{remark}
+  Если граница $\partial \mathbb{G}$ области $\mathbb{G}$ является кусочно
+  гладкой, то ее площадь равна нулю, а само множество $\mathbb{G}$ квадрируемо.
+\end{remark}
+
+\begin{theorem}
+  \label{th631}
+  Если граница плоской, ограниченной области $\mathbb{G}$ является
+  кусочно-гладкой, а функции $P, Q, \frac{\partial P}{\partial y},
+  \frac{\partial Q}{\partial x}$ --- непрерывны на замыкании
+  $\overline{\mathbb{G}}$ области $\mathbb{G}$, то:
+  \begin{gather}
+    \iint\limits_{\mathbb{G}} \left(\frac{\partial Q}{\partial x} -
+    \frac{\partial P}{\partial y} \right) dx dy = \int\limits_{\partial
+      \mathbb{G}^+} Pdx + Qdy
+    \label{th631:eq1}
+  \end{gather}
+  эта формула называется {\bfseries формулой Грина}.
+\end{theorem}
+
+\begin{proof}
+  Проведем его для произвольных областей.
+\end{proof}
+
+\begin{definition}
+  Назовем область $\mathbb{G}$ областью $\mathbb{G}_y$, если $\mathbb{G}$ имеет
+  вид:
+  \begin{gather}
+    \mathbb{G} = \{(x, y) : a < x < b, \ \varphi(x) < y < \psi(x)\}
+    \label{def634:eq1}
+  \end{gather}
+  где $\varphi(x), \psi(x)$ --- кусочно-гладкие функции на $[a,b]$. Поменяв
+  здесь $x$ и $y$ ролями получим определение области $\mathbb{G}_x$. Области,
+  которые можно разрезать на куски вида $\mathbb{G}_x$ либо $\mathbb{G}_y$
+  назовем простыми областями.
+\end{definition}
+
+\begin{lemma}
+  Пусть в теореме \eqref{th631} $\mathbb{G}$ --- область по $\mathbb{G}_y$,
+  тогда:
+  \begin{gather}
+    \iint\limits_{\mathbb{G}} \frac{\partial P}{\partial y} dx dy = -
+    \int\limits_{\partial \mathbb{G}^+} Pdx
+    \label{lem631:eq1}
+  \end{gather}
+\end{lemma}
+
+\begin{proof}
+  Сводя двойной интеграл к повторному, применяя формулу Ньютона-Лейбница и
+  формулу \eqref{cons621:eq2} получи:
+  \begin{gather}
+    \iint\limits_{\mathbb{G}} \frac{\partial P}{\partial y} dx dy =
+    \int\limits_a^b dx \int\limits_{\varphi(x)}^{\psi(x)} \frac{\partial
+    P}{\partial y} dy = \int\limits_a^b \left[P(x, \psi(x)) - P(x,
+    \varphi(x))\right] dx = \\
+    -\int\limits_a^b P(x, \varphi(x)) dx - \int\limits_b^a P(x, \psi(x)) dx =
+    -\int\limits_{\wideparen{AB}} P(x, y) dx - \int\limits_{\wideparen{CD}}
+    P(x, y) dx
+    \label{lem631:eq2}
+  \end{gather}
+  заметим, что $\int\limits_{\wideparen{BC}} Pdx = \int\limits_{\wideparen{DA}}
+  Pdx = 0$, и что сумма: $\int\limits_{\wideparen{AB}} Pdx +
+  \int\limits_{\wideparen{BC}} Pdx + \int\limits_{\wideparen{CD}} Pdx +
+  \int\limits_{\wideparen{DA}} Pdx = \int\limits_{\partial \mathbb{G}^+} Pdx$.
+  Поэтому из \eqref{lem631:eq2} получаем \eqref{lem631:eq1}. \\
+  Аналогично, если $\mathbb{G}$ --- область типа $\mathbb{G}_x$, то:
+  \begin{gather}
+    \iint\limits_{\mathbb{G}} \frac{\partial Q}{\partial x} dx dy =
+    \int\limits_{\partial \mathbb{G}^+} Qdy
+    \label{lem631:eq3}
+  \end{gather}
+\end{proof}
+
+\begin{lemma}
+  Если в теореме \eqref{th631} область $\mathbb{G}$ допускает разбиение на
+  области $\mathbb{G}_x, \mathbb{G}_y$, то выполняется \eqref{lem631:eq1}.
+\end{lemma}
+
+\begin{proof}
+  Двойной интеграл в области $\mathbb{G}$ в силу адитивности есть сумма по
+  кускам $\mathbb{G}_x, \mathbb{G}_y$, на которые разрезана $\mathbb{G}$. Для
+  каждого справедливо \eqref{lem631:eq1}. Но соседние куски на общей части
+  границ индуцируют противоположные ориентации. Поэтому, при сложении
+  интегралов по границам всех кусков в результате взаимных уничтожений,
+  останется $\int\limits_{\mathbb{G}} \partial \mathbb{G}$. \\
+  Аналогично, если разрезается на $\mathbb{G}_x$, то справедливо
+  \eqref{lem631:eq3}. Запищем для произвольной области выражения
+  \eqref{lem631:eq1} и \eqref{lem631:eq3}, умножив \eqref{lem631:eq1} на $-1$.
+  После сложения полученных соотношений, пользуясь свойством адитивности
+  интеграла, получим формулу Грина.
+\end{proof}
+
+\begin{consequence}
+  \begin{gather*}
+    \mu(\mathbb{G}) = \iint\limits_{\mathbb{G}} dx dy \overset{(\rom{1})} =
+    \int\limits_{\partial \mathbb{G}^+} x dy \overset{(\rom{2})} =
+    -\int\limits_{\partial \mathbb{G}^+} y dx \overset{(\rom{3})} =
+    \frac{1}{2} \int\limits_{\partial \mathbb{G}^+} xdy - ydx
+  \end{gather*}
+  где 
+  \begin{align}
+    (\rom{1}) &\ \text{---} \ P = 0, Q = x \\
+    (\rom{2}) &\ \text{---} \ P = -y, Q = 0 \\
+    (\rom{3}) &\ \text{--- если возьмем полусумму}
+  \end{align}
+\end{consequence}
+
+
