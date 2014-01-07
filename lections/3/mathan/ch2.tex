@@ -186,7 +186,7 @@ $\Rightarrow$ Теорема \eqref{th223} (критерий Коши равно
     \item $a_n(x) \in \mathbb{R}, \ b_n(x) \in \mathbb{C}, \ n = 1, 2, \dots$
     \item $a_n(x) \stackrel{\mathrm{\mathbb{E}}}{\rightrightarrows} 0$
       (Равномерная сходимость к нулю), $\{a_n(x)\}$ - монотонна.
-    \item $\{b_n(x)\}, \ \sum b_n(x)$ ограничена на множестве $\mathbb{E}$.
+    \item Последовательность частичных сумм $\{B_n(x)\} ряда \ \sum b_n(x)$ ограничена на множестве $\mathbb{E}$.
   \end{enumerate}
   Тогда ряд \eqref{th231:series1} равномерно сходится на множестве $\mathbb{E}$.
 \end{theorem}
@@ -197,13 +197,13 @@ $\Rightarrow$ Теорема \eqref{th223} (критерий Коши равно
   $\forall x \in \mathbb{E}, m \geq n \geq 2: |b_n(x) + \dots + b_m(x)| =
   |B_m(x) - B_{n-1}(x)| \leq 2B$. \\
   $\forall \varepsilon > 0$ из условия 2 $\Rightarrow \exists N = N(\varepsilon):
-  n > N(\varepsilon), \forall \in \mathbb{E}$ выполняется неравенство:
+  n > N(\varepsilon), \forall x \in \mathbb{E}$ выполняется неравенство:
   $$0 \leq |a_n(x)| < \frac{\varepsilon}{6B}.$$
   Примениев лемму Абеля \eqref{th151:cons}, получим:
   \begin{gather*}
-    |a_n(x) b_n(x) + \dots + a_m(x) b_m(x)| \leq 2B \\
-    (|a_n(x) + 2a_m(x)| < \varepsilon, \forall x \in \mathbb{E},
-    m \geq n \geq N(\varepsilon))
+    |a_n(x) b_n(x) + \dots + a_m(x) b_m(x)| \leq 2B(|a_n(x) + 2a_m(x)|) < \varepsilon \\ 
+    \forall x \in \mathbb{E},
+    m \geq n \geq N(\varepsilon)
   \end{gather*}
   В силу критерия Коши \eqref{th223}, ряд \eqref{th231:series1} сходится равномерно.
 \end{proof}
