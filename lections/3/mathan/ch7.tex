@@ -1,0 +1,454 @@
+\section{Поверхности в $\mathbb{R}^3$}
+Пусть $\mathbb{D} \subset \mathbb{R}^2, \ \overline{\mathbb{D}}$ --- ее
+замыкание.
+
+\begin{definition}
+  \label{def711}
+  $S$ --- образ непрерывного отображения $x = x(u, v), y = y(u, v), \\ z = z(u,
+  v)$ замкнутой области $\overline{\mathbb{D}} \subset \mathbb{R}_{uv}^2$ в
+  пространство $\mathbb{R}_{xyz}^3$ называется непрерывной поверхностью.
+\end{definition}
+Само отображение называется параметрическим представлением поверхности.
+Переменные $u, v$ --- параметры поверхности $S$.
+\begin{gather}
+  S = \{\pvec r(u, v) : (u, v) \in \overline{\mathbb{D}} \}
+  \label{ch71:eq1}
+\end{gather}
+Вектор $\pvec r(u, v)$ --- где $\pvec r$ --- радиус вектор в $\mathbb{R}^3$ с
+начала в начале координат и концом в точке($x(u, v), y(u, v), z(u, v)$).
+Представление \eqref{ch71:eq1} назовем векторным представлением поверхности
+$S$. Отметим, что одна и та же поверхность $S$ может иметь различные
+параметрические представления.
+
+\begin{definition}
+  Поверхность $S$ назовем простой, если на ней нет кратных точек, то есть для
+  любой точки $M \in S$ отображается лишь одна точка $(u,v) \in
+  \overline{\mathbb{D}}$.
+\end{definition}
+
+\begin{definition}
+  Если за параметры в одной из представленных поверхностей $S$ можно взять
+  какие-либо две координаты пространства $\mathbb{R}^3$, то такое представление
+  называется явным. Например, таковым является представление:
+  \begin{gather*}
+    S : x = x, y = y, z = \varphi(x, y) : (x, y) \in \overline{\mathbb{D}}
+  \end{gather*}
+  значит $S$ --- график $z = \varphi(x, y): (x, y) \in \overline{\mathbb{D}}$.
+  Очевидно, что поверхность, допускающая явное представление, не имеет кратных
+  точек.
+\end{definition}
+
+\begin{definition}
+  Если в определении \eqref{def711} отображение является непрерывно
+  диффиренцируемым, то $S$ называется непрерывно диффиренцируемой поверхностью.
+\end{definition}
+
+\begin{example}
+  $x = R \cos \varphi \cos \psi, y = R \sin \varphi \cos \psi, z = R \sin
+  \psi$, где $0 \leq \varphi \leq 2\pi, -\frac{\pi}{2} \leq \psi \leq
+  \frac{\pi}{2}$ является сферой с центром в начале координат и радиусом $R$ у
+  которой весь меридиан $\varphi = 0$ состоит из кратных точек.
+\end{example}
+
+\section{Касательная плоскость и нормаль к поверхности в $\mathbb{R}^3$}
+
+Пусть $S = \{\pvec r(u, v) : (u, v) \in \overline{\mathbb{D}}\}$ --- непрерывно
+диффиренцируемая поверхность, $(u_0, v_0) \in \mathbb{D}, \pvec r_u'$ ---
+производная вектор-функции $\pvec r = \pvec r(u, v_0)$, то есть $\pvec r_u'$ ---
+касательный вектор к кривой $\pvec r = \pvec r(u, v_0)$, называемой координатной
+линией, $\pvec r_v'$ --- касательный вектор к координатной линии $\pvec r = \pvec
+r(u_0, v)$.
+
+\begin{definition}
+  Точка $M_0 = \pvec r(u_0, v_0)$ поверхности $S$ называется неособой, если в
+  ней векторы $\pvec r_u', \pvec r_v'$ не колинеарны: $[\pvec r_u', \pvec r_v']
+  \not = 0$ в противном случае точка $M_0$ называется особой.
+\end{definition}
+
+\begin{definition}
+  Плоскость, проходящая через неособую точку $M_0 = \pvec r(u_0, v_0)$
+  поверхности $S$, параллельно векторам $\pvec r_u', \pvec r_v'$ называется
+  касательной плоскостью к поверхности $S$ в этой точке. Если $\pvec r_0 = \pvec
+  r(u_0, v_0), \pvec r$ --- радиус вектор произвольной точки на касательной
+  плоскости, то ее уравнение в векторной записи имеет вид:
+  \begin{gather}
+    < \pvec r - \pvec r_0, \pvec r_u', \pvec r_v' > = 0
+  \end{gather}
+\end{definition}
+
+\begin{definition}
+  Если $M_0 = \pvec r(u_0, v_0)$ --- неособая точка, то вектор
+  \begin{gather}
+    \pvec\nu = \frac{[\pvec r_u', \pvec r_v']}{\left|[\pvec r_u', \pvec
+    r_v']\right|}
+    \label{def723:eq1}
+  \end{gather}
+  а так же ему противоположный назовем единичной нормалью к поверности в точке
+  $M_0$.
+\end{definition}
+
+\begin{definition}
+  Непрерывно дифиренцируемая поверхность без особых точек называется гладкой
+  поверхностью. Объединение конечного числа гладких поверхностей назовем
+  кусочно гладкой поверхностью, она может состоять из парочки кусков.
+\end{definition}
+
+\section{Площадь поверхности}
+Пусть
+\begin{gather}
+  S = \{\pvec r(u, v) : (u, v) \in \overline{\mathbb{D}}\}
+  \label{ch73:eq1}
+\end{gather}
+непрерывно диффиренцируемая поверхность, где $\overline{\mathbb{D}}$ ---
+квадрируемая замкнутая область. Пусть $I$ --- промежуток, содержащий множество
+$\overline{\mathbb{D}}$. $T$ --- некоторое разбиение промежутка $I$.
+Прономеруем каким-либо образом те промежутки разбиения, которые содержатся в
+$\overline{\mathbb{D}}$ и обозначим их $I_j, \ j = 1, \dots, k$. \\ Возьмем
+какой-либо промежуток $I_j$.
+Пусть $I_j = [u, u + h] \times [v, v + t], t > 0,
+h > 0$ и где для краткости записи пропущен индекс ${}_j$ у переменных: $u, v, h,
+t$. Тогда
+\begin{gather*}
+  \pvec r(u + h, v) - \pvec r(u, v) = \pvec r_u' \cdot h +
+  \bar{\bar{o}}\left(h\right), \ h \to 0 \\
+  \pvec r(u, v + t) - \pvec r(u, v) = \pvec r_v' \cdot t +
+  \bar{\bar{o}}\left(t\right), \ t \to 0
+\end{gather*}
+При определении площади поверхности образы промежутков $I_j$ будем заменять
+прямолинейными параллелограмами, построенными на векторах $\pvec r_u' \cdot h,
+\ \pvec r_v' \cdot t$. Обозначим площадь этого параллелограма
+$\triangle\delta_i$, получаем:
+\begin{gather*}
+  \triangle \delta_i = |[\pvec r_u' \cdot h, \pvec r_v' \cdot t]| = |[\pvec
+  r_u', \pvec r_v']| ht = |[\pvec r_u', \pvec r_v']|_{\mu_j}|I_j|, \ \mu_j =
+  (u_j, v_j)
+\end{gather*}
+Наряду с поверхностью $S$ рассмотрим чешуйчатую поверхность, составленную из
+всех параллелограмов, построенных для каждого прямоугольника $I_j, \ (j = 1,
+\dots, k)$ на соответуствующих ему векторах $\pvec r_u', \pvec r_v'$. Ее
+площадь равна:
+\begin{gather*}
+  \sum\limits_{j = 1}^{k} |[\pvec r_u', \pvec r_v']|_{\mu_j}|I_j|
+\end{gather*}
+которую можно считать приближенным значением поверхности $S$, при чем все более
+точным при $\lambda(T) \to 0$. Таким образом мы принимаем определение
+\eqref{def731}.
+
+\begin{definition}
+  \label{def731}
+  Площадью $\mu_2(S)$ поверхности $S$ называется величина:
+  \begin{gather}
+    \mu_2(S) := \iint\limits_{\mathbb{D}} |[\pvec r_u', \pvec r_v']| du dv
+    \label{def731:eq1}
+  \end{gather}
+\end{definition}
+
+\begin{lemma}[тождество Лагранжа]
+  Для любых двух векторов:
+  \begin{gather*}
+    |[\pvec a, \pvec b]|^2 = \det
+    \begin{pmatrix}
+      (\pvec a, \pvec a) & (\pvec a, \pvec b) \\
+      (\pvec b, \pvec a) & (\pvec b, \pvec b)
+    \end{pmatrix} =
+    |\pvec a|^2 |\pvec b|^2 - (\pvec a, \pvec b)^2
+  \end{gather*}
+  называется тождеством Лагранжа.
+\end{lemma}
+
+\begin{proof}
+  Для доказательства достаточно: $|[\pvec a, \pvec b]| = |\pvec a||\pvec b|
+  \sin \widehat{\pvec a \pvec b}, \ (\pvec a, \pvec b) = |\pvec a||\pvec b|
+  \cos \widehat{\pvec a \pvec b}$. Детерминант в лемме называется детерминантом
+  Грамма векторов $\pvec a, \pvec b$.
+\end{proof}
+
+Введем обозначение:
+\begin{align}
+  E &= g_{11} = |(\pvec r_u', \pvec r_u')| \nonumber \\
+  F &= g_{12} = g_{21} = |(\pvec r_u', \pvec r_v')|
+  \label{ch73:eq2} \\
+  G &= g_{22} = |(\pvec r_v', \pvec r_v')| \nonumber
+\end{align}
+Из леммы $\pvec a = \pvec r_u', \ \pvec b = \pvec r_v'$. Из леммы $|[\pvec
+r_u', \pvec r_v']| = EGF^2 = \det (g_{ij})$, поэтому формула \eqref{def731:eq1}
+примет вид:
+\begin{gather}
+  \mu_2(S) = \iint\limits_{\mathbb{D}} \sqrt{EG - F^2} du dv \equiv \iint
+  \sqrt{\det(g_{ij})} du dv
+  \label{ch73:eq3}
+\end{gather}
+в частности, если $S$ --- график функции $z = f(x, y), (x, y) \in
+\overline{\mathbb{D}}$, то $u = x, \ v = y, \\ \pvec r = \{x, y, f(x, y)\}$ и
+следовательно $\pvec r_u' = \{1, 0, f_x'\}, \ \pvec r_v' = \{-1, 1, f_y'\}$.
+Тогда получим:
+
+\begin{gather*}
+  \det (g_{ij}) = \det
+  \begin{pmatrix}
+    1 + f_x'^2 & f_x' \cdot f_y' \\
+    f_x' \cdot f_y' & 1 + f_y'^2
+  \end{pmatrix} =
+  1 + f_x'^2 + f_y'^2 \\
+  \mu_2(S) = \iint\limits_{\mathbb{D}} \sqrt{1 + f_x'^2 + f_y'^2} dx dy
+\end{gather*}
+
+\begin{remark}
+  Использую формулу замены переменного в двойном интеграле не трудно доказать,
+  что определение \eqref{def731} площади поверхности не зависит от выбора ее
+  представления.
+\end{remark}
+
+\section{Ориентация поверхности в $\mathbb{R}^3$}
+Рассмотрим $\mathbb{R}^3$, то есть $Oxyz$. Пусть $S$ --- гладкая поверхность
+\begin{gather}
+  \pvec r = \pvec r(u, v): (u, v) \in \overline{\mathbb{D}}
+  \label{ch74:eq1}
+\end{gather}
+ее векторное представление.
+\begin{gather}
+  \pvec \nu = \frac{\pvec n}{|\pvec n|}, \pvec n = [\pvec r_u', \pvec r_v']
+  \label{ch74:eq2}
+\end{gather}
+$\pvec \nu$ --- ее единичная нормаль. Поскольку представление $(u, v)$
+непрерывно диффиренцируемо, то вектор $\pvec \nu$ (так же как и вектор $-\pvec
+\nu$) является непрерывной функцией на $\overline{\mathbb{D}}$.
+
+\begin{definition}
+  Всякая непрерывная на $\overline{\mathbb{D}}$ единичная нормаль $\pvec \nu =
+  \pvec \nu(u, v)$ гладкой поверхности $S$ называется ориентацией поверхности
+  $S$, если $\pvec \nu$ является так же однозначной непрерывной функцией
+  переменной точки $\mu(x, y, z) = \pvec r(u, v)$ на самой поверхности $S$. В
+  этом случае поверхность $S$ называется ориентированной (или двусторонней), в
+  противном случае неориентированной (односторонней). Поверхность у которой
+  фиксированна одна из ориентаций, называется ориентированной стороной
+  поверхности.
+\end{definition}
+Очевидно, что поверхность может иметь только две ориентации, который называют
+противоположными, одна положительная, другая отрицательная. $\mu(x, y, z) =
+\pvec r(u, v)$. Примером ориентации поверхности является всякая простая гладкая
+поверхность. Ориентированной является и сфера(хотя сфера и не является простой
+поверхностью). Примером неориентированной поверхности является лента Мебиуса,
+непрерывная поверхность в определении нарушается. \\
+
+Пусть гладкая ориентированная поверхность $S$ с представлением $\pvec r = \pvec
+r(u, v), \ (u, v) \in \overline{\mathbb{D}}$, ориентирована нормалью $\pvec \nu
+= \frac{\pvec n}{|\pvec n|}$, где $\pvec n = [\pvec r_u', \pvec r_v']$. И пусть
+граница $\partial \mathbb{D}$ в области $\mathbb{D}$ является непрерывной
+кривой, ориентированной положительно:
+\begin{gather*}
+  \partial \mathbb{D} = \{u(t), v(t) : a \leq t \leq b\}
+\end{gather*}
+Очевидно, что эта ориентация порождает определенную ориентацию края $\partial
+S = \{\pvec r = \pvec r(u(t), v(t)) : a \leq t \leq b\}$.
+
+\begin{definition}
+  Указанная выше ориентация края $\partial S$ поверхности $S$ называется
+  согласованной с ориентацией $\pvec \nu$ поверхности $S$. Для простой
+  поверхности, в частности для графика $z = f(x, y)$ вектор нормали $\pvec
+  \nu (-\pvec \nu)$ согласован с положительной (отрицательной) ориентацие
+  кривой $\partial S$ по правилу штопора.
+\end{definition}
+Ориентация контура $\partial S$ соответствует направлению вращения ручки
+штопора, а направлению нормали соответствует движение штопора.
+
+\begin{definition}
+  \label{def743}
+  Кусочно-гладкая поверхность $S = S_1 \cap S_2 \cap \dots \cap S_k$ называется
+  ориентированной, если ее можно представить как результат такой склейки
+  гладких поверхностей $S_i, i = 1, \dots, k$, при которой общие части краев
+  $\partial S_i$ поверхности $S_i$ принадлежат не более, чем двум этим
+  поверхностям и проходят в противоположных направлениях, при ориентации краев
+  $\partial S_i$, согласованных по правилу штопора с ориентациями указанных
+  двух поверхностей. Объединение краев $\partial S_i$, принадлежащих одному
+  такому краю, называется краем поверхности $S$.
+\end{definition}
+
+Примерами кусочно-гладких ориентированных(двусторонних) поверхностей являются
+поверхности параллелепипедов, цилиндров. \\
+Можно показать, что определение \eqref{def743} в важном частном случае
+совпадает со следующим определением.
+
+\begin{definition}
+  Если кусочно-гладкая поверхность $S$ является границей области $\mathbb{G}
+  \subset \mathbb{R}^3$, то еденичная нормаль $\pvec \nu$ к этой поверхности
+  (там где она существует), направленная внутрь области называется внутренней
+  нормалью (относительно области $\mathbb{G}$), а противоположная нормаль
+  $-\pvec \nu$ --- внешней нормалью. Эти нормали называются ориентациями
+  границы $\partial \mathbb{G}$ области $\mathbb{G}$.
+\end{definition}
+
+\section{Определение поверхностного интеграла первого рода}
+Пусть $S = \{\pvec r(u,v) : (u, v) \in \overline{\mathbb{D}}\}$ --- гладкая
+поверхность, $\mathbb{D}$ --- квадрируемая область. $F$ --- функция, заданная
+на поверхности $S$, то есть $F = F(\pvec r(u, v)) = F(x(u, v), y(u, v), z(u,
+v)), (u, v) \in \overline{\mathbb{D}}$.
+
+\begin{definition}
+  Интеграл первого рода $\iint\limits_S \mathcal{F} dS$ по поверхности $S$ называется
+  интеграл:
+  \begin{gather}
+    \iint\limits_S \mathcal{F}(x, y, z) dS := \iint\limits_D \mathcal{F}(\pvec r(u, v)) \sqrt{EG -
+    F^2} du dv
+    \label{def751:eq1}
+  \end{gather}
+  Если функция $\mathcal{F}$ --- непрерывная на поверхности $S$, то интеграл
+  \eqref{def751:eq1} безусловно существует.
+\end{definition}
+
+\begin{example}
+  Функция $\mathcal{F} \equiv 1$ на поверхности $S$, тогда получаем:
+  \begin{gather*}
+    \iint\limits_S dS = \iint\limits_{\mathbb{D}} \sqrt{EG - F^2} du dv =
+    \mu_2(S)
+  \end{gather*}
+\end{example}
+
+\begin{example}
+  Если поверхность $S$ задана явно, $z = f(x, y), \ (x, y) \in
+  \overline{\mathbb{D}}$, то:
+  \begin{gather*}
+    \iint\limits_S \mathcal{F}(x, y, z) dS = \iint\limits_{\mathbb{D}}
+    \mathcal{F}(x, y, f(x, y)) \sqrt{1 + f_x'^2 + f_y'^2} dx dy
+  \end{gather*}
+\end{example}
+
+\begin{definition}
+  Поверхностный интеграл первого рода по кусочно-гладкой поверхности
+  определяется как сумма интегралов по ее гладким частям.
+\end{definition}
+
+\section{Поверхностный интеграл второго рода}
+Пусть $\pvec \nu = \{\cos \alpha, \cos \beta, \cos \gamma\}$ --- непрерывная
+еденичная нормаль на ориентированной гладкой поверхности $S$, представление
+которой задано в квадрируемой области. Ориентированную с помощью этой нормали
+поверхность обозначим через $S^+$. Пусть $\pvec a = \pvec a(x, y, z) = \{P, Q,
+R\}$ --- векторная функция заданная на поверхности $S$ (так что $(P, Q, R)$ ---
+числовые функции на поверхности $S$).
+
+\begin{definition}
+  Поверхностным интегралом второго рода по ориентированной поверхности $S^+$
+  называется интеграл: $\iint\limits_{S^+} \pvec a d \pvec S := \iint\limits_S
+  (\pvec a, \pvec \nu) dS$. Для интегралов $\iint\limits_S \pvec a d \pvec S$
+  используется также обозначение:
+  \begin{gather}
+    \iint\limits_{S^+} P dy dz + Q dx dz + R dx dy
+    \label{def761:int1}
+  \end{gather}
+  таким образом получим:
+  \begin{gather}
+    \iint\limits_{S^+} P dy dz + Q dx dz + R dx dy = \iint\limits_S (P \cos
+    \alpha + Q \cos \beta + R \cos \gamma) dS
+    \label{def761:eq1}
+  \end{gather}
+\end{definition}
+
+Для случая, когда поочередно две функции из $P, Q, R$ тождественно равны нулю,
+очевидны интегралы:
+\begin{gather}
+  \iint\limits_{S^+} P dy dz := \iint\limits_S P \cos \alpha dS \nonumber \\
+  \iint\limits_{S^+} Q dx dz := \iint\limits_S Q \cos \beta dS
+  \label{ch76:eqs1} \\
+  \iint\limits_{S^+} R dx dy := \iint\limits_S R \cos \gamma dS \nonumber
+\end{gather}
+Выражение \eqref{def761:int1} теперь можно рассматривать как сумму трех только
+что определенных интегралов. \\
+
+Следующие утверждения очевидны:
+\begin{enumerate}
+  \item $\pvec a$ непрерывен на поверхности $S$, то $\iint\limits_{S^+} \pvec a
+    d \pvec S$ существует.
+  \item Если ориентированную с помощью вектора $-\pvec \nu$ поверхность $S$
+    обозначить через $S^-$, то:
+    \begin{gather*}
+      \iint\limits_{S^-} \pvec a d \pvec S = - \iint\limits_{S^+} \pvec a d
+      \pvec S
+    \end{gather*}
+\end{enumerate}
+
+\begin{theorem}
+  Пусть $S = \{\pvec r(u, v), \ (u, v) \in \overline{\mathbb{D}}\}$ --- гладкая
+  поверхность, $S^+$ --- поверхность $S$, ориентированная с помощью вектора
+  $\pvec \nu = \frac{\pvec n}{|\pvec n|}$, где $\pvec n = [\pvec r_u', \pvec
+  r_v']$, тогда поверхностный интеграл второго рода:
+  \begin{gather}
+    \iint\limits_{S^+} \pvec a d \pvec S = \iint\limits_{\mathbb{D}} <\pvec a,
+    \pvec r_u', \pvec r_v'> du dv = \iint\limits_{\mathbb{D}}
+    \begin{vmatrix}
+      P & Q & R \\
+      x_u' & y_u' & z_u' \\
+      x_v' & y_v' & z_v'
+    \end{vmatrix}
+    du dv
+    \label{th761:eq1}
+  \end{gather}
+  где $P = P(x(u, v), y(u, v), z(u, v)), \ Q = Q(x(u, v), y(u, v), z(u,v)), \ R =
+  R(x(u, v), y(u, v), z(u,v)), \\ \pvec r_u' = \{x_u', y_u', z_u'\}, \ \pvec r_v' =
+  \{x_v', y_v', z_v'\}$. В частности, полагая поочередное равенство двух
+  функций и $P, Q, R$ нулю, найдем интегралы \eqref{ch76:eqs1}.
+\end{theorem}
+
+\begin{proof}
+  \begin{gather*}
+    \iint\limits_{S^+} \pvec a d \pvec S := \iint\limits_S (\pvec a, \pvec \nu)
+    dS = \iint\limits_{\mathbb{D}} \left(\pvec a, \frac{\pvec n}{|\pvec n|}
+    \right) |\pvec n| du dv = \iint\limits_{\mathbb{D}} <\pvec a, \pvec r_u',
+    \pvec r_v'> du dv
+  \end{gather*}
+\end{proof}
+
+\begin{example}
+  \label{ex761}
+  Поверхность $S$ имеет явное представление: $z = f(x, y), \ (x, y) \in
+  \overline{\mathbb{D}}$. Тогда $x = u, y = v, z = f(u, v), \ (u, v) \in
+  \overline{\mathbb{D}}$ --- ее параметрическое представление:
+  \begin{gather*}
+    \begin{vmatrix}
+      P & Q & R \\
+      x_u' & y_u' & z_u' \\
+      x_v' & y_v' & z_v'
+    \end{vmatrix} =
+    \begin{vmatrix}
+      \pvec i & \pvec j & \pvec k \\
+      1 & 0 & f_u' \\
+      0 & 1 & f_v'
+    \end{vmatrix} =
+    \{-f_u', -f_v', 1\}
+    \label{ex761:eq1}
+  \end{gather*}
+  Поэтому, если $\pvec a = \{0, 0, R\}$, то $<\pvec a, \pvec r_u', \pvec r_v'>
+  = (\pvec a, \pvec n) = R$. Отсюда из формулы \eqref{th761:eq1} получаем:
+  \begin{gather}
+    \iint\limits_{S^+} R dx dy := \iint\limits_{S^+} \pvec a d \pvec S =
+    \iint\limits_{\mathbb{D}} R(x, y, f(x, y)) dx dy
+    \label{ex761:eq2}
+  \end{gather}
+\end{example}
+
+\begin{remark}
+  Поскольу в примере \eqref{ex761} проекция вектора $\pvec n$ на вектор $\pvec
+  k$ равна еденице, то $\cos \gamma = \text{Пр}_{\pvec k} \pvec \nu > 0$.
+  $\pvec \nu$ образует угол с осью $Oz$, то есть направленно вверх от
+  поверхности $S$, поэтому поверхность $S^+$ называют верхней стороной $S$, а
+  противположно ориентированную поверхность $S^-$ --- нижней стороной.
+\end{remark}
+
+\begin{example}
+  Пусть $S_0$ --- цилиндрическая поверхность, направляющей которой является
+  некоторая гладкая кривая, лежащая в плоскости $Oxy$, а образующая
+  параллельная оси $Oz$. $S_0^+$ --- поверхность $S_0$, ориентированная
+  непрерывной нормалью $\pvec \nu$, тогда $\cos \gamma = \text{Пр}_{Oz}\pvec
+  \nu = 0$ и
+  \begin{gather}
+    \iint\limits_{S_0} R dx dy = \iint\limits_{S_0} R\cos \gamma dS = 0
+    \label{ex762:eq1}
+  \end{gather}
+\end{example}
+
+\begin{definition}
+  Поверхностный интеграл второго рода по кусочно-гладкой ориентированной
+  поверхности $S$ определим как сумму интегралов второго рода по гладким
+  частям, составим эту поверхность, при условии, что ориентация каждой из этих
+  частей совпадает с выбранной ориентацие поверхности.
+\end{definition}
+
