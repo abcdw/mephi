@@ -10,7 +10,7 @@
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 \usepackage{fix-cm}
-\usepackage{mathenv}
+%\usepackage{mathenv}
 \usepackage{arcs}
 \usepackage{yhmath}
 \usepackage{indentfirst}
@@ -27,6 +27,7 @@
 \geometry{bottom=2cm}  % нижнее поле
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
 
 \renewcommand{\theenumi}{\arabic{enumi}}                                       % Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumi}{\arabic{enumi}.}                                     % Меняем везде перечисления на цифра.цифра
@@ -34,6 +35,8 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}                   % Меняем везде перечисления на цифра.цифра
 \renewcommand{\theenumiii}{.\arabic{enumiii}}                                  % Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.} % Меняем везде перечисления на цифра.цифра
+
+\numberwithin{equation}{section}
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[section]
@@ -69,5 +72,7 @@
   \input{ch5}
   \chapter{Криволинейные интегралы}
   \input{ch6}
+  \chapter{Поверхностные интегралы}
+  \input{ch7}
 \end{document}
 
