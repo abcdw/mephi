@@ -10,7 +10,7 @@
 
 \begin{definition}
   Ряд сходится, если $\exists \lim\limits_{n \to \infty}
-                      \sum\limits_0^n U_k = S$
+  \sum\limits_{k = 0}^n U_k = S$
 \end{definition}
 
 \begin{theorem}[Критерий Коши]
@@ -41,7 +41,7 @@
 
 \begin{example}
   $\sum\limits_0^\infty z^n,$
-  $S_n(z) = \sum\limits_0^n z_n = \frac{1-z^{n+1}}{1-z}$.
+  $S_n(z) = \sum\limits_0^n z^n = \frac{1-z^{n+1}}{1-z}$.
   При $n \to \infty, \ S_n(z) = \frac{1}{1 - z}, \ |z| < 1$. \\
   $S_n(z)$ не имеет придела при $|z| \geq 1$.
 \end{example}
@@ -93,8 +93,8 @@
 \begin{comment}
   Нельзя раскрывать скобки и переставлять члены.
 \end{comment}
-\subsection{Ряды с неотрицательными членами}
-$U_k \geq 0$, $S_n = \sum\limits_{0}^{n} U_k$ - не убывающая последовательность. \\
+\section{Ряды с неотрицательными членами}
+$U_k \geq 0$, $S_n = \sum\limits_{0}^{n} U_k$ - неубывающая последовательность. \\
 $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- ограничена
 \begin{comment}
   Сходимость ряда эквивалентна ограниченности $S_n$
@@ -105,8 +105,8 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
     \begin{enumerate}
       \item
         Если $0 \leq U_k \leq V_k$, то если $\sum V_k$ сходится $\Rightarrow$
-        $\sum U_k$ сходится и если
-        $\sum U_k$ расходится $\Rightarrow$ $\sum V_k$ расходится.
+        $\sum U_k$ сходится и  \\
+        если $\sum U_k$ расходится $\Rightarrow$ $\sum V_k$ расходится.
       \item
         Если $\lim\limits_{n\to \infty} \frac{U_k}{V_k} = A > 0$, то ряды
         сходятся или расходятся одновременно.
@@ -124,8 +124,8 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
       $\forall \varepsilon > 0 \ \varepsilon < A \ \exists N : \forall n \geq N
       \Rightarrow 0 < A - \varepsilon < \frac{U_k}{V_k} < A + \varepsilon$ \\
       $0 < (A - \varepsilon) \cdot V_k < U_k < (A + \varepsilon) \cdot V_k$ \\
-      Пусть $U_k$ --- сходится, тогда из доказанного выше 1ого пункта следует
-      $(A - \varepsilon) \cdot V_k$ --- сходится
+      Пусть $U_k$ сходится, тогда, из доказанного выше 1ого пункта, следует
+      $(A - \varepsilon) \cdot V_k$ сходится
       $\Rightarrow \sum V_k$ сходится
       $\Rightarrow \sum (A + \varepsilon) \cdot V_k$ сходится
       $\Rightarrow \sum U_k$ сходится.
@@ -142,38 +142,45 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   $$\sum U_k, \ U_k > 0$$
   \begin{enumerate}
     \item Если $\exists q$ такое что:
-      $\ \forall k \ \frac{U_{k+1}}{U_k} \leq q < 1$ сходится
+      $\ \forall k \ \frac{U_{k+1}}{U_k} \leq q < 1$, то $U_k$ сходится
     \item Если $\exists \lim\limits_{k \to \infty} \frac{U_{k+1}}{U_k} = q$, то:
     \begin{itemize}
-      \item при $q < 1$ сходимость
-      \item при $q > 1$ расходимость
+      \item при $q < 1$ сходится
+      \item при $q > 1$ расходится
       \item при $q = 1$ неизвестно (нужно провести дополнительные исследования)
     \end{itemize}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  Идея докозательства - сравнение с геометрической прогрессией.
+  Идея доказательства - сравнение с геометрической прогрессией.
   \begin{enumerate}
-    \item $k = 0, 1, \dots, n$;
-      $U_k = U_0 \cdot \frac{U_1}{U_0} \frac{U_2}{U_1} \cdots \frac{U_k}{U_{k-1}}
-      < U_0 \cdot q^k$
-      \begin{comment}
-        $\frac{U_k}{U_{k-1}} < q, \ \forall k$
-      \end{comment}
-      $q < 1$, тогда $\sum U_0 \cdot q^k$ --- сходящаяся геометрическая прогрессия. \\
-      $U_k = U_0 \cdot \frac{U_1}{U_0}\frac{U_2}{U_1}\cdots\frac{U_k}{U_{k-1}}
-      \geq U_0 > 0$
-      \begin{comment}
-        $\frac{U_k}{U_{k-1}} \geq 1, \ \forall k$
-      \end{comment}
-      $U_k \not \to 0 \Rightarrow$ не выполняется необходимое условие сходимости.
+    \item
+      \begin{itemize}
+        \item $k = 0, 1, \dots, n$,
+          $U_k = U_0 \cdot \frac{U_1}{U_0} \frac{U_2}{U_1} \cdots
+          \frac{U_k}{U_{k-1}}
+          < U_0 \cdot q^k$
+          \begin{comment}
+            $\frac{U_k}{U_{k-1}} < q, \ \forall k$
+          \end{comment}
+          $q < 1$, тогда $\sum U_0 \cdot q^k$ --- сходящаяся геометрическая
+          прогрессия.
+        \item $U_k = U_0 \cdot
+          \frac{U_1}{U_0}\frac{U_2}{U_1}\cdots\frac{U_k}{U_{k-1}}
+          \geq U_0 > 0$
+          \begin{comment}
+            $\frac{U_k}{U_{k-1}} \geq 1, \ \forall k$
+          \end{comment}
+          $U_k \not \to 0 \Rightarrow$ не выполняется необходимое условие
+          сходимости.
+      \end{itemize}
     \item Пусть $\lim\limits_{k \to \infty} \frac{U_{k+1}}{U_k} = q$ \\
       $\forall \varepsilon > 0, \ \exists K : \ \forall k \geq K$
       выполняется неравенство
       $q - \varepsilon < \frac{U_{k+1}}{U_k} < q + \varepsilon$
       \begin{itemize}
-        \item Если $q < 1$,выберем такое $\varepsilon$, что 
+        \item Если $q < 1$,выберем такое $\varepsilon$, что
           $q + \varepsilon < 1$, для
           $\forall k \geq K(\varepsilon)$. \\
           $\frac{U_{k+1}}{U_k} < q + \varepsilon < 1 \Rightarrow$
@@ -192,32 +199,32 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   $$\sum U_k, U_k \geq 0$$
   \begin{enumerate}
     \item Если $\exists q < 1$ и $\forall k > K : $ выполняется
-      $\sqrt[k]U_k \leq q < 1$, то ряд сходится, а если
-      $\forall k \ \sqrt[k]U_k~\geq~1$, то расходится.
-    \item Если $\exists \lim\limits_{k \to \infty} \sqrt[k]U_k = q, (q \geq 0)$,
+      $\sqrt[k]{U_k} \leq q < 1$, то ряд сходится, а если
+      $\forall k \ \sqrt[k]{U_k}~\geq~1$, то расходится.
+    \item Если $\exists \lim\limits_{k \to \infty} \sqrt[k]{U_k} = q, (q \geq 0)$,
       то
       \begin{itemize}
-        \item $q < 1$ - сходится
-        \item $q > 1$ - расходится
-        \item $q = 1$ - нужны дополнительные исследования
+        \item при $q < 1$ сходится
+        \item при $q > 1$ расходится
+        \item при $q = 1$ нужны дополнительные исследования
       \end{itemize}
   \end{enumerate}
 \end{theorem}
 \begin{remark}
-  $\lim\limits_{n \to \infty} \sqrt[n]U_n$ можно рассматривать вместо
-  $\overline {\lim\limits_{k \to \infty}} \sqrt[k]U_k$
+  $\lim\limits_{n \to \infty} \sqrt[n]{U_n}$ можно рассматривать вместо
+  $\overline {\lim\limits_{k \to \infty}} \sqrt[k]{U_k}$
 \end{remark}
 
 \begin{proof}
   Сравнение с геометрической прогрессией
   \begin{enumerate}
-    \item Если $\forall k\ \sqrt[k]U_k \leq q < 1 \Rightarrow U_k \leq q^k$
+    \item Если $\forall k \ \sqrt[k]{U_k} \leq q < 1 \Rightarrow U_k \leq q^k$
       --- сходящаяся геометрическая прогрессия. \\
-      Если $\forall k \sqrt[k]U_k \geq 1 \Rightarrow U_k \geq 1$
+      Если $\forall k \ \sqrt[k]{U_k} \geq 1 \Rightarrow U_k \geq 1$
       --- не выполняется необходимое условие сходимости.
-    \item Если $\lim\limits_{k \to \infty} \sqrt[k]U_k = q$, то
+    \item Если $\lim\limits_{k \to \infty} \sqrt[k]{U_k} = q$, то
       $\forall \varepsilon > 0 \ \exists K = K(\varepsilon) :
-      \forall k \geq K, (q - \varepsilon) < \sqrt[k]U_k < (q + \varepsilon)$\\
+      \forall k \geq K, \ (q - \varepsilon) < \sqrt[k]{U_k} < (q + \varepsilon)$\\
       $(q - \varepsilon)^k < U_k < (q + \varepsilon)^k$
       \begin{itemize}
         \item При $q < 1$ выберем $\varepsilon$ так, чтобы $q + \varepsilon < 1$,
@@ -261,7 +268,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
 
 \section{Интегральный признак сходимости рядов с неотрицательными членами}
 \begin{theorem}
-  Если $f(x)$ не отрицательна и убывает на $x \geq 1$, то ряд
+  Если $f(x)$ неотрицательна и убывает на $x \geq 1$, то ряд
   \begin{gather}
     \label{th131:series1}
     \sum\limits_{n = 1}^{\infty} f(n) < \infty
@@ -324,7 +331,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   При $\alpha < 0 \ $ дробь $ \ \frac{1}{n^\alpha} \geq 1$.
 \end{example}
 
-\section{Признак сходимости для чередующихся рядов}
+\section{Признак сходимости для знакочередующихся рядов}
 Рассмотрим ряды с действительными числами, которые то положительные, то
 отрицательные.
 
@@ -349,7 +356,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   Заметим, что частичная суммы $S_n$ с четными номерами возрастают:
   $$S_{2k} = (U_1 - U_2) + (U_3 - U_4) + \dots + (U_{2k - 1} - U_{2k}), \
   k = 1, 2, \dots $$
-  Так что выполняется неравенство $S_{2k + 2} \geq S_2k$. Кроме того, они
+  Так что выполняется неравенство $S_{2k + 2} \geq S_{2k}$. Кроме того, они
   ограничены сверху:
   $$S_{2k} = U_1 - (U_2 - U_3) - \dots - (U_{2k - 2} - U_{2k - 1}) - U_{2k}, \
   S_{2k} < U_1$$
@@ -389,18 +396,19 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
 \end{theorem}
 
 \begin{proof}
-  Очевидно, $b_1 = B_1, b_k = B_k - B_{k - 1}, k = 2, 3, \dots, n$ \\
+  Очевидно, $b_1 = B_1, b_k = B_k - B_{k - 1}, \ k = 2, 3, \dots, n$ \\
   Поэтому
   $a_1 b_1 + a_2 b_2 + \dots + a_n b_n
   = a_1 B_1 + a_2 (B_2 - B_1) + a_3 (B_3 - B_2) + \dots a_n (B_n - B_{n - 1})
-  = (a_1 - a_2) B_1 + (a_2 - a_3) B_2 + \dots + (a_{n-1} - a_n) B_{n-1} + a_n B_n$ \\
+  = (a_1 - a_2) B_1 + (a_2 - a_3) B_2 + \dots + (a_{n-1} - a_n) B_{n-1} + a_n
+  B_n$ \\
   Называется преобразованием Абеля $\sum\limits_{k = 1}^{n} a_k b_k$.
 \end{proof}
 
 \begin{consequence}[лемма Абеля]
   \label{th151:cons}
   Если $a_1 \leq a_2 \leq \dots \leq a_n$
-   или $a_1 \geq a_2 \geq \dots \geq a_n$ \\
+   или $a_1 \geq a_2 \geq \dots \geq a_n$, \\
   $a_k \in \mathbb{R}, \ \forall k = 1, 2, \dots, n$,
   $|b_1 + \dots + b_k| \leq B, \ (b_k \in \mathbb{C})$, то
   $$\left|\sum\limits_{k = 1}^{n} a_k b_k \right| \leq B(|a_1| + 2|a_n|)$$
@@ -463,9 +471,9 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
 
 \section{Безусловно и условно сходящиеся ряды}
 \begin{definition}
-  Пусть $\{k_n\}, n = 1, 2, \dots$ --- последовательность, в которой каждое
+  Пусть $\{k_n\}, \ n = 1, 2, \dots$ --- последовательность, в которой каждое
   натуральное число встречается только один раз. $\{k_n\}$ --- однозначное
-  отображение $a_n^* = a_{k_n}, \ (n~=~1, 2, \dots)$. \\
+  отображение $a_n$ в $a_n^* = a_{k_n}, \ (n~=~1, 2, \dots)$. \\
   Будем говорить, что ряд $\sum a_n^*$ является перестановкой ряда $\sum a_n$.
 \end{definition}
 \begin{definition}
@@ -484,7 +492,7 @@ $\sum\limits_{0}^{n} U_k$ - сходится $\Leftrightarrow$ $\{S_n\} $ --- о
   одному и тому же числу --- сумме исходного ряда. \\
   Пусть $\sum a_n^*$ --- перестановка ряда $\sum a_n$. $S_n^*$ --- ее частичная
   сумма. \\
-  По Коши: $\forall \varepsilon > 0 \exists N : m \geq n > N$
+  По Коши: $\forall \varepsilon > 0 \ \exists N : m \geq n > N$
   \begin{gather}
     |a_n| + \dots + |a_m| < \varepsilon \label{th171:uneq1}
   \end{gather}
