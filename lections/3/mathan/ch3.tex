@@ -7,7 +7,7 @@
   \end{gather}
   $a_n$ --- коэффициенты ряда. \\
   $\xi = z - z_0, $ тогда
-  $\sum\limits_{n = 0}^{\infty} a_n \xi$,
+  $\sum\limits_{n = 0}^{\infty} a_n \xi^n$,
   \begin{gather}
     \sum\limits_{n = 0}^{\infty} a_n z^n \label{def311:series2}
   \end{gather}
@@ -26,7 +26,7 @@
 
 \begin{proof}
   Положим $C_n = a_n z^n$. По критерию Коши заключаем, что сумма
-  $\sum C_n$ сходится при $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|}
+  $\sum C_n$ сходится при $\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|C_n|}
   = |z|\cdot \overline{\lim\limits_{n \to \infty}} \sqrt[n]{|a_n|} =
   \frac{|z|}{R} < 1,$ то есть $|z| < R;$ и рассходится, если $|z| > R$.
 \end{proof}
