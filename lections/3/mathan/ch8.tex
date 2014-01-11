@@ -1,0 +1,502 @@
+\section{Определения}
+Вместо терминов числовая функция в точке и вектор-функции точки будем
+употреблять такие равнозначные к ним понятия: скалярное поле и векторное
+поле(тем самым подчеркивается, что значение функции не зависит от выбора
+системы координат).
+
+\begin{definition}
+  Пусть в области $\mathbb{G}$ задана $\pvec a = \pvec a(M)$ и существует $u =
+  u(M), \ M \in \mathbb{G}$, такая что
+  \begin{gather}
+    \pvec a(M) = \mbox{grad} \ u(M)
+    \label{def811:eq1}
+  \end{gather}
+  Тогда функция $u(M)$ называется потенциалом поля $A$. Поле обладающее
+  потенциалом называется потенциальным полем.
+\end{definition}
+
+Введем $\nabla = \{\frac{\partial}{\partial x}, \frac{\partial}{\partial y},
+\frac{\partial}{\partial z}\}$ (оператор Набла). Тогда $\nabla U =
+\{\frac{\partial U}{\partial x}, \frac{\partial U}{\partial y},
+\frac{\partial U}{\partial z}\}$ и равенство \eqref{def811:eq1} можно записать
+в виде $\pvec a(M) = \nabla U$.
+
+\begin{definition}
+  Пусть поле $\pvec a = \{P, Q, R\}$ диффиренцируема в области $\mathbb{G}$,
+  числовая функция
+  \begin{gather*}
+    \mbox{div} \ \pvec a = (\nabla, \pvec a) = \frac{\partial P}{\partial x} +
+    \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}
+  \end{gather*}
+  называется дивиргенцией поля $\pvec a$ в области $\mathbb{G}$.
+  Векторная функция
+  \begin{gather*}
+    \mbox{rot} \ \pvec a = [\pvec \nabla, \pvec a] =
+    \begin{vmatrix}
+      \pvec i & \pvec j & \pvec k \\
+      \frac{\partial }{\partial x} & \frac{\partial }{\partial y} &
+      \frac{\partial }{\partial z} \\
+      P & Q & R
+    \end{vmatrix} =
+    \left\{\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},
+    \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},
+    \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right\}
+  \end{gather*}
+  называется ротором или вихрем поля A.
+\end{definition}
+
+\begin{definition}
+  Если векторное поле $\pvec a$ задано на кусочно-гладкой замкнутой кривой~
+  $\Gamma$,~то
+  \begin{gather*}
+    \oint\limits_{\Gamma} \pvec a d \pvec r
+  \end{gather*}
+  называется циркуляцией
+  векторного поля $\pvec a$ по кривой $\Gamma$.
+\end{definition}
+
+\begin{definition}
+  Если кусочно-гладкая поверхность $S$ ориентирована с помощью единичной
+  нормали $\pvec \nu$, то для векторного поля $\pvec a$, заданного на
+  поверхности $S$:
+  \begin{gather*}
+    \iint\limits_S (\pvec a, \pvec \nu) dS
+  \end{gather*}
+  называется потоком векторного поля, через поверхность $S$.
+\end{definition}
+
+\section{Формула Гаусса-Остроградского}
+\begin{theorem}
+  \label{th821}
+  Пусть $\mathbb{G}$ --- ограниченная область $\subset \mathbb{R}^3_{xyz}$
+  с кусочно-гладкой границей $\partial G$, $P, Q, R$ --- функции, непрерывные
+  вместе со своими частными производными: \\ $\frac{\partial P}{\partial x},
+  \frac{\partial Q}{\partial y}, \frac{\partial R}{\partial z}, \ (x, y, z) \in
+  \overline{\mathbb{G}}$. $\pvec a = \{P, Q, R\}$, тогда
+  \begin{gather}
+    \iiint\limits_{\mathbb{G}} \mbox{div} \ \pvec a dx dy dz =
+    \iint\limits_{\partial \mathbb{G}} (\pvec a, \pvec \nu) dS
+    \label{th821:eq1}
+  \end{gather}
+  где $\pvec \nu$ --- единичная нормаль к $\partial \mathbb{G}$, внешняя
+  относительно области $\mathbb{G}$. То есть поток векторного поля через
+  границу области равен интегралу от дивиргенции поля по самой области.
+  \eqref{th821:eq1} называется формулой Остроградского-Гаусса.
+  \begin{gather}
+    \iiint \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}
+    + \frac{\partial R}{\partial z}\right) dx dy dz = \iint\limits_{\partial
+      \mathbb{G}^+} P dy dz + Q dx dz + R dx dy
+    \label{th821:eq2}
+  \end{gather}
+  где $\partial \mathbb{G}^+$ ориентирована внешней нормалью $\pvec \nu$.
+\end{theorem}
+
+\begin{proof}
+  $\mathbb{R}^3$
+  \begin{definition}
+    $\mathbb{G} \subset \mathbb{R}^3, \mathbb{G}_z, S_0$ с образующими
+    параллельными оси $Oz$, $S_1, S_2, \varphi, \psi, \\ \mathbb{D} \subset
+    \mathbb{R}^2$ с кусочно-гладкой границей $\partial \mathbb{D}$.
+    $\mathbb{G}_z = \{(x, y, z) : (x, y) \in \mathbb{D}, \varphi(x, y) < z <
+    \psi(x, y)\}$. Аналогично определяются области $\mathbb{G}_y$ и
+    $\mathbb{G}_x$, цилиндрической поверхности, образующие которой параллельны
+    $Oy$ и $Ox$. Простой областью называется область, допускающая разбиение на
+    области каждого из типов: $\mathbb{G}_x, \mathbb{G}_y, \mathbb{G}_z$.
+  \end{definition}
+\end{proof}
+
+\begin{lemma}
+  Пусть в теореме \eqref{th821} $\mathbb{G}$ --- область типа $\mathbb{G}_z$,
+  тогда
+  \begin{gather}
+    \iiint\limits_{\mathbb{G}} \frac{\partial R}{\partial z} dx dy dz =
+    \iint\limits_{\partial \mathbb{G}^+} R dx dy
+    \label{lem821:eq1}
+  \end{gather}
+\end{lemma}
+
+\begin{proof}
+  \begin{gather}
+    \iiint\limits_{\mathbb{G}} \frac{\partial R}{\partial z} dx dy dz =
+    \iint\limits_{\mathbb{D}} dx dy \int\limits_{\varphi(x, y)}^{\psi(x, y)}
+    \frac{\partial R}{\partial z} dz = \iint\limits_{\mathbb{D}} \left(R(x, y,
+    \psi(x, y)) - R(x, y, \varphi(x, y)) \right) dx dy = \nonumber \\
+    \iint\limits_{\mathbb{D}} R(x, y, \psi(x, y)) dx dy -
+    \iint\limits_{\mathbb{D}} R(x, y, \varphi(x, y)) dx dy
+    \overset{\eqref{ex761:eq2}} = \iint\limits_{S_2^+} R dx dy +
+    \iint\limits_{S_1^-} R dx dy
+    \label{lem821:eq2}
+  \end{gather}
+  где $S_2^+$ --- верхняя сторона поверхности $S_2$, а $S_1^-$ --- нижняя
+  сторона поверхности $S_1$. \\ Поскольку двойной $\iint\limits_{S_0^+} R dx dy =
+  0$ (см. \eqref{ex762:eq1}), $\partial \mathbb{G} = S_1 \cup S_2 \cup S_0$, то
+  согласно \eqref{def762} из \eqref{lem821:eq2} получаем \eqref{lem821:eq1}.
+\end{proof}
+
+\begin{lemma}
+  Если область $\mathbb{G}$ можно разбить на конечное число областей типа
+  $\mathbb{G}_z$, то выполняется \eqref{lem821:eq1}.
+\end{lemma}
+
+\begin{proof}
+  Очевидно, что на поверхности, по которой прилигают две такие области,
+  индуцируются противоположные ориентации, поэтому при положительном
+  интегрировании по границе, произойдут взаимные уничтожения, в результате
+  которых останется лишь интеграл $\partial \mathbb{G}^+$ исходной области
+  $\mathbb{G}$.
+\end{proof}
+
+Если область $\mathbb{G}$ можно разложить на области типа $\mathbb{G}_y,
+\mathbb{G}_x$, то соответственно имеют место соотношения:
+\begin{gather}
+  \iiint\limits_{\mathbb{G}} \frac{\partial Q}{\partial y} dx dy dz =
+  \iint\limits_{\mathbb{G}^+} Q dx dz
+  \label{ch82:eq1} \\
+  \iiint\limits_{\mathbb{G}} \frac{\partial Q}{\partial x} dy dz dx =
+  \iint\limits_{\mathbb{G}^+} Q dy dz
+  \label{ch82:eq2}
+\end{gather}
+если область $\mathbb{G}$ простая, то складывая \eqref{lem821:eq1},
+\eqref{ch82:eq1} и \eqref{ch82:eq2}. Получим для области $\mathbb{G}$ равенство
+\eqref{th821:eq2}.
+
+\section{Формула Стокса}
+\begin{theorem}
+  $\pvec a$ непрерывно диффиренцируемая вектор-функция в области $\mathbb{G}$,
+  содержащей ориентированную кусочно-гладкую поверхность $S = S_1 \cup \dots
+  \cup S_k, \ S_1, \dots, S_k$ --- гладкие куски поверхности и пусть $\partial
+  S$ --- ее край с ориентацией, согласованной с заданной ориентацией
+  поверхности $S$, тогда:
+  \begin{gather}
+    \int\limits_{\partial S} \pvec a d \pvec r = \iint\limits_S \mbox{rot} \
+    \pvec a d \pvec S
+    \label{th831:eq1}
+  \end{gather}
+  таким образом циркуляция векторного поля на границе поверхности равна потоку
+  поля через поверхность. Наглядное согласование ориентации $\partial S$ с
+  ориентацией поверхности означает следующие: наблюдатель, двигающийся по краю
+  $\partial S$ (этот край может состоять из нескольких контуров), и, смотрящий
+  из конца нормали $\pvec \nu$, видит непосредственно прилегающую к нему часть
+  поверхности слева от себя ($\pvec \nu$ --- определяет ориентацию того куска
+  $S_i$, на котором в данный момент находится наблюдатель). Формула
+  \eqref{th831:eq1} называется формулой Стокса. Если $S \subset \mathbb{R}^2$,
+  то получаем формулу Грина.
+\end{theorem}
+
+\begin{proof}
+  Очевидно, достаточно провести доказательство для гладкой поверхности, так как
+  написав формулу Стокса для каждой поверхности $S_i$ ($i = 1, \dots, k$), и
+  положив получившиеся равенства получим формулу \eqref{th831:eq1}. \\
+
+  Чтобы доказательство упростить проведем его с дополнительными условиями на
+  гладкой поверхности $S : S = \{\pvec r(u, v): (u, v) \in
+  \overline{\mathbb{D}}\}$ --- давжды непрерывно диффиренцируемая
+  ориентированная поверхность, без особых точек в пространстве
+  $\mathbb{R}_{xyz}^3, \mathbb{D}$ --- плоская ограниченная область у которой
+  область $\partial \mathbb{D}$ --- есть простой кусочно-гладкий контур. Пусть
+  $u = u(t), v = v(t), \ t \in [a,b]$ --- параметрическое представление
+  контуров $\partial {\mathbb{D}}^+, \partial S$ --- край поверхности $S$ с
+  представлением: $\pvec r = \pvec r(u(t), v(t)), \ a \leq t \leq b, \ S^+$ ---
+  поверхность $S$, оиентированная нормалью $\pvec \nu = \frac{(\pvec r_u',
+  \pvec r_v')}{|(\pvec r_u', \pvec r_v')|} = \{\cos \alpha, \cos \beta, \cos
+  \gamma\}$. \\
+  Поскольку $(\mbox{rot} \ \pvec a, \pvec \nu) = (\pvec \nu, [\nabla, \pvec a])
+  = \begin{vmatrix}
+    \cos \alpha & \cos \beta & \cos \gamma \\
+    \frac{\partial }{\partial x} & \frac{\partial }{\partial y} &
+    \frac{\partial }{\partial z} \\
+    P & Q & R
+  \end{vmatrix}$, то в координатной записи формула \eqref{th831:eq1} примет
+  вид:
+  \begin{gather}
+    \int\limits_{\partial S} Pdx + Qdy + Rdz = \iint\limits_{S^+}
+    \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right)
+    dy dz + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}
+    \right) dx dz + \left(\frac{\partial Q}{\partial x} - \frac{\partial
+    P}{\partial y} \right) dx dy
+    \label{th831:eq2}
+  \end{gather}
+  поэтому достаточно проверить, что:
+  \begin{gather*}
+    \int\limits_{\partial S} Pdx = \iint\limits_{S^+} \frac{\partial
+    P}{\partial z} dx dz - \frac{\partial P}{\partial y} dx dy \\
+    \int\limits_{\partial S} Qdy = \iint\limits_{S^+} \frac{\partial
+    Q}{\partial x} dx dy - \frac{\partial Q}{\partial z} dy dz \\
+    \int\limits_{\partial S} Rdz = \iint\limits_{S^+} \frac{\partial
+    R}{\partial y} dy dz - \frac{\partial R}{\partial x} dx dz \\
+  \end{gather*}
+  сложив эти формулы, получим формулу \eqref{th831:eq2}. Проверим пример
+  формулы:
+  \begin{gather*}
+    \int\limits_{\partial S} P(x, y, z) dx = \int\limits_a^b P(\pvec r(u(t),
+    v(t)) \cdot x_t' (u(t), v(t)) dt = \int\limits_a^b P(\pvec r(u(t), v(t)))
+    \left(\frac{\partial x}{\partial u} \frac{\partial u}{\partial t} +
+    \frac{\partial x}{\partial v} \frac{\partial v}{\partial t}\right) dt = \\
+    \int\limits_{\partial \mathbb{D}^+} P(\pvec r(u, v)) \frac{\partial
+    x}{\partial u} du + P(\pvec r(u, v)) \frac{\partial x}{\partial v} dv =
+    \iint\limits_{\mathbb{D}} \left[ \frac{\partial }{\partial u}\left(P
+      \frac{\partial x}{\partial v} \right) - \frac{\partial }{\partial
+      v}\left(P \frac{\partial x}{\partial u} \right) \right] du dv =\\
+      \iint\limits_{\mathbb{D}} \left[\left(\frac{\partial P}{\partial x}
+        \frac{\partial x}{\partial u} + \frac{\partial P}{\partial y}
+        \frac{\partial y}{\partial u} + \frac{\partial P}{\partial z}
+        \frac{\partial z}{\partial u}\right) \frac{\partial x}{\partial v} +
+        P \frac{\partial^2 x}{\partial v \partial u} - \left(\frac{\partial
+        P}{\partial x} \frac{\partial x}{\partial v} + \frac{\partial
+        P}{\partial y} \frac{\partial y}{\partial v} + \frac{\partial
+        P}{\partial z} \frac{\partial z}{\partial v} \right) \frac{\partial
+        x}{\partial u} - P\frac{\partial^2 x}{\partial u \partial v}\right] du
+        dv = \\
+        \iint\limits_{\mathbb{D}} \left[\frac{\partial P}{\partial z}
+        \frac{\mathbb{D}(z, x)}{\mathbb{D}(u, v)} - \frac{\partial
+        P}{\partial y}\frac{\mathbb{D}(x, y)}{\mathbb{D}(u, v)}\right] du dv =
+        \iint\limits_{S^+} \frac{\partial P}{\partial z} dx dz -
+        \iint\limits_{S^+} \frac{\partial P}{\partial y} dx dy
+  \end{gather*}
+\end{proof}
+
+\section{Инвариантность понятий дивергенция и ротор}
+Далее $\pvec a = \pvec a(M), \ M \in \mathbb{G}$ --- непрерывно
+диффиренцируемое векторное поле в трехмерной области $\mathbb{G}$.
+
+\begin{theorem}
+  Пусть $\mathbb{V} \subset \mathbb{G}$ --- окрестность (например шаровая).
+  $|\mathbb{V}|$ --- ее объем. $d$ --- диаметр, тогда:
+  \begin{gather}
+    \mbox{div} \ \pvec a(M_0) = \lim\limits_{d \to 0}
+    \frac{\int\limits_{\partial \mathbb{V}} (\pvec a, \pvec \nu)
+    dS}{|\mathbb{V}|}
+    \label{th841:eq1}
+  \end{gather}
+  $\pvec \nu$ --- внешняя нормаль к границе $\partial \mathbb{V}$ области
+  $\mathbb{V}$.
+\end{theorem}
+
+\begin{proof}
+  Используя формулу Остроградского-Гаусса и теорему о среднем получим:
+  \begin{gather}
+    |\mathbb{V}| \cdot \mbox{div} \ \pvec a(M') = \iint\limits_{\partial
+      \mathbb{V}}
+    (\pvec a, \pvec \nu) dS
+    \label{th841:eq2}
+  \end{gather}
+  где $M' \in \mathbb{V}$. При $d \to 0: M' \to M_0, \ \mbox{div} \ M' \to
+  \mbox{div} \ M_0$. Отсюда из \eqref{th841:eq2} следует \eqref{th841:eq1}.
+\end{proof}
+Правая часть формулы \eqref{th841:eq1} не зависит от выбора координат. Поэтому
+$\mbox{div} \ \pvec a$ инвариантна. \\
+
+Если считать $\pvec a$ полем скоростей течения жидкости или газа, то
+дивиргенцию можно интерпретировать как плотность распределения источников в
+плотности течения.
+
+\begin{theorem}
+  Пусть $M_0 \in \mathbb{G}, \pvec \nu$ --- произвольный фиксированный
+  единичный вектор $\Pi$ --- плоскость, проходящая через точку $M_0$
+  перпендикуляроно $\pvec \nu$. $S$ --- окрестность (например круговая) точки
+  $M_0$ плоскости $\Pi$ ($S \subset \Pi \cap \mathbb{G}$), $|S|$ --- ее
+  площадь, $d$ --- ее диаметр. И пусть контур $\pvec S$ согласованно ориентирован с
+  нормалью $\pvec \nu$. Тогда:
+  \begin{gather}
+    (\mbox{rot} \ \pvec a(M_0), \pvec \nu) = \lim\limits_{d \to 0}
+    \frac{\int\limits_{\partial S} \pvec a d \pvec r}{|S|}
+    \label{th842:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Из формулы Стокса и теоремы о среднем получим:
+  \begin{gather}
+    |S| \cdot (\mbox{rot} \ \pvec a(M'), \pvec \nu) = \int\limits_{\partial S}
+    \pvec a d \pvec r, \ M' \in S
+    \label{th842:eq2}
+  \end{gather}
+  если $d \to 0$, то $M' \to M_0, (\mbox{rot} \ \pvec a(M'), \pvec \nu) \to
+  (\mbox{rot} \ \pvec a(M_0), \pvec \nu)$. Отсюда из \eqref{th842:eq2} получаем
+  \eqref{th842:eq1}.
+\end{proof}
+
+Правая часть равенства \eqref{th842:eq1} не зависит от выбор системы координат.
+Выбрав в качестве $\pvec \nu$ три линейно независимых вектора получим по
+формуле \eqref{th842:eq1} три проекции $\mbox{rot} \ \pvec a$ на эти векторы.
+Этими своими проекциями ротор однозначно определяется. Поскольку они не зависят
+от выбора системы координат, следовательно $\mbox{rot} \ \pvec a$ не зависит от
+системы координат.
+
+\section{Потенциальные векторные поля}
+Поверхность $S$, для которой
+\begin{definition}
+  \label{def851}
+  Множество $\mathbb{E} \subset \mathbb{R}^3$ называется односвязанным, если
+  для любого кусочно-гладкого замкнутого контура, принадлежащего $\mathbb{E}$,
+  существует допустимая поверхность, краем которой он являлся и которая так же
+  лежит в $\mathbb{E}$. \\
+\end{definition}
+Если $\mathbb{E}$ --- плоская область $\mathbb{G} \subset \mathbb{R}^2$, то
+определение \eqref{def851} равносильно условию: для любого кусочно-гладкого
+контура, ограниченная им облать $\mathbb{D}$ содержится в $\mathbb{G}$ (то есть
+односвязная плоская область не имеет дыр). \\
+
+В пространстве примером односвязных областей являются выпуклые области,
+множество точек лежащих между двумя коцентрическими сферами.
+
+\begin{theorem}
+  Пусть в односвязной области $\mathbb{G} \subset \mathbb{R}^3$ задано
+  непрерывно диффиренцируемое векторное поле $\pvec a = \{P, Q, R\}$, тогда
+  эквивалентны следующие пять свойств:
+  \begin{enumerate}
+    \item $\pvec a = \pvec a(M)$ --- потенциальна в $\mathbb{G}$
+    \item $Pdx + Qdy + Rdz$ является в $\mathbb{G}$ полным диффиренциалом
+      некоторой функции $u = u(M)$, которая и является потенциалом поля $\pvec
+      a$
+    \item Для любой точки $A \in \mathbb{G}$ и $B \in \mathbb{G}
+      \int\limits_{\wideparen{AB}} \pvec a d \pvec r$ не зависит от кривой
+      $\wideparen{AB}$, соединяющей эти точки в области $\mathbb{G}$
+      (предполагается, что $\wideparen{AB}$ --- простая кусочно-гладкая
+      кривая)
+    \item $\int \pvec a d \pvec r = 0$ для любого кусочно-гладкого контура
+      $\Gamma \subset \mathbb{G}$
+    \item $\mbox{rot} \ \pvec a = 0$ в области $\mathbb{G}$
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Из 2 следует 1. \\
+
+      Пусть в $\mathbb{G}$ существует функция $U(M) = U(x, y, z): dU = Pdx +
+      Qdy + Rdz$. Тогда $P = \frac{\partial U}{\partial x}, Q = \frac{\partial
+      U}{\partial y}, R = \frac{\partial U}{\partial z}$, так что $\pvec a =
+      \mbox{grad} \ U$.
+    \item Из 1 следует 5. \\
+
+      Пусть $\pvec a = \mbox{grad} \ U = \nabla U$, тогда $\mbox{rot} \ \pvec a
+      = [\nabla, \pvec a] = [\nabla, \nabla U] = \begin{vmatrix}
+        \pvec i & \pvec j & \pvec k \\
+        \frac{\partial }{\partial x} & \frac{\partial }{\partial y} &
+        \frac{\partial }{\partial z} \\
+        \frac{\partial U}{\partial x} & \frac{\partial U}{\partial y} &
+        \frac{\partial U}{\partial z}
+      \end{vmatrix} = 0$. Равенство смешанных производных обеспечено
+      непрерывной диффиренцируемостью функции $P, Q, R$.
+    \item Из 5 следует 4. \\
+
+      Пусть $\mbox{rot} \ \pvec a = 0$ в области $\mathbb{G}$. В силу
+      односвязности области $\mathbb{G}$ существует допустимая поверхность $S
+      \subset \mathbb{G}$ для которой $\Gamma$ является краем. Тогда по теореме
+      Стокса:
+      \begin{gather*}
+        \int\limits_{\Gamma} \pvec a d \pvec r = \iint\limits_S \mbox{rot} \
+        \pvec a d \pvec S = 0
+      \end{gather*}
+    \item Из 4 следует 3. \\
+
+      Пусть $\int\limits_{\Gamma} \pvec a d \pvec r = 0, \ \forall \Gamma \in
+      \mathbb{G}$ (кусочно-гладкой). $A \in \mathbb{G}, B \in \mathbb{G}, \
+      (\wideparen{AB})_1, (\wideparen{AB})_2$ --- кусочно гладкие простые
+      кривые, соединяющие в $\mathbb{G}$ точки $A, B$. Если эти кривые не имеют
+      общих точек, то кривая $\Gamma := (\wideparen{AB})_1 \cup
+      (\wideparen{AB})_2$ является простым кусочно-гладким контуром, лежащим в
+      $\mathbb{G}$, тогда:
+      \begin{gather*}
+        \oint\limits_{\Gamma} = \int\limits_{(\wideparen{AB})_1} -
+        \int\limits_{(\wideparen{AB})_2} = 0 \ \Longrightarrow
+        \int\limits_{(\wideparen{AB})_1} = \int\limits_{(\wideparen{AB})_2}
+      \end{gather*}
+      если же $(\wideparen{AB})_1 \cap (\wideparen{AB})_2 \not = 0$, то в
+      области $\mathbb{G}$ нужна третья кривая $(\wideparen{AB})_3$, которая не
+      пересекается ни с одной из прежних. Тогда по доказанному:
+      $\int\limits_{(\wideparen{AB})_1} = \int\limits_{(\wideparen{AB})_2} =
+      \int\limits_{(\wideparen{AB})_3}$
+    \item из 3 следует 2. \\
+
+      Зафиксируем какую-либо точку $M_0 \in \mathbb{G}$ и определим функцию
+      $U(M)$ по формуле:
+      \begin{gather}
+        U(M) = \int\limits_{\wideparen{M_0M}} \pvec a d \pvec r =
+        \int\limits_{\wideparen{M_0M}} Pdx + Qdy + Rdz, \ M \in \mathbb{G}
+        \label{th851:eq1}
+      \end{gather}
+      где $\wideparen{M_0M}$ --- какая-либо простая кусочно-гладкая кривая,
+      соединяющая в $\mathbb{G}$ точки $M_0$ и $M$. Формула \eqref{th851:eq1} в
+      силу свойства 3 определяет функцию $U(M)$ однозначно. Покажем что:
+      \begin{gather}
+        dU = Pdx + Qdy + Rdz
+        \label{th851:eq2}
+      \end{gather}
+      в любой точке $M(x, y, z) \in \mathbb{G}$. Пусть $M'(x + h, y, z) \in
+      \mathbb{G}, \wideparen{MM'}$ --- отрезок с концами $M$ и $M'$. Тогда:
+      \begin{gather*}
+        U(M') - U(M) = \int\limits_{\wideparen{MM'}} Pdx + Qdy + Rdz =
+        \int\limits_x^{x + h} P(t, y, z) dt
+      \end{gather*}
+      откуда получаем:
+      \begin{gather*}
+        \frac{\partial U}{\partial x} = \lim\limits_{h \to 0} \frac{U(x + h, y,
+        z) - U(x, y, z)}{h} = \lim\limits_{h \to 0} \frac{1}{h}
+        \int\limits_x^{x+h} P(t, y, z) dt = P(x, y, z)
+      \end{gather*}
+      Аналогично получим $\frac{\partial U}{\partial y} = Q, \ \frac{\partial
+      U}{\partial z} = R$. Поскольку функции $P, Q, R$ непрерывны, то функция
+      $U(M)$ диффиренцируема и равенство \eqref{th851:eq2} доказано.
+  \end{enumerate}
+\end{proof}
+
+\begin{remark}
+  Потенциал $U(M)$ поля $\pvec a$ определен с точностью до аддитивной
+  постоянной. Из формулы \eqref{th851:eq1} следует, что потенциальное поле
+  $\pvec a: \int \pvec a d \pvec r = U(B) - U(A)$.
+\end{remark}
+
+\begin{remark}
+  Линиями потенциала называют $U, \pvec F = -\mbox{grad} \ U$.
+\end{remark}
+
+\section{Соленоидальные векторные поля}
+\begin{definition}
+  Непрерывная в области $\mathbb{G} \subset \mathbb{R}^3$ векторное поле $\pvec
+  a$ называется соленоидальным, если для любой ограниченной области $\mathbb{V}
+  \subset \mathbb{G}$ с кусочно-гладкой границей $\partial \mathbb{V} \subset
+  \mathbb{G}$ его поток через эту границу равен 0.
+  Очевидно, что понятия соленоидальности не зависит от выбора ориентации на
+  границе $\partial \mathbb{V}$ обалсти $\mathbb{V}$.
+\end{definition}
+
+\begin{theorem}
+  Для того, чтобы непрерывно диффиренцируемое векторное поле $\pvec a$ было
+  соленоидальным в области $\mathbb{G}$ необходимо и достаточно, чтобы на всех
+  точках области выполнялось равенство:
+  \begin{gather}
+    \mbox{div} \ \pvec a = 0
+    \label{th861:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  \underline{Необходимость}. Пусть $\pvec a$ соленоидально в $\mathbb{G}, M \in
+  \mathbb{G}, r_0 \in \mathbb{G}$. Тогда $r_0 > 0, \forall r : r < r_0$ и с
+  центром в точке $M$ содержится в $\mathbb{G}$. Для этих шаров:
+  \begin{gather*}
+    \iint\limits_{\partial \mathbb{V}_r} \pvec a d \pvec S = 0 \\
+    \mbox{div} \ \pvec a(M) = \lim\limits_{r \to 0}
+    \frac{\iint\limits_{\partial \mathbb{V}_r} \pvec a d \pvec
+    S}{|\mathbb{V}_R|} = 0
+  \end{gather*} \\
+
+  \underline{Достаточность}. Если выполнено \eqref{th861:eq1}, то в силу
+  формулы Остроградского-Гаусса: для любого $\mathbb{V} \subset \mathbb{G}$ с
+  кусочно-гладкой границей $\partial \mathbb{V}$ имеем:
+  \begin{gather*}
+    \iint\limits_{\partial \mathbb{V}_r} \pvec a d \pvec S =
+    \iiint\limits_{\mathbb{V}} \mbox{div} \ \pvec a dx dy dz = 0
+  \end{gather*}
+\end{proof}
+
+\begin{example}
+  Если $\pvec b$ --- дважды непрерывно диффиренцируемое в области $\mathbb{G}$
+  поле, то $\mbox{rot} \ \pvec b$ является соленоидальным в области
+  $\mathbb{G}$ полем.
+  \begin{gather*}
+    \mbox{div} \ \mbox{rot} \ \pvec b = (\nabla, [\nabla, \pvec b]) = 0
+  \end{gather*}
+\end{example}
