@@ -1,0 +1,452 @@
+\section{Бесконечные произведения}
+\begin{definition}
+  Пусть $\{b_n\}$ --- поселдовательность положительных чисел. Формально
+  бесконечное произведение ее членов $b_1b_2\dots b_n\dots$ называется
+  бесконечным произведением. Обозначается так:
+  \begin{gather*}
+    b_1b_2\dots = \prod\limits_{n = 1}^\infty b_n = \prod b_n
+  \end{gather*}
+\end{definition}
+
+\begin{definition}
+  Конечное произведение ${\prod}_n = b_1\dots b_n$ называется $n$-ым
+  частичным произведением.
+\end{definition}
+
+\begin{definition}
+  Если последовательность произведений ${\prod}_n$ сходится к числу $\prod \not =
+  0 \ (\prod > 0)$, то бесконечное произведение называется сходящимся к
+  $\prod$. Если $\prod = 0$, то бесконечное произведение расходится к нулю, а
+  если $\prod_n \to \infty$, то оно называется расходящимся к бесконечности.
+  Если предела нет, то оно называется расходящимся.
+\end{definition}
+
+\begin{approval}[необходимый признак сходимости]
+  Если $\prod b_n$ сходится, то $b_n \to 1$ при $n \to \infty$.
+\end{approval}
+
+\begin{proof}
+  Если $\prod_n \to \prod \not = 0$, то
+  \begin{gather*}
+    b_n = \frac{{\prod}_n}{{\prod}_{n-1}} \to
+    \frac{\prod}{\prod} = 1, \ n \to \infty
+  \end{gather*}
+\end{proof}
+
+\begin{approval}
+  Сходимость бесконечного произведения $\prod b_n$ влечет за собой сходимость
+  ряда $\sum \ln b_n$ и наоборот. Причем
+  \begin{gather*}
+    \ln \prod\limits_{n = 1}^\infty b_n = \sum\limits_{n = 1}^{\infty} \ln b_n
+  \end{gather*}
+\end{approval}
+
+\begin{proof}
+  Имеем
+  \begin{gather}
+    \ln {\prod}_n = \sum\limits_{k = 1}^{n} \ln b_k =: S_n, \ {\prod}_n = e^{S_n}
+    \label{app912:eq1}
+  \end{gather}
+  из непрерывности логарифмической и показательной функции следует, что если
+  ${\prod}_n \to \prod$, то $S_n \to \ln \prod$ и обратно, если $S_n \to S$, то
+  ${\prod}_n \to e^{S}$.
+\end{proof}
+
+\begin{definition}
+  Бесконечное произведение называется абсолютно сходящимся, если абсолютно
+  сходится ряд $\sum \ln b_n$. Сходящееся произведение, не являющееся абсолютно
+  сходящимся, называется условно сходящимся. Очевидно, что абсолютно сходящееся
+  произведение сходится в обычном смысле. Поскольку мы считаем $b_n > 0$, то
+  $b_n = 1 + a_n$, где $a_n > -1$. Тогда имеем:
+  \begin{gather*}
+    \prod\limits_{n = 1}^\infty b_n = \prod\limits_{n = 1}^\infty (1 + a_n)
+  \end{gather*}
+\end{definition}
+
+\begin{theorem}
+  \label{th911}
+  Бесконечное произведение $\prod\limits_{n = 1}^\infty (1 + a_n)$ абсолютно
+  сходится тогда и только тогда, когда $\sum\limits_{n = 1}^{\infty} |a_n|$
+  сходится.
+\end{theorem}
+
+\begin{proof}
+  Действительно, $1+a_n \to 1 \Longleftrightarrow a_n \to 0$, так что $|\ln (1 +
+  a_n)| \sim |a_n|, n \to \infty$. Ряды $\sum |\ln (1 + a_n)|$ и $\sum |a_n|$
+  сходятся и расходятся одновременно.
+\end{proof}
+
+\section{Определение $\Gamma$-функции Эйлера. Некоторые ее свойства}
+По определению $\Gamma(x)$
+\begin{gather}
+  \Gamma(x) = \frac{1}{x} \prod\limits_{n = 1}^{\infty} \frac{(1 +
+  \frac{1}{n})^x}{1 + \frac{x}{n}}, \ x \not = 0, -1, -2, \dots
+  \label{ch92:eq1}
+\end{gather}
+Представим общий член произведения так:
+\begin{gather*}
+  \frac{(1 + \frac{1}{n})^x}{1 + \frac{x}{n}} = 1 + \frac{x(x - 1)}{2} \cdot
+  \frac{1}{n^2} + \bar{\bar{o}}\left(\frac{1}{n^2}\right), \ n \to \infty
+\end{gather*}
+Отсюда в силу теоремы \eqref{th911} вытекает, что наше параметрическое
+представление абсолютно сходится. \\
+
+Отметим некоторые свойства $\Gamma$-функции Эйлера:
+\begin{enumerate}
+  \item
+    \begin{gather}
+      \Gamma(x) = \lim\limits_{n \to \infty} P_n(x), \ P_n(x) = (n+1)^x
+      \frac{n!}{x(x+1)\dots(x+n)}
+      \label{ch92:eq2}
+    \end{gather}
+    Из того, что $n$-ое частичное произведение имеет вид:
+    \begin{gather*}
+      \frac{\prod\limits_{k = 1}^n \left(\frac{k + 1}{k}\right)^x}{x(1 + x)(1 +
+      \frac{x}{2})\dots(1+\frac{x}{n})} = \frac{(n + 1)^x n!}{x(x + 1) \dots (x
+      +n)} = P_n(x)
+    \end{gather*}
+  \item Функциональное уравнения для $\Gamma$-функции:
+    \begin{gather}
+      \Gamma(x + 1) = x \Gamma(x), \ \Gamma(1) = 1
+      \label{ch92:eq3}
+    \end{gather}
+    действительно, $\frac{\Gamma(x + 1)}{\Gamma(x)} = \lim\limits_{n \to
+    \infty} \frac{P_n(x + 1)}{P_n(x)} = \lim\limits_{n \to \infty} \frac{(n +
+    1)x}{(x + 1) + n} = x$. \\
+    В качестве следствия получаем: $\Gamma(m + 1) = m!$.
+\end{enumerate}
+
+\section{Представления синуса в виде бесконечного произведения и формула
+дополнения для $\Gamma$-функции}
+\begin{theorem}[разложение функции $\ctg$ на простейшие дроби]
+  Имеет место формула:
+  \begin{gather}
+    \pi \ctg \alpha \pi = \frac{1}{\alpha} + \sum\limits_{k = 1}^{\infty}
+    \frac{2\alpha}{\alpha^2 - k^2} = \lim\limits_{n \to \infty} \sum\limits_{k
+    = -n}^{n} \frac{1}{\alpha - k}, \ \alpha \in \mathbb{R} \ (\mathbb{Z})
+    \label{th931:eq1}
+  \end{gather}
+\end{theorem}
+\begin{proof}
+  Формулу \eqref{th931:eq1} достаточно установить для $\alpha \in (0,
+  \frac{1}{2})$. Справедливость ее для остальных $\alpha$, отличных от
+  $\mathbb{Z}$ следует из нечетности выражений слева и справа в формуле
+  \eqref{th931:eq1} и их периодичности. \\ На отрезке $[-\pi, \pi]$ рассмотрим
+  функцию $g(x) = \cos \alpha x$, где $\alpha \in [-\frac{1}{2}, \frac{1}{2}]$.
+  Продолжим ее на $\mathbb{R}$. Она будет периодической с периодом $2\pi$.
+  Тогда $g(x)$ будет четной и непрерывной на $\mathbb{R}$. Так как $g(x)$ ---
+  непрерывная и кусочно-гладкая функция, то ее ряд Фурье равномерно сходится на
+  $I = [0, 2\pi]$ к функции $g(x)$. Поэтому при всех $x \in I$:
+  \begin{gather*}
+    g(x) = \frac{a_0}{2} + \sum\limits_{k = 1}^{\infty} (a_k \cos kx + b_k
+    \sin kx)
+  \end{gather*}
+  где $b_k = 0$ в силу четности $g(x)$.
+  \begin{gather*}
+    \frac{a_0}{2} = \frac{\sin \alpha \pi}{\alpha \pi} \\
+    a_k = (-1)^k \frac{2\alpha}{\alpha^2 - k^2} \cdot \frac{\sin \alpha
+    \pi}{\pi}
+  \end{gather*}
+  таким образом:
+  \begin{gather*}
+    g(x) = \cos \alpha x = \frac{\sin \alpha \pi}{\pi} \left(\frac{1}{\alpha} +
+    \sum\limits_{k = 1}^{\infty} (-1)^k \frac{2\alpha}{\alpha^2 - k^2} \cos kx
+    \right), \ x = \pi
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}[Эйлера]
+  $\forall \alpha \in \mathbb{R}$,
+  \begin{gather}
+    \sin \pi \alpha = \pi \alpha \prod\limits_{k = 1}^\infty \left(1 -
+    \frac{\alpha^2}{k^2}\right)
+    \label{th932:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Равенство \eqref{th932:eq1} эквивалентно при $\alpha \in (0, 1)$ равенству:
+  \begin{gather}
+    \ln \left(\frac{\sin \pi \alpha}{\pi \alpha}\right) = \sum\limits_{k =
+    1}^{\infty} \ln \left(1 - \frac{\alpha^2}{k^2} \right) =: S(\alpha)
+    \label{th932:eq2}
+  \end{gather}
+  Ряд справа сходится равномерно при $\alpha \in [-\alpha_0, \alpha_0]$, где $0
+  < \alpha_0 < 1$. \\
+  Пусть $S(\alpha)$ --- сумма этого ряда. Так как:
+  \begin{gather*}
+    \ln \left(1 - \frac{\alpha^2}{k^2}\right) = \frac{2\alpha}{\alpha^2 - k^2}
+  \end{gather*}
+  то $\sum\limits_{k = 1}^{\infty} \frac{2\alpha}{\alpha^2 - k^2}$
+  равномерно сходится на $[-\alpha_0, \alpha_0]$, то существуют произведения
+  $S'(\alpha)$ и выполняется равенство:
+  \begin{gather*}
+    S'(\alpha) = \sum\limits_{k = 1}^{\infty} \frac{2\alpha}{\alpha^2 - k^2}, \
+    \alpha \in (-1, 1)
+  \end{gather*}
+  отсюда и из \eqref{th931:eq1} получим:
+  \begin{gather*}
+    S'(\alpha) = \pi \ctg \alpha \pi - \frac{1}{\alpha}, \ \alpha \in (-1, 1) \\
+    S(\alpha) = \ln \frac{\sin \pi \alpha}{\alpha} + C, \ C = const
+  \end{gather*}
+  так как $\lim\limits_{\alpha \to 0} S(\alpha) = 0$ ряд \eqref{th932:eq2}
+  сходится равномерно, то
+  \begin{gather*}
+    C = - \lim \ln \frac{\sin \pi \alpha}{\alpha} = - \ln \pi
+  \end{gather*}
+  так что
+  \begin{gather*}
+    S(\alpha) = \ln \frac{\sin \pi \alpha}{\pi \alpha}
+  \end{gather*}
+  и равенство \eqref{th932:eq2}, а также \eqref{th932:eq1} доказаны.
+\end{proof}
+
+\begin{consequence}
+  При $\alpha = \frac{1}{2}$ получим формулу Валлиса:
+  \begin{gather}
+    \frac{2}{\pi} = \prod\limits_{k = 1}^\infty \left(1 - \frac{1}{4n^2}\right)
+    \label{th932:eq3}
+  \end{gather}
+\end{consequence}
+
+\begin{theorem}[формула дополнения Эйлера]
+  При $x \not \in \mathbb{Z}$:
+  \begin{gather}
+    \Gamma(x) \Gamma(1 - x) = \frac{\pi}{\sin \pi x}
+    \label{th933:eq1}
+  \end{gather}
+\end{theorem}
+
+\begin{proof}
+  Используя определение $\Gamma$-функции и следующие равенство:
+  \begin{gather*}
+    \Gamma(1 - x) = -x \Gamma(-x) = \prod\limits_{n = 1}^\infty
+    \frac{\left(1 + \frac{1}{n}\right)^{-x}}{1 - \frac{x}{n}}
+  \end{gather*}
+  докажем эту теорему. Перемножая $\Gamma(x)$ и $\Gamma(1 - x)$, получим:
+  \begin{gather*}
+    \Gamma(x) \cdot \Gamma(1 - x) = \frac{\pi}{\sin \pi x}
+  \end{gather*}
+\end{proof}
+
+\begin{consequence}
+  При $x = \frac{1}{2}$ находим:
+  \begin{gather}
+    \Gamma \left( \frac{1}{2} \right) = \sqrt{\pi}
+  \end{gather}
+\end{consequence}
+
+\section{Интегральное представление для $\Gamma$-функции Эйлера}
+
+\begin{lemma}[формула Гаусса]
+  Пусть $P_n(x) = (n + 1)^x \frac{n!}{x(x + 1)\dots(x + n)}$. При $x > 0$:
+  \begin{gather*}
+    P_n(x) = \left( 1 + \frac{1}{n} \right)^x \int\limits_0^n \left( 1 -
+    \frac{t}{n} \right)^n t^{x - 1} dt
+  \end{gather*}
+\end{lemma}
+
+\begin{proof}
+  С помощью замены переменной и интегрирования по частям, получаем:
+  \begin{gather*}
+    \left( 1 + \frac{1}{n} \right)^x \int\limits_0^n \left( 1 -
+    \frac{t}{n} \right)^n t^{x - 1} dt = (n + 1)^x \int\limits_0^1 (1 - y)^n
+    y^{x - 1} dy = (n + 1)^x \frac{1}{x} \int\limits_0^1 (1 - y)^n dy^x = \\
+    (n + 1)^x \frac{n}{x} \int\limits_0^1 (1 - y)^{n - 1}y^x dy = \dots = \\
+    (n+1)^x \frac{n!}{x(x + 1)\dots(x + n -1)} \int\limits_0^1 y^{x + n - 1} dy
+    = (n + 1)^x \frac{n!}{x(x + 1) \dots (x + n)} = P_n(x)
+  \end{gather*}
+\end{proof}
+
+\begin{theorem}[Интегральное представление $\Gamma$-функции]
+  \label{th941}
+  $x > 0$
+  \begin{gather}
+    \Gamma(x) = \int\limits_0^\infty t^{x-1} e^{-t} dt
+    \label{th941:eq1}
+  \end{gather}
+  При $0 < x < 1$: Интеграл имеет особую точку $t = 0$ и сходится в ее
+  окрестности. В окрестности $\infty$ подинтегральное выражение ограничено
+  функцией $e^{-t/2}$ и сходится в этой окрестности.
+\end{theorem}
+
+\begin{proof}
+  Рассмотрим разность
+  \begin{gather}
+    R_n(x) = \int\limits_0^n t^{x-1} e^{-t} dt - P_n(x) \left(1 +
+    \frac{1}{n}\right)^{-x} = \int\limits_0^n t^{x - 1} \left( e^{-t} - \left(
+    1 - \frac{t}{n} \right)^n \right) dt
+    \label{th941:eq2}
+  \end{gather}
+  покажем, что при $t \in [0, n]$:
+  \begin{gather}
+    0 \leq e^{-t} - \left( 1 - \frac{t}{n} \right)^n \leq \frac{1}{n} e^{-t}
+    t^2
+    \label{th941:eq3}
+  \end{gather}
+  действительно, любое неравенство является следствием неравенства $1 + y \leq
+  e^y\left( 1 - \frac{t}{n} \right)~\leq~e^{-t/n}$. Правое неравенство получено
+  ссылкой на этоже неравенство, а так же на неравенство Бернулли:
+  $(1 + y)^n \geq 1 + ny, \ (y > -1)$. Учитывая все это, получаем:
+  \begin{gather*}
+    e^{-t} - \left( 1 - \frac{t}{n} \right)^n = e^{-t}\left( 1 - e^t\left( 1 -
+    \frac{t}{n} \right)^n \right) \leq e^{-t} \left( 1 - \left( 1 + \frac{t}{n}
+    \right)^n \left( 1 - \frac{t}{n} \right)^n \right) = \\
+    e^{-t} \left( 1 - \left( 1 - \frac{t^2}{n^2} \right)^n \right) \leq e^{-t}
+    n\frac{t^2}{n^2} = \frac{1}{n} e^{-t} t^2
+  \end{gather*}
+  учитывая \eqref{th941:eq2} и \eqref{th941:eq3} получаем:
+  \begin{gather*}
+    0 \leq R_n(x) < \int\limits_0^n \frac{t^{x-1}e^{-t}}{n} dt <
+    \frac{1}{n}\int\limits_0^\infty t^{x-1} e^{-t} dt = \frac{\Gamma(x)}{n}
+    \Rightarrow R_n(x) \to 0, n \to \infty
+  \end{gather*}
+  отсюда $\int\limits_0^\infty t^{x-1} e^{-t} dt = \lim\limits_{n \to \infty}
+  \int\limits_0^n t^{x-1} e^{-t} dt = \lim\limits_{n \to \infty} \left( R_n(x)
+  + P_n(x) \left( 1 + \frac{1}{n} \right)^{-x} \right) = \lim\limits_{n \to
+  \infty} P_n(x) = \Gamma(x)$.
+\end{proof}
+
+\begin{remark}
+  С помощью интегрирования по частям и теоремы \eqref{th941} вводится следующая
+  формула Коши, справедливая при значениях $x \in (-(n + 1), n), \ n \in
+  \mathbb{N}$:
+  \begin{gather*}
+    \Gamma(x) = \int\limits_0^\infty t^{x-1} (e^{-t} - \varphi_n(t)) dt, \
+    \varphi_n(t) = \sum\limits_{k = 0}^{n} (-t)^k \frac{1}{k!}
+  \end{gather*}
+\end{remark}
+
+\begin{consequence}[интеграл Эйлера-Пуассона]
+  \begin{gather*}
+    \int\limits_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}, \
+    \Gamma\left(  \frac{1}{2} \right) = \int\limits_0^\infty
+    \frac{e^{-t}}{\sqrt{t}} dt = 2 \int\limits_0^{+\infty} e^{-x^2} dx, \
+    \Gamma\left( \frac{1}{2} \right) = \sqrt{\pi}
+  \end{gather*}
+\end{consequence}
+
+Дальнейшее изучение свойств $\Gamma$-функций будем проводить, исходя из ее
+интегрального представления и основываясь на теории интегралов, зависящих от
+параметров.
+
+\section{Формула Стирлинга}
+
+$\Gamma(x+1) = \sqrt{2\pi x} \left( \frac{x}{e} \right)^x\left( 1 +
+\frac{1}{12x} + \frac{1}{288x^2} + \bar{\bar{o}}\left(\frac{1}{x^3}\right)
+\right), \ x \to \infty$
+\begin{theorem}
+  \label{th951}
+  \begin{gather}
+    \Gamma(n + 1) = n! \sim \sqrt{2\pi n}\left( \frac{n}{e} \right)^n, \ n\to
+    \infty, \ n \in \mathbb{N}
+    \label{ch95:eq1}
+  \end{gather}
+  $(\sqrt[n]{n!} \sim \frac{n}{e}, \ n \to \infty)$.
+\end{theorem}
+
+\begin{lemma}
+  \label{lem951}
+  При $\forall n = 1, 2, \dots$ имеем:
+  \begin{gather}
+    e < \left( 1 + \frac{1}{n} \right)^{n + \frac{1}{2}} < e^{1 +
+      \frac{1}{12n(n+1)}}
+    \label{lem951:eq1}
+  \end{gather}
+\end{lemma}
+
+\begin{proof}
+  $|x| < 1, \ \ln \frac{1 + x}{1 - x} = \ln(1 + x) - \ln(1 - x) = \sum\limits_{n
+  = 1}^{\infty} (-1)^{n+1} \frac{x^n}{n} - \sum\limits_{n = 1}^{\infty} \left(
+  -\frac{x^n}{n} \right) = 2x \sum\limits_{k = 0}^{\infty} \frac{x^{2k}}{2k +
+  1} = 2x(1 + \frac{1}{3}x^2 + \frac{1}{5}x^4 + \dots)$, отсюда при $0 < x < 1$
+  получим:
+  \begin{gather*}
+    2x < \ln \frac{1 + x}{1 - x} < 2x\left( 1 + \frac{1}{3}\frac{x^2}{1 - x^2}
+    \right) \\
+    1 < \frac{1}{2x} \ln \frac{1 + x}{1 - x} < 1 + \frac{1}{3}\frac{x^2}{1 - x^2}
+  \end{gather*}
+  или, что тоже самое,
+  \begin{gather*}
+    1 < \frac{t}{2} \ln \frac{t + 1}{t - 1} < 1 + \frac{1}{3}\frac{1}{t^2-1}, \
+    t > 1, \ t = 2n + 1, \ n \in \mathbb{N} \\
+    1 < \left( n + \frac{1}{2} \right)\ln \left( 1 + \frac{1}{n} \right) < 1 +
+    \frac{1}{12} \frac{1}{n(n+1)}
+  \end{gather*}
+  потенциируя, получаем \eqref{lem951:eq1}.
+\end{proof}
+
+\begin{lemma}[формула Валлиса]
+  \label{lem952}
+  \begin{gather}
+    \pi = \lim\limits_{n \to \infty} \frac{1}{n} \left( 2^{2n}
+    \frac{(n!)^2}{(2n)!} \right)^2
+    \label{lem952:eq1}
+  \end{gather}
+\end{lemma}
+
+\begin{proof}
+  Действительно, согласно формуле \eqref{th932:eq3}:
+  \begin{gather}
+    \frac{\pi}{2} = \prod\limits_{k = 1}^\infty \left( 1 - \frac{1}{4k^2}
+    \right)^{-1} = \lim\limits_{n \to \infty} \prod\limits_{k = 1}^n
+    \frac{(2k)^2}{(2k - 1)(2k + 1)}
+    \label{lem952:eq2}
+  \end{gather}
+  запишем ${\prod}_n$ в виде:
+  \begin{gather*}
+    {\prod}_n = \frac{1}{2n + 1} \left( \frac{(2n)!!}{(2n - 1)!!} \right)^2 =
+    \frac{1}{2n + 1} \left( \frac{((2n)!!)^2}{(2n)!} \right)^2 = \frac{1}{2n +
+    1}\left( \frac{2^{2n}(n!)^2}{(2n)!} \right)^2
+  \end{gather*}
+  отсюда и из \eqref{lem952:eq2} получаем \eqref{lem952:eq1}.
+\end{proof}
+
+\begin{proof}(теоремы \eqref{th951}).
+  Положим:
+  \begin{gather}
+    x_n = \frac{n!e^n}{n^{n + \frac{1}{2}}}
+    \label{th951:eq2}
+  \end{gather}
+  требуется доказать, что
+  \begin{gather}
+    \lim\limits_{n \to \infty} x_n = \sqrt{2\pi}
+    \label{th951:eq3}
+  \end{gather}
+  поскольку $\frac{x_n}{x_{n+1}} = \frac{1}{e}\left( 1 + \frac{1}{n}
+  \right)^{n+\frac{1}{2}}$, то в силу \eqref{lem951:eq1} получаем:
+  \begin{gather}
+    1 < \frac{x_n}{x_{n+1}} < \frac{e^{\frac{1}{12n}}}{e^{\frac{1}{12(n + 1)}}}
+    = e^{\frac{1}{12n(n+1)}}
+    \label{th951:eq4}
+  \end{gather}
+  из левого неравенства следует, что последовательность $x_n$ убывает и
+  следовательно имеет конечный предел $a, \ (a \geq 0)$:
+  \begin{gather}
+    \lim\limits_{n \to \infty} x_n = a
+    \label{th951:eq5}
+  \end{gather}
+  положим $y_n = x_n e^{-\frac{1}{12n}}, \ n \in \mathbb{N}$. Очевидно,
+  $\lim\limits_{n \to \infty} y_n = a$. В силу правого из неравенств
+  \eqref{th951:eq4} $y_n < y_{n+1}$, так что $a > 0$. Получаем, что $x_n = a(1
+  + \varepsilon_n)$, где $\varepsilon_n \to 0, \ n \to \infty$. \\ Отсюда из
+  \eqref{th951:eq2} получим:
+  \begin{gather*}
+    n! = a \frac{n^{n+\frac{1}{2}}}{e^n} \left( 1 + \varepsilon_n \right) \\
+    (2n)! = a \frac{2^{2n + \frac{1}{2}} n^{2n + \frac{1}{2}}}{e^{2n}} (1 +
+    \varepsilon_{2n})
+  \end{gather*}
+  Подставив эти выражения в формулу Валлиса \eqref{lem952:eq1} получаем:
+  \begin{gather*}
+    \pi = \lim\limits_{n \to \infty} \frac{1}{n} \left( a \sqrt{\frac{n}{2}}
+    \cdot \frac{(1 + \varepsilon_n)^2}{1 + \varepsilon_{2n}} \right)^2 \\
+    \pi = \lim\limits_{n \to \infty} \frac{1}{n} \left( 2^{2n}\left(
+    \frac{a n^{n + \frac{1}{2}}(1+\varepsilon_n)}{e^n} \right)^2 \cdot
+    \frac{1}{a} \cdot \frac{e^{2n}}{2^{2n + \frac{1}{2}} n^{2n + \frac{1}{2}}(1
+    + \varepsilon_{2n})}\right)^2 = \\ \lim\limits_{n \to \infty}
+    \frac{1}{n}\left( \frac{a(1 + \varepsilon_n)^2}{1 + \varepsilon_{2n}} \cdot
+    \sqrt{\frac{n}{2}}\right)^2 = \frac{a^2}{2} \Longrightarrow a = \sqrt{2\pi}
+  \end{gather*}
+  что и требовалось доказать (смотри \eqref{th951:eq3} и \eqref{th951:eq5}).
+
+\end{proof}
